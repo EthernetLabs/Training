@@ -377,7 +377,7 @@ What is an IP address. What is difference between IPV4 and IPV6. Why IPV6 was ne
 
 \section{Task - 4: IP Addressing Case}
 \label{week-03:task-4-ip-addressing-case}
-Let's assume that Techknox Systems has 10 departments. The list of departments are:
+Let's assume that IoT Systems has 10 departments. The list of departments are:
 
 \begin{tabulary}{\linewidth}{|L|L|}
 \hline
@@ -445,7 +445,7 @@ Each department should have its own subnet. The design of sub-netting should be 
 \capstart
 
 \includegraphics{{IP_Addressing_Techknox}.png}
-\caption{IP Addressing for Techknox Systems.}\label{week-03:ip-addr-tech}\end{figure}
+\caption{IP Addressing for IoT Systems.}\label{week-03:ip-addr-tech}\end{figure}
 
 
 \section{Task - 5: Software Defined Network (SDN)}
@@ -500,7 +500,7 @@ All that has been done above should be scripted now. Think how we can efficientl
 
 \section{Task - 1: SDN - Scripting}
 \label{week-04:task-1-sdn-scripting}
-As we have concluded our week-3 by establishing the Techknox Systems Networks through commands and have to think how we can implement it using bash scripts. Why Bash Scripts?
+As we have concluded our week-3 by establishing the IoT Systems Networks through commands and have to think how we can implement it using bash scripts. Why Bash Scripts?
 
 Now, we have got that how the things are working, but did not done in professional way. Secondly, if we have to work on some different machine, having the VMS, then we have to perform all this procedure again. It sounds not good.
 
@@ -1370,7 +1370,7 @@ Transport layer provides the logical communication. Logical communication means 
 
 \textbf{Analogy}
 
-Lets consider a company “Techknox” having head office with 100 individuals in Lahore. A sub-office with 100 individuals in Rawalpindi. Its time, when there was only post service for sending messages in form of letters. Suppose, every day each individual writes a message to an individual in other office. In both office Ali and Akbar respectively has responsibility to receive and send letters from courier service, handed it over to each individual and receive theirs to post.
+Lets consider a company “IoT” Head Office with 100 employees in Dublin. A sub-office with 100 employees in Cape Town. Its time, when there was only post service for sending messages in form of letters. Suppose, every day each individual writes a message to an individual in other office. In both office Ali and Akbar respectively has responsibility to receive and send letters from courier service, handed it over to each individual and receive theirs to post.
 
 \begin{tabulary}{\linewidth}{|L|L|}
 \hline
@@ -1839,7 +1839,7 @@ Import os (Read about OS class, what type of methods it provides and those that 
 Learn how to read and write a file in python.
 \begin{quote}
 
-fd = open(`/home/ahmer/Techknox/Python Exercises/fs\_list', `w')
+fd = open(`/opt/pylabs/fs\_list', `w')
 
 for each\_item in fs:
 \begin{quote}
@@ -2065,9 +2065,9 @@ class supplier(contact):
 if \_\_name\_\_ == `\_\_main\_\_':
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n}{s1} \PYG{o}{=} \PYG{n}{supplier}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ahmer}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ahmer.malik914@gmail.com}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{s1} \PYG{o}{=} \PYG{n}{supplier}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Ahmer}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{ahmer.malik@linuxiot.org}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \PYG{k}{print} \PYG{p}{(} \PYG{n}{s1}\PYG{o}{.}\PYG{n}{name} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{:}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{+} \PYG{n}{s1}\PYG{o}{.}\PYG{n}{email} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{n}{s2} \PYG{o}{=} \PYG{n}{supplier}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Weqaar}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{weqaar@gmail.com}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{s2} \PYG{o}{=} \PYG{n}{supplier}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{Weqaar}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{weqaar.janjua@linuxiot.org}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
 \PYG{k}{print} \PYG{p}{(} \PYG{n}{s2}\PYG{o}{.}\PYG{n}{name} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{:}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{+} \PYG{n}{s2}\PYG{o}{.}\PYG{n}{email} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
 \PYG{k}{print} \PYG{n}{s1}\PYG{o}{.}\PYG{n}{all\PYGZus{}contacts}
 \end{Verbatim}

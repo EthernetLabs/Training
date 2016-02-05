@@ -7,7 +7,7 @@ Week - 4 Linux IoT Training
 Task - 1: SDN - Scripting 
 =========================
 
-As we have concluded our week-3 by establishing the Techknox Systems Networks through commands and have to think how we can implement it using bash scripts. Why Bash Scripts?
+As we have concluded our week-3 by establishing the IoT Systems Networks through commands and have to think how we can implement it using bash scripts. Why Bash Scripts?
 
 Now, we have got that how the things are working, but did not done in professional way. Secondly, if we have to work on some different machine, having the VMS, then we have to perform all this procedure again. It sounds not good.
 

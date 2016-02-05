@@ -19,7 +19,7 @@ How to Proceed
 #. Import os (Read about OS class, what type of methods it provides and those that might help).
 #. Learn how to read and write a file in python.
 
-		fd = open('/home/ahmer/Techknox/Python Exercises/fs_list', 'w')
+		fd = open('/opt/pylabs/fs_list', 'w')
 
 		for each_item in fs: 
 
@@ -183,9 +183,9 @@ class supplier(contact)::
 
 if __name__ == '__main__'::
 
-	s1 = supplier("Ahmer","ahmer.malik914@gmail.com") 
+	s1 = supplier("Ahmer","ahmer.malik@linuxiot.org") 
 	print ( s1.name + ':' + s1.email + '\n') 
-	s2 = supplier("Weqaar","weqaar@gmail.com") 
+	s2 = supplier("Weqaar","weqaar.janjua@linuxiot.org") 
 	print ( s2.name + ':' + s2.email + '\n') 
 	print s1.all_contacts 
 

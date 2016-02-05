@@ -237,7 +237,7 @@ Transport layer provides the logical communication. Logical communication means 
 
 **Analogy**
 
-Lets consider a company “Techknox” having head office with 100 individuals in Lahore. A sub-office with 100 individuals in Rawalpindi. Its time, when there was only post service for sending messages in form of letters. Suppose, every day each individual writes a message to an individual in other office. In both office Ali and Akbar respectively has responsibility to receive and send letters from courier service, handed it over to each individual and receive theirs to post.
+Lets consider a company “IoT” Head Office with 100 employees in Dublin. A sub-office with 100 employees in Cape Town. Its time, when there was only post service for sending messages in form of letters. Suppose, every day each individual writes a message to an individual in other office. In both office Ali and Akbar respectively has responsibility to receive and send letters from courier service, handed it over to each individual and receive theirs to post.
 
 ========================		============================
 TCP/IP Stack				Real-Life Stack

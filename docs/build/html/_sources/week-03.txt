@@ -24,7 +24,7 @@ What is an IP address. What is difference between IPV4 and IPV6. Why IPV6 was ne
 Task - 4: IP Addressing Case
 ============================
 
-Let's assume that Techknox Systems has 10 departments. The list of departments are:
+Let's assume that IoT Systems has 10 departments. The list of departments are:
 
 ==================== 	 ================
 DEPARTMENTS  	  	 NO. OF EMPLOYEES
@@ -49,7 +49,7 @@ Each department should have its own subnet. The design of sub-netting should be 
 .. figure::  images/IP_Addressing_Techknox.png
    :align:   center
 
-   IP Addressing for Techknox Systems.
+   IP Addressing for IoT Systems.
 
 Task - 5: Software Defined Network (SDN)
 ========================================
