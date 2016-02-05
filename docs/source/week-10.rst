@@ -3,6 +3,10 @@
 Week - 10 Linux IoT Training
 ****************************
 
+=====================================
+IoT Protocols: RESTful APIs and COAP
+=====================================
+
 REST: Representational State Transfer
 =====================================
 
