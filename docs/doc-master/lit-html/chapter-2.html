@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>WIRELESS SENSOR NETWORK &mdash; LIT_Project 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="LIT_Project 0.0.1 documentation" href="index.html" />
+    <link rel="prev" title="LINUX IOT - LIT" href="chapter-1.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="chapter-1.html" title="LINUX IOT - LIT"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIT_Project 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="wireless-sensor-network">
+<span id="chapter-2"></span><h1>WIRELESS SENSOR NETWORK<a class="headerlink" href="#wireless-sensor-network" title="Permalink to this headline">¶</a></h1>
+<p>The first and foremost requirement of WSN is to have the <strong>Development Boards</strong> integrated with sensors that can sense the different parameters you desired like <strong>temperature, pressure and light intensity</strong> etc. It should be wireless protocol compatible like <strong>WIFI - 802.10.11 or ZigBee 802.15.4</strong>. Now each development board will be consider as 1 <strong>wireless sensor node (SN)</strong>. Hence, we should have 10 development boards to make WSN. As it&#8217;s our initial step in IoT, we will first use emulated development boards in order save time and money. After successful completion, we will deploy it on hardware.</p>
+<p>The second requirement of WSN is to decide an RTOS that provide us an C - API for writing and managing user-space applications on the wireless nodes.</p>
+<div class="section" id="fit-iot-lab">
+<h2>FIT IoT-LAB<a class="headerlink" href="#fit-iot-lab" title="Permalink to this headline">¶</a></h2>
+<p>Now, need of hour is to search an IoT emulated platform that can help us to deploy, run and manage our network infrastructure. <a class="reference external" href="https://www.iot-lab.info/">IoT-LAB</a> best suits us. We have selected <a class="reference external" href="https://www.iot-lab.info/hardware/m3/">M3</a> development board as sensor nodes. M3 is also compatible with RIOT-OS.</p>
+<p>To download IoT-LAB: <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/iot-lab/iot-lab.wiki.git</span></code></p>
+<p>Let&#8217;s start exploring IoT-LAB by following the <a class="reference external" href="https://www.iot-lab.info/tutorials/">tutorials</a></p>
+</div>
+<div class="section" id="riot-os">
+<h2>RIOT – OS<a class="headerlink" href="#riot-os" title="Permalink to this headline">¶</a></h2>
+<p>We will be using <a class="reference external" href="http://www.riot-os.org/">RIOT</a> on our development boards because it provides C API interface and small memory footprint.</p>
+<p>The <a class="reference external" href="http://www.riot-os.org/#features">reason</a> why we used RIOT-OS. Let&#8217;s <a class="reference external" href="https://github.com/RIOT-OS/RIOT">Download</a> RIOT and start exploring RIOT by compiling its example programs.</p>
+</div>
+<div class="section" id="udp-server-in-riot">
+<h2>UDP Server in RIOT<a class="headerlink" href="#udp-server-in-riot" title="Permalink to this headline">¶</a></h2>
+<p>How to create multiple network interfaces in RIOT.</p>
+<p><strong>Create</strong></p>
+<ul>
+<li><dl class="first docutils">
+<dt>Run the RIOT/dist/tools/tapsetup/tapsetup.sh as follows</dt>
+<dd><p class="first last">tapsetup -c 2 (Create 2 interfaces i-e tap0 &amp; tap1)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>If we compile RIOT for native cpu and include nativenet module.</dt>
+<dd><p class="first last">Make (default: native)</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">How to run RIOT on a specific interface.</p>
+</li>
+<li><p class="first">Do “Up” the network interfaces using <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">ip</span> <span class="pre">link</span> <span class="pre">set</span> <span class="pre">dev</span> <span class="pre">tap0</span> <span class="pre">up</span></code></p>
+</li>
+<li><p class="first">Enter into examples directory, then make copy of gnrc_networking directory. Compile (make) the module &amp; run it as <code class="docutils literal"><span class="pre">make</span> <span class="pre">term</span> <span class="pre">PORT=tap0</span></code></p>
+</li>
+<li><p class="first">Do “ifconfig” to see the ipv6 of the interface.</p>
+</li>
+<li><p class="first">Start the server as folows: <code class="docutils literal"><span class="pre">udp</span> <span class="pre">server</span> <span class="pre">start</span> <span class="pre">13377(port</span> <span class="pre">number)</span></code>.</p>
+</li>
+<li><p class="first">Send data over the port <code class="docutils literal"><span class="pre">udp</span> <span class="pre">send</span> <span class="pre">&lt;ip-address</span> <span class="pre">of</span> <span class="pre">tap0&gt;</span> <span class="pre">13377</span> <span class="pre">HELLO-RIOT</span></code>.</p>
+</li>
+</ul>
+<p><strong>Sniffing Packets</strong></p>
+<ul class="simple">
+<li>Run the wireshark &amp; select the interface you want to sniff. (tap0)</li>
+<li>On your host machine, check the ipv6 of the interface tap0.</li>
+<li>Now check the ipv6 in RIOT shell. There will be the difference of 1 in last octet.</li>
+<li>udp send &lt;ip-address of tap0 at host&gt; 13377 HELLO-RIOT</li>
+</ul>
+</div>
+<div class="section" id="what-you-understand">
+<h2>What You Understand<a class="headerlink" href="#what-you-understand" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>RIOT<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Write an user-space application in RIOT using its C-API.</li>
+<li>Compile it for the native board first.</li>
+<li>Run it on your Linux (native board) and test is it working?</li>
+<li>If yes, then our application is ready to run on the specific board M3.</li>
+<li>Compile the application for M3 or you may skip this step over to IoT-LAB.</li>
+<li>If you want to compile for M3 using RIOT, download and install GCC toolchain for MSP430 according to the information provided on the website <a class="reference external" href="http://sourceforge.net/projects/mspgcc/">http://sourceforge.net/projects/mspgcc/</a>.</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h3>IoT-LAB<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>After the development has been done, test your application on test-bed (emulated M3 boards) provided by IoT-LAB.</p>
+<ol class="arabic simple">
+<li>Make new experiment.</li>
+<li>Select the machine you required (M3).</li>
+<li>Select one of servers to login into the device.</li>
+<li>Total number of machines you required.</li>
+<li>Upload the firmware app.elf that was compiled by RIOT.</li>
+<li>Start using your application.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">WIRELESS SENSOR NETWORK</a><ul>
+<li><a class="reference internal" href="#fit-iot-lab">FIT IoT-LAB</a></li>
+<li><a class="reference internal" href="#riot-os">RIOT – OS</a></li>
+<li><a class="reference internal" href="#udp-server-in-riot">UDP Server in RIOT</a></li>
+<li><a class="reference internal" href="#what-you-understand">What You Understand</a><ul>
+<li><a class="reference internal" href="#id1">RIOT</a></li>
+<li><a class="reference internal" href="#id2">IoT-LAB</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="chapter-1.html"
+                        title="previous chapter">LINUX IOT - LIT</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/chapter-2.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="chapter-1.html" title="LINUX IOT - LIT"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIT_Project 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Weqaar Janjua, Ahmer Malik.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.4.
+    </div>
+  </body>
+</html>
