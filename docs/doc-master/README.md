@@ -1,2 +1,0 @@
-# doc
-LIT Project Documentation
