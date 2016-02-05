@@ -308,7 +308,7 @@ Sub-routine::
 
 **Note:** Coroutines may use a return, and behave just like a subroutine
 
-For co-routines in Python ( generators, yield) follow the link: import asyncio (python library)
+For co-routines in Python (generators, yield) follow the link: import asyncio (python library)
 http://wla.berkeley.edu/~cs61a/fa11/lectures/streams.html#coroutines
 https://www.jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/
 
@@ -323,7 +323,8 @@ On the client side, you can request resources by assembling a Message.
 
 https://aiocoap.readthedocs.org/en/latest/aiocoap.message.html#aiocoap.message.Message
 
-For COAP communication, we will use aiocoap module in Python 3.0+. aicoap module does not supported in Python 2.7. Let's install Python 3.0+. 
+For COAP communication, we will use aiocoap module in Python 3.0+. aicoap module is not yet supported for Python 2.7. Let's install Python 3.0+. 
+
 Check the using version of Python.
 
 ``python -V``
@@ -337,7 +338,7 @@ https://aiocoap.readthedocs.org/en/latest/examples.html
 COAP Communication in C
 -----------------------
 
-or COAP communication, we will use libcoap. 
+libcoap is the COAP communication library for C. 
 Download libcoap: https://libcoap.net/
 How to use: https://gitlab.informatik.uni-bremen.de/bergmann/libcoap/tree/3e9afb146043a94da25e0e8fc4bc6c03ebc7a2f1/examples
 
