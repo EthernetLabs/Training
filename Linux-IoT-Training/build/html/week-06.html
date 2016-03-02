@@ -1,0 +1,573 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week - 6 Linux IoT Training &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Week - 7 Linux IoT Training" href="week-07.html"/>
+        <link rel="prev" title="Week - 5 Linux-IoT Training" href="week-05.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week - 6 Linux IoT Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-1-basic-overview-on-tcp-ip-protocol-suite">Task - 1: Basic Overview on TCP-IP Protocol Suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-2-network-layer">Task - 2: NETWORK LAYER</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ip-header-big-endian-ordering">IP Header (Big Endian Ordering)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ip-routing">IP Routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arp-address-resolution-protocol">ARP – Address Resolution Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-network-layer">Understanding: Network Layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-3-raw-sockets">Task - 3: Raw Sockets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-4-transport-layer">Task - 4: Transport Layer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#transport-control-protocol-tcp">Transport Control Protocol - TCP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#analogy">Analogy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#networking">Networking</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#user-datagram-protocol-udp">User Datagram Protocol - UDP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Analogy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Networking</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-transport-layer">Understanding: Transport Layer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-5-socket-programs-tcp-udp-clients-and-servers">Task – 5: Socket Programs (TCP – UDP Clients and Servers)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Linux IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week - 6 Linux IoT Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-06.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-6-linux-iot-training">
+<span id="week-06"></span><h1>Week - 6 Linux IoT Training<a class="headerlink" href="#week-6-linux-iot-training" title="Permalink to this headline">¶</a></h1>
+<p>For better understanding OSI model, read the <a class="reference external" href="http://www.tcpipguide.com/free/t_UnderstandingTheOSIReferenceModelAnAnalogy.htm">OSI Model Analogy</a></p>
+<div class="section" id="task-1-basic-overview-on-tcp-ip-protocol-suite">
+<h2>Task - 1: Basic Overview on TCP-IP Protocol Suite<a class="headerlink" href="#task-1-basic-overview-on-tcp-ip-protocol-suite" title="Permalink to this headline">¶</a></h2>
+<p>TCP-IP is considered as 4 layer system.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="57%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Application</td>
+<td>Telnet, FTP, e-mail, etc.</td>
+</tr>
+<tr class="row-even"><td>Transport</td>
+<td>TCP, UDP</td>
+</tr>
+<tr class="row-odd"><td>Network</td>
+<td>IP, ICMP, IGMP</td>
+</tr>
+<tr class="row-even"><td>Link</td>
+<td>device driver and interface card</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Link Layer: Media Details</strong></p>
+<p>Hardware details for physically connecting or interfacing with cable or any other media.</p>
+<p><strong>Network Layer</strong></p>
+<p>Routing or forwarding of packets intra or inter networks.</p>
+<p><strong>Transport Layer</strong></p>
+<p>Control flow of data between two hosts.
+The major difference between network layer and transport layer is that transport layer decide how and what data has to be transmitted (connection or connectionless) while network layer decide which route  should be taken to deliver the message to destination.</p>
+<p><strong>What is Internet?</strong></p>
+<p>Internet is collection of different networks that uses the same protocol suite. Router is a special purpose hardware device that is used to connect two or more networks. Hence, Internet is totally inter-connected using routers.</p>
+<p><strong>What is the worth of Internet? Why a whole country uses the same network doesn&#8217;t make sense?</strong></p>
+<p>If there was only one network in Pakistan or any other country, then all the companies will have a central administration that can make too mess and security problems. Now, each company has   its own network, and has administration rights as well.</p>
+<p><strong>Routers</strong></p>
+<p>One special thing about routers that they provide connections to many different type of physical networks e.g. Token Ring, Ethernet etc. The Figure below explains it up to reasonable extent.</p>
+<p>One of the goal of Internet is to hide the all the details of physical layout of Internet from applications.</p>
+<p><strong>Bridges</strong></p>
+<p>Another way to connection is bridge. Bridge is link-layer device while the router is network-layer device. Bridges make multiple LAN&#8217;s appear to the upper layer as single LAN.</p>
+<p><strong>Encapsulation</strong></p>
+<p>An application sends data using TCP, the data is sent down the protocol stack. Each layers adds its information to the data in the form of headers. The unit of data that TCP sends to IP, is called TCP segment. IP sends to network interface (link layer), is called IP datagram. The stream of bits that flow across the Ethernet, is called frame.</p>
+<p>A physical property of Ethernet frame is that its data size must between 46 – 1500 bytes.</p>
+<p><strong>DATA-LINK LAYER</strong></p>
+<p><strong>Purpose</strong></p>
+<ol class="arabic simple">
+<li>Send or receive IP datagrams for IP module.</li>
+<li>ARP request and reply</li>
+<li>RARP requests and reply</li>
+</ol>
+<p>ARP and RARP is basically the map between the 32-bit IP address and 48-bit MAC address.</p>
+</div>
+<div class="section" id="task-2-network-layer">
+<h2>Task - 2: NETWORK LAYER<a class="headerlink" href="#task-2-network-layer" title="Permalink to this headline">¶</a></h2>
+<p>Every device that communicate over a network has an logical address. It is called IP address or layer-3 address. This address should be unique because it is the identity of a user in a particular network. Hence Network layer has following jobs:</p>
+<ol class="arabic simple">
+<li>Logical Addressing</li>
+<li>Forwarding and Routing</li>
+<li>Datagram Encapsulation</li>
+<li>Fragmentation and Reassembling</li>
+</ol>
+<p>The normal size of IP header is 20 bytes.</p>
+<div class="section" id="ip-header-big-endian-ordering">
+<h3>IP Header (Big Endian Ordering)<a class="headerlink" href="#ip-header-big-endian-ordering" title="Permalink to this headline">¶</a></h3>
+<p>Note: For machines that use little endian format, should convert headers in network byte order (command: htons in c).</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="3%" />
+<col width="87%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>4B - 0</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>IP version</td>
+<td>0:3</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Header Length</td>
+<td>4:7</td>
+<td>maximum (4*15 = 60 bytes)       Normal  (4*5 = 20)</td>
+</tr>
+<tr class="row-even"><td>Type of Service</td>
+<td>8:15</td>
+<td>0x00 (Delay, Throughput , Reliability Services)</td>
+</tr>
+<tr class="row-odd"><td>Total Datagram Lentgh</td>
+<td>16:31</td>
+<td>Data + Header</td>
+</tr>
+<tr class="row-even"><td><strong>4B - 1</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Identification</td>
+<td>0:15</td>
+<td>Number each datagram, usually increments during fragmentation</td>
+</tr>
+<tr class="row-even"><td>Flag</td>
+<td>16:18</td>
+<td>0 normally</td>
+</tr>
+<tr class="row-odd"><td>Flag Offset</td>
+<td>19:31</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td><strong>4B - 3</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Time To Live</td>
+<td>0:7</td>
+<td>Set upper limit on routers through which datagram can pass. It decrements at every router and datagram thrown away                                                        when counter reaches to 0 and sender is notified by an ICMP message.</td>
+</tr>
+<tr class="row-even"><td>Protocol</td>
+<td>8:15</td>
+<td>For demultiplexing at destination, what type of data</td>
+</tr>
+<tr class="row-odd"><td>Header Checksum</td>
+<td>16:31</td>
+<td>Checksum calculated for the Header, stored here</td>
+</tr>
+<tr class="row-even"><td><strong>4B - 4</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Source IP</td>
+<td>0:31</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>4B – 5</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Destination IP</td>
+<td>0:31</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td><strong>4B – 6</strong></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>Options</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>i. Options</strong></p>
+<p>Security and Handling  Restrictions – Military Applications</p>
+<p><strong>ii. Record Route – Each router record its IP address</strong></p>
+<p>Ping gives us an opportunity to look at the IP record route (RR) option. Most versions of ping have -R option to enable the record feature. This causes every router that handles the IP datagram (contains ICMP echo request message) to add its IP address to a list in the options. When datagram reaches to final destination, a list IP addresses should be copied into the outgoing ICMP echo reply, and all routers on the return path add their IP address into the list. When PING receives echo reply, prints the list of IP addresses.</p>
+<p><strong>Problem</strong></p>
+<p>The biggest problem in using this feature is that we have limited room in IP header for list of IP addresses. A maximum header length can be (4 * 15 = 60 bytes). 20 bytes are reserved for normal IP header, 3 bytes for RR option overhead. Hence, 60 - 20 - 3 = 37 bytes remaining. Therefore, only 37/4 = 9 IP addresses can be stored in the IP list.</p>
+<p><strong>Code:</strong></p>
+<p><em>Option:</em>       Type. For RR code = 7</p>
+<p><em>Len:</em>          Total number of bytes for RR option. In this case len = 39.</p>
+<p><em>ptr:</em>          pointer → IP address (4,8,12, . . .)</p>
+<p><strong>iii. Time Stamp</strong></p>
+<p>Before going to next option. We should know what is source routing?</p>
+<p><strong>What is Source Routing?</strong></p>
+<p>Normally, IP routing is dynamic with each router making decisions about next hop, where to send the IP datagram. Applications have no control on this and are normally not concerned with it. The idea behind the source routing is, sender specifies the route.</p>
+<p><strong>iv. Loose Source Routing</strong></p>
+<p>IP datagram should at least traverse from the IP addresses specifies by the sender. But, it can also pass through other router between two specified IP addresses in the list.</p>
+<p><strong>v. Strict Source Routing</strong></p>
+<p>IP datagram could not pass through other routers.</p>
+<p><strong>Code</strong></p>
+<blockquote>
+<div>0x83 = loose source routing
+0x87 = strict source routing</div></blockquote>
+</div>
+<div class="section" id="ip-routing">
+<h3>IP Routing<a class="headerlink" href="#ip-routing" title="Permalink to this headline">¶</a></h3>
+<p>It is simple for a host, when destination is directly connected to the host (point-to-point link) or on shared network (Ethernet, Token ring etc). Datagram is sent directly to the destination. Otherwise, the host sends the datagram to default router, and router delivers the datagram to its destination.</p>
+<p>In general, IP receives a datagram form TCP, UDP etc to send or from network interface (to forward). IP layer has a routing table in memory, that it searches each time it receives a datagram to send. When a datagram received from network interface, IP first checks, destination IP is its own IP address or IP broadcast address.</p>
+<p>IP routing performs the following actions:</p>
+<ol class="arabic simple">
+<li>Search the routing table = = Network ID and Host ID (Complete destination IP). If found send packet directly to the next hop or directly connected interface. PP link are found here.</li>
+<li>Search the routing table = = Network ID (Ethernet / Token ring).</li>
+<li>Routing table = = Default.</li>
+</ol>
+</div>
+<div class="section" id="arp-address-resolution-protocol">
+<h3>ARP – Address Resolution Protocol<a class="headerlink" href="#arp-address-resolution-protocol" title="Permalink to this headline">¶</a></h3>
+<p>APP Cache: IP address →  MAC Address</p>
+<p>Ethernet frame (ARP) Type →  0x0806</p>
+</div>
+<div class="section" id="understanding-network-layer">
+<h3>Understanding: Network Layer<a class="headerlink" href="#understanding-network-layer" title="Permalink to this headline">¶</a></h3>
+<p>We have ended our last by developing strong concepts on physical and Link Layer. Now, learn the Network Layer in detail.</p>
+<ol class="arabic">
+<li><p class="first">Basic jobs of network Layer</p>
+</li>
+<li><p class="first">IP Datagram Layout</p>
+</li>
+<li><p class="first">Strong Concepts on each field in IP header.</p>
+</li>
+<li><p class="first">Normal Header Length of IP datagram</p>
+</li>
+<li><p class="first">Options that can be used if desirable.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Record Route (with header formats)</li>
+<li>Time Stamp</li>
+<li>Loose Source routing</li>
+<li>Strict Source Routing</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">What is difference between Forwarding and Routing.</p>
+</li>
+<li><p class="first">Routing Tables and actions they perform</p>
+</li>
+<li><p class="first">ARP – Address Resolution Protocol</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="task-3-raw-sockets">
+<h2>Task - 3: Raw Sockets<a class="headerlink" href="#task-3-raw-sockets" title="Permalink to this headline">¶</a></h2>
+<p><strong>What are raw sockets. Why they are used?</strong></p>
+<p>Raw sockets are low level sockets to send one packet at a time. All the protocol headers are filled by the user, instead of kernel, in order to get strong grip on each protocol header.</p>
+<p><strong>Write a raw socket program that fills the UDP/TCP segment and IP datagram according to our will and transmit over the network to a specific destination. After transmission, sniff that packet using Wire-shark, that same packet is received that we have transmitted over the network.</strong></p>
+<p><strong>Helpful link:</strong> <a class="reference external" href="http://www.tenouk.com/Module43a.html">http://www.tenouk.com/Module43a.html</a></p>
+</div>
+<div class="section" id="task-4-transport-layer">
+<h2>Task - 4: Transport Layer<a class="headerlink" href="#task-4-transport-layer" title="Permalink to this headline">¶</a></h2>
+<p>Transport layer provides the logical communication. Logical communication means process to process as IP layer do communication host to host.</p>
+<p><strong>Analogy</strong></p>
+<p>Lets consider a company “IoT” Head Office with 100 employees in Dublin. A sub-office with 100 employees in Cape Town. Its time, when there was only post service for sending messages in form of letters. Suppose, every day each individual writes a message to an individual in other office. In both office Ali and Akbar respectively has responsibility to receive and send letters from courier service, handed it over to each individual and receive theirs to post.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">TCP/IP Stack</th>
+<th class="head">Real-Life Stack</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Application</td>
+<td>Letters in envelopes</td>
+</tr>
+<tr class="row-odd"><td>Processes</td>
+<td>Each individual is a process</td>
+</tr>
+<tr class="row-even"><td>Hosts</td>
+<td>Offices</td>
+</tr>
+<tr class="row-odd"><td>Transport Layer Protocol</td>
+<td>Ali &amp; Akbar</td>
+</tr>
+<tr class="row-even"><td>Network Layer Protocol</td>
+<td>Post Service</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="transport-control-protocol-tcp">
+<h3>Transport Control Protocol - TCP<a class="headerlink" href="#transport-control-protocol-tcp" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="analogy">
+<h4>Analogy<a class="headerlink" href="#analogy" title="Permalink to this headline">¶</a></h4>
+<p>Ali and Akbar are reliable resource, because they take time to analyze how to deliver the letters to the respective individuals without any mistake. Here, time is the constraint.</p>
+</div>
+<div class="section" id="networking">
+<h4>Networking<a class="headerlink" href="#networking" title="Permalink to this headline">¶</a></h4>
+<p><strong>Reference:</strong> The protocols TCP/IP Volume-1 by Stevens – Chapter # 17, 18]</p>
+</div>
+</div>
+<div class="section" id="user-datagram-protocol-udp">
+<h3>User Datagram Protocol - UDP<a class="headerlink" href="#user-datagram-protocol-udp" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>Analogy<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Ahmad or Akram works in the absence of Ali and Akbar. They always remain in haste, and  delivers letters without any analysis or plan. Hence, individuals get their messages instantly. But the drawback is that in haste they do mistakes in proper delivery.</p>
+</div>
+<div class="section" id="id2">
+<h4>Networking<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>UDP is connectionless and unreliable transport layer protocol. Its sends the datagram that application writes to IP layer, with no guarantee that it reaches the destination or not.</p>
+<div class="figure align-center" id="id3">
+<span id="udp-header"></span><img alt="_images/UDP_HEADER.png" src="_images/UDP_HEADER.png" />
+<p class="caption"><span class="caption-text">UDP Header Format</span></p>
+</div>
+<p><strong>Port numbers</strong></p>
+<p>Identify the sending and receiving processes. The TCP port numbers are independent of UDP port numbers. If a service can provide both  TCP and UDP, port numbers can be same.</p>
+<p><strong>Length</strong></p>
+<p>UDP header length. The minimum value of this field is 8-bytes.</p>
+<p><strong>Checksum</strong></p>
+<p>UDP checksum field covers both UDP header and data unlike the checksum in IP datagram that only covers datagram header.</p>
+<p>With UDP checksum is optional while with TCP checksum is mandatory.</p>
+<p>Length of UDP datagram can be odd number of bytes. The solution is to append a pad byte of 0&#8217;s to the end. For 16 bit word checksum calculation.</p>
+<p>Both TCP and UDP include 12 byte pseudo header with UDP datagram, just for checksum calculation.</p>
+<div class="figure align-center" id="id4">
+<span id="udp-check-header"></span><img alt="_images/UDP_CHECKSUM_HEADER.png" src="_images/UDP_CHECKSUM_HEADER.png" />
+<p class="caption"><span class="caption-text">UDP Header For Checksum Calculation</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="understanding-transport-layer">
+<h3>Understanding: Transport Layer<a class="headerlink" href="#understanding-transport-layer" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Relationship between Transport Layer and Network Layer.</li>
+<li>Difference between them.</li>
+<li>What is difference between UDP and TCP.</li>
+<li>UDP Header Format</li>
+<li>What is the difference between the checksum of IP layer and UDP/TCP layer.</li>
+<li>What are port numbers and IANA.</li>
+<li>Basic services of TCP</li>
+<li>TCP Header</li>
+<li>What is ISN</li>
+<li>Sequence number and acknowledgement number.</li>
+<li>Flags: SYN, FIN, RST, PSH, URG, ACK</li>
+<li>Connection Establishment Protocols (3 way handshake)</li>
+<li>Termination Protocol</li>
+</ol>
+</div>
+</div>
+<div class="section" id="task-5-socket-programs-tcp-udp-clients-and-servers">
+<h2>Task – 5: Socket Programs (TCP – UDP Clients and Servers)<a class="headerlink" href="#task-5-socket-programs-tcp-udp-clients-and-servers" title="Permalink to this headline">¶</a></h2>
+<p>Write a UDP client-server that client sends a string to server and server convert it into capital letters and send back to the client. After successful implementation check the packet in Wire-shark and check your understanding. If server is off, still packet can be sniffed or not by wire-shark that is sent by client. (YES)</p>
+<p>Write same utility using TCP and check your understanding again about.</p>
+<blockquote>
+<div><p>Note down the following</p>
+<blockquote>
+<div><ul class="simple">
+<li>flags that we have learn.</li>
+<li>Sniff packet when client just started. (See is there 3 way handshake)</li>
+<li>Clear the results, now sniff when client try to use server utility by sending data.</li>
+<li>Clear the results, shutdown the server and sniff again. (Terminating protocol should be noticed)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week-07.html" class="btn btn-neutral float-right" title="Week - 7 Linux IoT Training" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="week-05.html" class="btn btn-neutral" title="Week - 5 Linux-IoT Training" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

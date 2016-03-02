@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week 11-12 Linux IoT Training &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Week-13 LINUX IoT Training" href="week-13.html"/>
+        <link rel="prev" title="Week - 10 IoT Protocols: RESTful APIs and COAP" href="week-10.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week 11-12 Linux IoT Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#frame-definition">Frame Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valid-phy-type-values">Valid PHY-TYPE Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valid-dev-type-values">Valid DEV-TYPE Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valid-tom-values">Valid TOM Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#valid-seqnum-values">Valid SEQNUM Values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week-13.html">Week-13 LINUX IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week 11-12 Linux IoT Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-12.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-11-12-linux-iot-training">
+<span id="week-12"></span><h1>Week 11-12 Linux IoT Training<a class="headerlink" href="#week-11-12-linux-iot-training" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center" id="id1">
+<span id="gw-frame"></span><img alt="_images/GW_FRAME_LIT.png" src="_images/GW_FRAME_LIT.png" />
+<p class="caption"><span class="caption-text"><strong>Frame Structure for WSN Gateway Firmware</strong></span></p>
+</div>
+<div class="section" id="frame-definition">
+<h2>Frame Definition<a class="headerlink" href="#frame-definition" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="7%" />
+<col width="6%" />
+<col width="9%" />
+<col width="9%" />
+<col width="7%" />
+<col width="10%" />
+<col width="5%" />
+<col width="10%" />
+<col width="7%" />
+<col width="5%" />
+<col width="2%" />
+<col width="6%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Description</td>
+<td>Network-ID</td>
+<td>Source-ID</td>
+<td>Destination-ID</td>
+<td>Physical-Type</td>
+<td>Device-Type</td>
+<td>Type-Of-Message</td>
+<td>Priority</td>
+<td>Sequence-Number</td>
+<td>PDU-Length</td>
+<td>PDU-Type</td>
+<td>PDU</td>
+<td>Encrytion</td>
+</tr>
+<tr class="row-even"><td>Field</td>
+<td>NET-ID</td>
+<td>SRC-ID</td>
+<td>DEST-ID</td>
+<td>PHY-TYPE</td>
+<td>DEV-TYPE</td>
+<td>TOM</td>
+<td>PRIO</td>
+<td>SEQNUM</td>
+<td>PDU-L</td>
+<td>PDU-T</td>
+<td>PDU</td>
+<td>ECC</td>
+</tr>
+<tr class="row-odd"><td>Variable (V) / Fixed Length</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>V</td>
+<td>V</td>
+</tr>
+<tr class="row-even"><td>Byte Length</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>80</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Total Length: 16 - 96 Bytes</p>
+</div>
+<div class="section" id="valid-phy-type-values">
+<h2>Valid PHY-TYPE Values<a class="headerlink" href="#valid-phy-type-values" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="23%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">PHY-TYPE</th>
+<th class="head">Description</th>
+<th class="head">PDU</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Z</td>
+<td>ZigBee: 802.15.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>W</td>
+<td>Wireless: 802.11</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>E</td>
+<td>Ethernet: 802.3</td>
+<td><ul class="first last simple">
+<li>P : PIR</li>
+<li>A : Acoustic</li>
+<li>S : Siesmic</li>
+<li>V=Video</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="valid-dev-type-values">
+<h2>Valid DEV-TYPE Values<a class="headerlink" href="#valid-dev-type-values" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="valid-tom-values">
+<h2>Valid TOM Values<a class="headerlink" href="#valid-tom-values" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="29%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">TOM</th>
+<th class="head">Description</th>
+<th class="head">PDU</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>T</td>
+<td>Time Synchronization</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>I</td>
+<td>Sequence Number &amp; Increment Synchronization</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>P</td>
+<td>Type Of Power Source</td>
+<td><ul class="first last simple">
+<li>B : Battery</li>
+<li>M : Main</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>B</td>
+<td>Battery Information (%)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>H</td>
+<td>Heart-Beat</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>S</td>
+<td>State Of Device</td>
+<td><ul class="first last simple">
+<li>O : OFF</li>
+<li>N : ON</li>
+<li>D : DEBUG</li>
+<li>L : GPS Locking</li>
+<li>F : GPS Lock Fail</li>
+<li>S : SLEEP</li>
+<li>W : WAKEUP</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>R</td>
+<td>Registration / Authentication</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>W</td>
+<td>Wireless</td>
+<td><ul class="first last simple">
+<li>S : Strength</li>
+<li>I : Internal Antenna</li>
+<li>E : Externel Antenna</li>
+<li>T : Transciever Power</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="valid-seqnum-values">
+<h2>Valid SEQNUM Values<a class="headerlink" href="#valid-seqnum-values" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">SEQNUM</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>S</td>
+<td>Start Sequence Number (randomly generated) 0-255</td>
+</tr>
+<tr class="row-odd"><td>I</td>
+<td>Increment in Sequence Number (random) 0-25</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week-13.html" class="btn btn-neutral float-right" title="Week-13 LINUX IoT Training" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="week-10.html" class="btn btn-neutral" title="Week - 10 IoT Protocols: RESTful APIs and COAP" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

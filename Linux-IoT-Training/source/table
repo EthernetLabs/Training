@@ -1,0 +1,46 @@
+=====  =====  ======
+   Inputs     Output
+------------  ------
+  A      B    A or B
+=====  =====  ======
+False  False  False
+True   False  True
+False  True   True
+True   True   True
+=====  =====  ======
+
+
+To add a text with a hyperlink, I like using this format:
+
+`Docs for this project <http://packages.python.org/an_example_pypi_project/>`_
+
+
+.. figure::  images/sweat.jpg
+   :align:   center
+
+   Proof that getting rich is mostly luck.
+
+.. _is_sweaty:
+.. figure::  images/sweat.jpg
+   :align:   center
+
+   Proof that getting rich is mostly luck.
+
+
+To download documents you use the syntax:
+
+:download:`An Example Pypi Project<docs/examplepypi.pdf>`
+
+which renders like An Example Pypi Project.
+
+Paragraph Markup
+
+.. note::
+
+.. warning::
+
+.. versionadded:: version
+
+.. versionchanged:: version
+
+.. seealso::

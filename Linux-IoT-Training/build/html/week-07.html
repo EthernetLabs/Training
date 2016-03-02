@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week - 7 Linux IoT Training &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Week - 8 Linux IoT Training" href="week-08.html"/>
+        <link rel="prev" title="Week - 6 Linux IoT Training" href="week-06.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week - 7 Linux IoT Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-1-tcp-congestion-control">Task - 1: TCP Congestion Control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#compare-different-congestion-control-algorithms-by-developing-a-network">Compare different congestion control algorithms by developing a network</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-2-compare-different-congestion-control-algorithms-by-developing-a-network">Task – 2: Compare different congestion control algorithms by developing a network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-3-netem-driver-network-emulation">Task – 3: NETEM Driver – Network Emulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#latency">Latency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#packet-loss">Packet Loss</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#packet-corruption-noise">Packet Corruption – Noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-300-mb-raw-data-file">Create 300 MB Raw Data File</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-4-make-your-own-web-server">Task - 4: Make Your Own Web-Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#steps">Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-5-gnu-plot">Task - 5: GNU-Plot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-6-git-hub">Task - 6: Git-Hub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-7-basic-interaction-with-python">Task - 7: Basic Interaction with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Linux IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week - 7 Linux IoT Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-07.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-7-linux-iot-training">
+<span id="week-07"></span><h1>Week - 7 Linux IoT Training<a class="headerlink" href="#week-7-linux-iot-training" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="task-1-tcp-congestion-control">
+<h2>Task - 1: TCP Congestion Control<a class="headerlink" href="#task-1-tcp-congestion-control" title="Permalink to this headline">¶</a></h2>
+<p>Learn TCP Congestion control in detail. What is Bandwidth, Round Trip Time, Packets Loss? What is tuning of TCP? What is window? What is slow start, congestion avoidance and different congestion control algorithms and their difference.</p>
+<div class="section" id="compare-different-congestion-control-algorithms-by-developing-a-network">
+<h3>Compare different congestion control algorithms by developing a network<a class="headerlink" href="#compare-different-congestion-control-algorithms-by-developing-a-network" title="Permalink to this headline">¶</a></h3>
+<p><strong>Develop a network that PC-2 acts as router, PC-1 and PC-2 acts as source or destinations, all are connected through Ethernet cables. By using different congestion control algorithms, copy a file of 1GB on either computer and store the data-rate in a text file. Based on the data rate stored, plot the graphs using GNU-plot in Linux. Explain your understandings.</strong></p>
+<div class="figure align-center" id="id3">
+<span id="congestion-net"></span><img alt="_images/CONGESTION_NETWORK_07.png" src="_images/CONGESTION_NETWORK_07.png" />
+<p class="caption"><span class="caption-text">Congestion Control Network Architecture</span></p>
+</div>
+<p><strong>PC - 1</strong></p>
+<ol class="arabic simple">
+<li>Add eth0 → EDGE_1 → EDGE_1 IP = 192.168.2.249, netmask = 255.255.255.252</li>
+<li>Add route for eth0 (PC-2)</li>
+<li>sudo route add -net 192.168.2.252 netmask 255.255.255.252 gw 192.168.2.250</li>
+</ol>
+<p><strong>PC - 2</strong></p>
+<ol class="arabic simple">
+<li>It should have two Ethernet ports. Attach an Ethernet adapter.</li>
+<li>Add eth2 → EDGE_2 → EDGE_2 IP = 192.168.2.250, netmask = 255.255.255.252 (PC - 1 &amp; PC – 2 adapter using LAN cable ).</li>
+<li>Add eth0 → EDGE_3 → EDGE_3 IP = 192.168.2.253, netmask = 255.255.255.252 (PC - 2 &amp; PC – 3 using LAN cable ).</li>
+</ol>
+<p><strong>PC - 3</strong></p>
+<ol class="arabic simple">
+<li>Add eth0 → EDGE_4 → EDGE_4 IP = 192.168.2.254, netmask = 255.255.255.252</li>
+<li>Add route for eth0 (PC-2)</li>
+<li>sudo route add -net 192.168.2.248 netmask 255.255.255.252 gw 192.168.2.253</li>
+</ol>
+<p>Now, check using Ping that PC-1 should be able to communicate uptil eth-0 (SW-4) of PC-3 and vice-versa.</p>
+</div>
+</div>
+<div class="section" id="task-2-compare-different-congestion-control-algorithms-by-developing-a-network">
+<h2>Task – 2: Compare different congestion control algorithms by developing a network<a class="headerlink" href="#task-2-compare-different-congestion-control-algorithms-by-developing-a-network" title="Permalink to this headline">¶</a></h2>
+<p>Develop a network that PC-2 acts as router, PC-1 and PC-2 acts as source or destinations, all are connected through Ethernet cables. By using different congestion control algorithms, copy a file of 1GB on either computer and store the data-rate in a text file. Based on the data rate stored, plot the graphs using GNU-plot in Linux. Explain your understandings.</p>
+</div>
+<div class="section" id="task-3-netem-driver-network-emulation">
+<h2>Task – 3: NETEM Driver – Network Emulation<a class="headerlink" href="#task-3-netem-driver-network-emulation" title="Permalink to this headline">¶</a></h2>
+<p>Learn how to add latency, noise and packet loss into a network. Useful link: <a class="reference external" href="http://www.linuxfoundation.org/collaborate/workgroups/networking/netem">http://www.linuxfoundation.org/collaborate/workgroups/networking/netem</a></p>
+<p><strong>iproute2</strong></p>
+<p>Linux package contains a collection of utilities for controlling TCP/IP networking and traffic control in Linux.</p>
+<p>The current version of netem driver emulates variables  delay, loss, duplication and re-ordering.</p>
+<p>How to add fixed delay to all packets.</p>
+<div class="section" id="latency">
+<h3>Latency<a class="headerlink" href="#latency" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">tc</span> <span class="pre">qdisc</span> <span class="pre">add</span> <span class="pre">dev</span> <span class="pre">eth0</span> <span class="pre">root</span> <span class="pre">netem</span> <span class="pre">delay</span> <span class="pre">100ms</span></code></p>
+<div class="figure align-center" id="id4">
+<span id="id1"></span><img alt="_images/LATENCY_07.png" src="_images/LATENCY_07.png" />
+<p class="caption"><span class="caption-text">Latency Results</span></p>
+</div>
+</div>
+<div class="section" id="packet-loss">
+<h3>Packet Loss<a class="headerlink" href="#packet-loss" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">tc</span> <span class="pre">qdisc</span> <span class="pre">add</span> <span class="pre">dev</span> <span class="pre">eth0</span> <span class="pre">root</span> <span class="pre">netem</span> <span class="pre">loss</span> <span class="pre">0.1%</span></code></p>
+<div class="figure align-center" id="id5">
+<span id="id2"></span><img alt="_images/PACKET_LOSS_07.png" src="_images/PACKET_LOSS_07.png" />
+<p class="caption"><span class="caption-text">Pscket Loss Results</span></p>
+</div>
+</div>
+<div class="section" id="packet-corruption-noise">
+<h3>Packet Corruption – Noise<a class="headerlink" href="#packet-corruption-noise" title="Permalink to this headline">¶</a></h3>
+<p>tc qdisc add dev eth0 root netem corrupt 0.1% (it introduces single bit in error).</p>
+<p>Linux TCP Tunning helpful link: <a class="reference external" href="http://kaivanov.blogspot.com/2010/09/linux-tcp-tuning.html">http://kaivanov.blogspot.com/2010/09/linux-tcp-tuning.html</a></p>
+</div>
+<div class="section" id="create-300-mb-raw-data-file">
+<h3>Create 300 MB Raw Data File<a class="headerlink" href="#create-300-mb-raw-data-file" title="Permalink to this headline">¶</a></h3>
+<p>dd if=/dev/sda1 of=/home/ahmer/TCP_data.img bs=1G count=10</p>
+<p><code class="docutils literal"><span class="pre">script</span> <span class="pre">-q</span> <span class="pre">-c</span> <span class="pre">&quot;scp</span> <span class="pre">-rp</span> <span class="pre">/home/ahmer/TCP_data_300MB.img</span> <span class="pre">ahmer&#64;192.168.2.254:/home/ahmer/&quot;</span> <span class="pre">&gt;</span> <span class="pre">/home/ahmer/TCP_reno</span></code></p>
+<p>cut desired data into TCP_reno_2</p>
+<p>Filter: <code class="docutils literal"><span class="pre">cat</span> <span class="pre">TCP_reno_2</span> <span class="pre">|</span> <span class="pre">cut</span> <span class="pre">-d'%'</span> <span class="pre">-f2</span> <span class="pre">|</span> <span class="pre">cut</span> <span class="pre">-d&quot;</span> <span class="pre">&quot;</span> <span class="pre">-f5</span>&nbsp; <span class="pre">&gt;</span> <span class="pre">TCP_reno_3</span></code></p>
+<p>How to check the available Congestion Control algorithms modules.ko in your kernel.</p>
+<p><code class="docutils literal"><span class="pre">ls</span> <span class="pre">/lib/modules/`uname</span> <span class="pre">-r`/kernel/net/ipv4/</span></code></p>
+<p>How to find running CC modules on your kernel?</p>
+<p><code class="docutils literal"><span class="pre">root&#64;ahmer-Inspiron-5548:/proc/sys/net/ipv4#</span>&nbsp; <span class="pre">sysctl</span> <span class="pre">net.ipv4.tcp_available_congestion_control</span></code></p>
+<p><code class="docutils literal"><span class="pre">net.ipv4.tcp_available_congestion_control</span> <span class="pre">=</span> <span class="pre">cubic</span> <span class="pre">reno</span></code></p>
+<p>What if your desired CC modules are not running?</p>
+<p><code class="docutils literal"><span class="pre">/sbin/modprobe</span> <span class="pre">tcp_bic</span></code>
+<code class="docutils literal"><span class="pre">/sbin/modprobe</span> <span class="pre">tcp_highspeed</span></code></p>
+<p>How to change /set the TCP CC algorithm?</p>
+<p><code class="docutils literal"><span class="pre">root&#64;ahmer-Inspiron-5548:/proc/sys/net/ipv4#</span> <span class="pre">echo</span> <span class="pre">reno</span> <span class="pre">&gt;</span> <span class="pre">tcp_allowed_congestion_control</span></code></p>
+</div>
+</div>
+<div class="section" id="task-4-make-your-own-web-server">
+<h2>Task - 4: Make Your Own Web-Server<a class="headerlink" href="#task-4-make-your-own-web-server" title="Permalink to this headline">¶</a></h2>
+<p><strong>How to Download a file from a web-server?</strong></p>
+<p><strong>Apache:</strong>     Hypertext Transfer Protocol Service</p>
+<p><strong>Curl:</strong>               Transfer a URL</p>
+<div class="section" id="steps">
+<h3>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Install apache2 on server.</li>
+<li>Copy the desired files in directory /var/www/html.</li>
+<li>curl -o filename <a class="reference external" href="http:/">http:/</a>/&lt;IP-Address&gt;/filename_wanted_to_download</li>
+<li>You can Download the file using web-browser as well.</li>
+</ol>
+<p><strong>How to change the directory of web-server?</strong></p>
+<p>sudo vim /etc/apache2/sites-available/000-default.conf</p>
+<p>Change: DocumentRoot /var/www/html → DocumentRoot /your/directory/</p>
+<p>sudo vim /etc/apache2/apache2.conf</p>
+<p>change: &lt;Directory /var/www/html/&gt;  –&gt; &lt;Directory /your/directory/&gt;</p>
+<p>Options Indexes FollowSymLinks</p>
+<p>AllowOverride None</p>
+<p>Require all granted</p>
+<p>&lt;/Directory&gt;</p>
+</div>
+</div>
+<div class="section" id="task-5-gnu-plot">
+<h2>Task - 5: GNU-Plot<a class="headerlink" href="#task-5-gnu-plot" title="Permalink to this headline">¶</a></h2>
+<p>Learn how to use GNU-Plot in Linux for elaborated graphing such as tiltle, X, and Y axis legends, sub-plotting, reading data from a file etc.</p>
+<p><strong>How to install?</strong></p>
+<p>Sudo apt-get install gnuplot-qt rlwrap</p>
+<div class="section" id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h3>
+<p>For doing diffrent settings for gnu-plot and help <a class="reference internal" href="appendix.html#gnu-plot"><span class="std std-ref">Settings GNU-Plot</span></a></p>
+</div>
+</div>
+<div class="section" id="task-6-git-hub">
+<h2>Task - 6: Git-Hub<a class="headerlink" href="#task-6-git-hub" title="Permalink to this headline">¶</a></h2>
+<p>Why Git-Hub is used? Make an account on Git-Hub and how to setup git on you Linux machine. Upload some of your codes on the git-hub using command line.</p>
+<ol class="arabic">
+<li><p class="first">Make an account on www.github.com.</p>
+</li>
+<li><p class="first">Install git on your linux machine sudo apt-get install git.</p>
+</li>
+<li><p class="first">ssh-keygen -t rsa -b 4096 -C “<a class="reference external" href="mailto:ahmer&#46;malik&#37;&#52;&#48;linuxiot&#46;org">ahmer<span>&#46;</span>malik<span>&#64;</span>linuxiot<span>&#46;</span>org</a>”.</p>
+</li>
+<li><p class="first">ls -l .ssh              →       Check the list</p>
+</li>
+<li><p class="first">mv linuxiot* .ssh       →       move linuxiot (with whatever extension) to .ssh folder.</p>
+</li>
+<li><p class="first">chmod 0600 .ssh/linuxiot* → Change the ownership of the files only to the user (read &amp; write).</p>
+</li>
+<li><p class="first">cat linuxiot.pub → Copy all the contents of file to website of github.</p>
+<p><code class="docutils literal"><span class="pre">https://github.com/settings/ssh</span> <span class="pre">→</span>&nbsp; <span class="pre">Add</span> <span class="pre">SSH</span> <span class="pre">Key</span></code> copy all the contents here.</p>
+</li>
+<li><p class="first">Make your git repository folder_name = git-repo. Cd into your repository.</p>
+</li>
+<li><p class="first">git init.</p>
+</li>
+<li><p class="first">git config  - -global user.email “<a class="reference external" href="mailto:ahmer&#46;malik&#37;&#52;&#48;linuxiot&#46;org">ahmer<span>&#46;</span>malik<span>&#64;</span>linuxiot<span>&#46;</span>org</a>”.</p>
+</li>
+<li><p class="first">git config  - -global user.name “Ahmer Malik”.</p>
+</li>
+<li><p class="first">Go into your browser → github → select ssh and copy its content (A path <a class="reference external" href="mailto:git&#37;&#52;&#48;/&#46;&#46;&#46;&#46;/">git<span>&#64;</span>/<span>&#46;</span><span>&#46;</span><span>&#46;</span><span>&#46;</span>/</a>)</p>
+</li>
+<li><p class="first">git remote add origin (paste the copied path) <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:LinuxIoT/training.git.</p>
+</li>
+<li><p class="first">ssh-add /home/ahmer/.ssh/linuxiot</p>
+</li>
+<li><p class="first">vim test        → Make afile with whatever data.</p>
+</li>
+<li><p class="first">git add test</p>
+</li>
+<li><p class="first">git commit -m “test”</p>
+</li>
+<li><p class="first">git push –set-upstream origin master            or      git push origin master</p>
+</li>
+<li><p class="first">git pull →  git push</p>
+</li>
+<li><p class="first">git config –global push.default simple</p>
+</li>
+</ol>
+<p><strong>How to make a new branch?</strong></p>
+<p>Only 1 master branch, we are working with till now.</p>
+<p>To create new branch:   git checkout -b develop</p>
+<p>To delete a branch:             git branch -d name_branch</p>
+<p>To switch to that branch:       git checkout develop</p>
+<p>Back:                           git checkout master</p>
+<p>To view branches:               git branch -a</p>
+</div>
+<div class="section" id="task-7-basic-interaction-with-python">
+<h2>Task - 7: Basic Interaction with Python<a class="headerlink" href="#task-7-basic-interaction-with-python" title="Permalink to this headline">¶</a></h2>
+<p>Learn basic interaction with python environment using Idle-2.7. What are Lists and how variables, functions and modules are defined in python. Try to explore, what is the benefit of choosing python over other languages.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week-08.html" class="btn btn-neutral float-right" title="Week - 8 Linux IoT Training" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="week-06.html" class="btn btn-neutral" title="Week - 6 Linux IoT Training" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

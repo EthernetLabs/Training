@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week-14 Linux IoT Training &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Settings GNU-Plot" href="appendix.html"/>
+        <link rel="prev" title="Week-13 LINUX IoT Training" href="week-13.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Week 11-12 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-13.html">Week-13 LINUX IoT Training</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week-14 Linux IoT Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-network-management-protocol-snmp">System Network Management Protocol - SNMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-understanding-and-configuration-of-ansible-tool-in-linux">Basic Understanding and Configuration of Ansible Tool in Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-linux-ha">What is Linux HA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#amazon-web-service-aws">Amazon Web Service (AWS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#learn-in-detail-about-apache">Learn in Detail about Apache</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#web-proxy-forward-reverse">Web-Proxy (Forward &amp; Reverse)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#nginx">NGINX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#squid-a-proxy-server">SQUID - A Proxy Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#icinga-2">Icinga - 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jenkins">Jenkins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week-14 Linux IoT Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-14.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-14-linux-iot-training">
+<span id="week-14"></span><h1>Week-14 Linux IoT Training<a class="headerlink" href="#week-14-linux-iot-training" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system-network-management-protocol-snmp">
+<h2>System Network Management Protocol - SNMP<a class="headerlink" href="#system-network-management-protocol-snmp" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><strong>What is SNMP? Basic understanding of SNMP.</strong></li>
+</ol>
+<p><a class="reference external" href="http://www.thegeekstuff.com/2012/09/snmp-introduction/">http://www.thegeekstuff.com/2012/09/snmp-introduction/</a>
+<a class="reference external" href="https://www.digitalocean.com/community/tutorials/an-introduction-to-snmp-simple-network-management-protocol">https://www.digitalocean.com/community/tutorials/an-introduction-to-snmp-simple-network-management-protocol</a></p>
+<ol class="arabic simple">
+<li><strong>How to Configure SNMP Manager and SNMP Agent in Linux?</strong></li>
+</ol>
+<p><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-an-snmp-daemon-and-client-on-ubuntu-14-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-an-snmp-daemon-and-client-on-ubuntu-14-04</a></p>
+</div>
+<div class="section" id="basic-understanding-and-configuration-of-ansible-tool-in-linux">
+<h2>Basic Understanding and Configuration of Ansible Tool in Linux<a class="headerlink" href="#basic-understanding-and-configuration-of-ansible-tool-in-linux" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/">http://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/</a>
+<a class="reference external" href="http://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/2/">http://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/2/</a></p>
+<ol class="arabic simple">
+<li><strong>How to Use Ansible Playbooks to Automate Complex Tasks on Multiple Remote Servers</strong></li>
+</ol>
+<p><a class="reference external" href="http://www.tecmint.com/use-ansible-playbooks-to-automate-complex-tasks-on-multiple-linux-servers/">http://www.tecmint.com/use-ansible-playbooks-to-automate-complex-tasks-on-multiple-linux-servers/</a></p>
+<ol class="arabic simple">
+<li><strong>How to change directory for ansible hosts and playbooks.</strong></li>
+</ol>
+<p><cite>ansible-playbook -vvv -i ~/Ahmer/Techknox/ansible/hosts ~/Ahmer/Techknox/ansible/playbooks/apache.yml</cite></p>
+</div>
+<div class="section" id="what-is-linux-ha">
+<h2>What is Linux HA<a class="headerlink" href="#what-is-linux-ha" title="Permalink to this headline">¶</a></h2>
+<p>A way for the cluster to communicate about its state and configuration, this is called a cluster messaging layer.
+A way to automatically manage the resources of the cluster, the cluster resource manager (CRM).
+Some kind of middle ware between the resource manager and the actual resources, sometimes called resource agents.</p>
+<p><a class="reference external" href="http://frankgroeneveld.nl/2014/03/23/basic-concepts-of-high-availability-linux/">http://frankgroeneveld.nl/2014/03/23/basic-concepts-of-high-availability-linux/</a>
+<a class="reference external" href="https://www.howtoforge.com/high_availability_heartbeat_centos">https://www.howtoforge.com/high_availability_heartbeat_centos</a></p>
+</div>
+<div class="section" id="amazon-web-service-aws">
+<h2>Amazon Web Service (AWS)<a class="headerlink" href="#amazon-web-service-aws" title="Permalink to this headline">¶</a></h2>
+<p>Learn AWS in detail as well its cli tool to manage the AWS utilities from command line.
+How to manage its EBS, VM instances, Queues etc.</p>
+</div>
+<div class="section" id="learn-in-detail-about-apache">
+<h2>Learn in Detail about Apache<a class="headerlink" href="#learn-in-detail-about-apache" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="web-proxy-forward-reverse">
+<h3>Web-Proxy (Forward &amp; Reverse)<a class="headerlink" href="#web-proxy-forward-reverse" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://linuxpoison.blogspot.com/2010/01/configuring-apache-as-forward-reverse.html">http://linuxpoison.blogspot.com/2010/01/configuring-apache-as-forward-reverse.html</a>
+<a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension">https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension</a></p>
+</div>
+</div>
+<div class="section" id="nginx">
+<h2>NGINX<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><strong>Look into NGINX</strong></li>
+</ol>
+</div>
+<div class="section" id="squid-a-proxy-server">
+<h2>SQUID - A Proxy Server<a class="headerlink" href="#squid-a-proxy-server" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><strong>Basic Understanding of Proxy Web-Server</strong></li>
+</ol>
+<p><a class="reference external" href="http://www.brennan.id.au/11-Squid_Web_Proxy.html">http://www.brennan.id.au/11-Squid_Web_Proxy.html</a></p>
+<ol class="arabic simple">
+<li><strong>whatis.techtarget.com/definition/Squid-proxy-server</strong></li>
+<li><strong>How to use and configure Squid Proxy Server?</strong></li>
+</ol>
+<p><a class="reference external" href="https://help.ubuntu.com/lts/serverguide/squid.html">https://help.ubuntu.com/lts/serverguide/squid.html</a>
+<a class="reference external" href="http://www.computersecuritystudent.com/UNIX/UBUNTU/1204/lesson12/">http://www.computersecuritystudent.com/UNIX/UBUNTU/1204/lesson12/</a>
+<a class="reference external" href="https://www.linode.com/docs/networking/squid/squid-http-proxy-ubuntu-12-04">https://www.linode.com/docs/networking/squid/squid-http-proxy-ubuntu-12-04</a>
+<a class="reference external" href="http://www.cyberciti.biz/faq/linux-unix-clearing-squid-proxy-cache-and-recreate-dirs/">http://www.cyberciti.biz/faq/linux-unix-clearing-squid-proxy-cache-and-recreate-dirs/</a>
+<a class="reference external" href="http://www.tecmint.com/configure-squid-server-in-linux/">http://www.tecmint.com/configure-squid-server-in-linux/</a></p>
+<ol class="arabic simple">
+<li><strong>How to ban Particular Websites?</strong></li>
+</ol>
+<p>Vim /etc/squid3/squid.conf</p>
+<p><a class="reference external" href="http://www.thegeekstuff.com/2010/09/squid-control-internet-access/">http://www.thegeekstuff.com/2010/09/squid-control-internet-access/</a></p>
+<p>http_port 8020</p>
+<p>visible_hostname LITproxy</p>
+<p>acl client src 192.168.10.19</p>
+<p>acl ban_domains dstdomain &#8220;/etc/squid3/ban_domains&#8221;</p>
+<p>http_access deny ban_domains client</p>
+<p>http_access allow client</p>
+</div>
+<div class="section" id="icinga-2">
+<h2>Icinga - 2<a class="headerlink" href="#icinga-2" title="Permalink to this headline">¶</a></h2>
+<p>Basic Hands on Experience on Icinga - 2</p>
+</div>
+<div class="section" id="jenkins">
+<h2>Jenkins<a class="headerlink" href="#jenkins" title="Permalink to this headline">¶</a></h2>
+<p>Basic learning of Jenkins tool for automatic build and deployemnet in a huge network.</p>
+<ul class="simple">
+<li>Write a jenkins job for automatic build of our Linux IoT Gateway firmware.</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendix.html" class="btn btn-neutral float-right" title="Settings GNU-Plot" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="week-13.html" class="btn btn-neutral" title="Week-13 LINUX IoT Training" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

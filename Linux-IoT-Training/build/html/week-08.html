@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week - 8 Linux IoT Training &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Week - 9 Linux IoT Project" href="week-09.html"/>
+        <link rel="prev" title="Week - 7 Linux IoT Training" href="week-07.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week - 8 Linux IoT Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-1-practice-of-writing-code-in-python">Task – 1: Practice of writing code in Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-proceed">How to Proceed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-2-object-oriented-programming-in-python">Task – 2: Object Oriented Programming in Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">How to Proceed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-3-importing-a-class-in-another-file">Task – 3: Importing a class in another File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-4-reading-configuration-files-name-conf">Task - 4: Reading Configuration Files (name.conf)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inheritance">INHERITANCE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#super-parent-class">Super / Parent Class</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sub-child-class">Sub / Child Class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-5-multi-processing">Task – 5: Multi-Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-6-queues">Task - 6: Queues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-7-setup-qemu-for-arm-cortex-m4-32bit-cpu">Task - 7: Setup QEMU for ARM Cortex M4 32bit CPU</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-qemu">What is QEMU?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-information">Useful Information</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Linux IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week - 8 Linux IoT Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-08.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-8-linux-iot-training">
+<span id="week-08"></span><h1>Week - 8 Linux IoT Training<a class="headerlink" href="#week-8-linux-iot-training" title="Permalink to this headline">¶</a></h1>
+<p>For learning Python or OOP follow the <a class="reference external" href="http://www.tutorialspoint.com/python/python_classes_objects.htm">link</a></p>
+<div class="section" id="task-1-practice-of-writing-code-in-python">
+<h2>Task – 1: Practice of writing code in Python<a class="headerlink" href="#task-1-practice-of-writing-code-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Write a python code that should do following steps.
+#. Get the file-system list and store it in a file fs.txt
+#. Get size in KB for each element ( i-e /opt, /etc) in the file-system.
+#. Store the size in dictionary across the name of directory. { i-e /opt: 4KB }
+#. Print that dictionary in a dictionary.txt file in readable form.</p>
+<div class="section" id="how-to-proceed">
+<h3>How to Proceed<a class="headerlink" href="#how-to-proceed" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Import os (Read about OS class, what type of methods it provides and those that might help).</p>
+</li>
+<li><p class="first">Learn how to read and write a file in python.</p>
+<blockquote>
+<div><p>fd = open(&#8216;/opt/pylabs/fs_list&#8217;, &#8216;w&#8217;)</p>
+<p>for each_item in fs:</p>
+<blockquote>
+<div><p>fd.write(each_item)</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first">Read about the data-types lists and dictionary. What are these and how they are used in python.</p>
+<blockquote>
+<div><p>Dictionary {&#8216;Ali&#8217; : 0 , &#8216;Akram&#8217; : 1}</p>
+<p>List [&#8216;Ali&#8217; , 1 , &#8216;Ahmer&#8217; , 2 ]</p>
+</div></blockquote>
+</li>
+<li><p class="first">What is the benefit of using os.stat method of OS class.</p>
+<blockquote>
+<div><p>See the stats of the file or directory.</p>
+</div></blockquote>
+</li>
+<li><p class="first">How to access a particular value like size from lists of different stat information.</p>
+<blockquote>
+<div><p>a = os.stat(line)</p>
+<p>print (a[6])</p>
+</div></blockquote>
+</li>
+<li><p class="first">How to remove the last character from a string line.</p>
+<blockquote>
+<div><p>line[:-1]</p>
+</div></blockquote>
+</li>
+<li><p class="first">How to concatenate different strings and how to covert an integer into string.</p>
+<blockquote>
+<div><p>line + &#8221;:&#8221; + str(A)  + &#8220;n&#8221;</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="task-2-object-oriented-programming-in-python">
+<h2>Task – 2: Object Oriented Programming in Python<a class="headerlink" href="#task-2-object-oriented-programming-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Write the above program again, but now using OOP concepts.</p>
+<div class="section" id="id1">
+<h3>How to Proceed<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">How to declare a class in python.</p>
+<blockquote>
+<div><p>class Class_Name : (“: at the end”)</p>
+</div></blockquote>
+</li>
+<li><p class="first">What is class variable.</p>
+<blockquote>
+<div><p>A variable that is shared by all instances of a class. Class variables are defined within a class but   outside any of the class&#8217;s methods. Class variables are not used as frequently as instance      variables are.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Constructor Declaration</p>
+<blockquote>
+<div><p>def __init__(self, name, salary):</p>
+<blockquote>
+<div><p>self.name = name</p>
+<p>self.salary = salary</p>
+<p>Employee.empCount += 1</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first">Define methods or functions</p>
+<blockquote>
+<div><p>def Function_Name(self):        (“self” is compulsory)</p>
+<blockquote>
+<div><p>Implementation</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="code">
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h3>
+<p>The see code <a class="reference external" href="https://github.com/LinuxIoT/training/blob/DEV/get_fs_dict_class.py">click here</a>.</p>
+</div>
+</div>
+<div class="section" id="task-3-importing-a-class-in-another-file">
+<h2>Task – 3: Importing a class in another File<a class="headerlink" href="#task-3-importing-a-class-in-another-file" title="Permalink to this headline">¶</a></h2>
+<p>Repeat the same task, but now the class should be declared in one python file named as class.py. While the object of that class should be instantiated in another python file, named as class_main.py.</p>
+<p>How to Proceed:</p>
+<ol class="arabic">
+<li><p class="first">Class definition in a separate file : class.py</p>
+<blockquote>
+<div><p>class name_class:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>def __init__(self, other arguments)</dt>
+<dd><p class="first">.</p>
+<p>.</p>
+<p class="last">.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first">How to import a class : class_main.py</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Three different ways:</dt>
+<dd><p class="first">– import  file_name_that_have_class_definition &#8212;&gt; <code class="docutils literal"><span class="pre">import</span> <span class="pre">class</span>&nbsp; <span class="pre">(no</span> <span class="pre">need</span> <span class="pre">of</span> <span class="pre">extension</span> <span class="pre">.py)</span></code></p>
+<p>– from  file_name_that_have_class_definition import * (All classes in that file) <code class="docutils literal"><span class="pre">from</span> <span class="pre">class_name</span> <span class="pre">import</span> <span class="pre">*</span></code></p>
+<p class="last">– from  file_name_that_have_class_definition import class_name <code class="docutils literal"><span class="pre">from</span> <span class="pre">class_name</span> <span class="pre">import</span> <span class="pre">class_name</span></code></p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p class="first">Class object instantiated in another file.</p>
+<blockquote>
+<div><p>– X = file_name.class_name(“Constructor arguments initiallization”)</p>
+<blockquote>
+<div><p>X.Methods()</p>
+</div></blockquote>
+<p>– X = classname (“Constructor arguments initiallization”)</p>
+<blockquote>
+<div><p>X.Methods()</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ol>
+<div class="section" id="id2">
+<h3>Code<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The see code <a class="reference external" href="https://github.com/LinuxIoT/training/tree/DEV/GET_FS_Dictionary_Task_classified">click here</a>.</p>
+</div>
+</div>
+<div class="section" id="task-4-reading-configuration-files-name-conf">
+<h2>Task - 4: Reading Configuration Files (name.conf)<a class="headerlink" href="#task-4-reading-configuration-files-name-conf" title="Permalink to this headline">¶</a></h2>
+<p>What are configuration files and how to write it in python? How to read it and extract the information to be processed by accessing different OPTIONS and its variables.</p>
+<p>Write a .py code that reads STATS.conf file that contains two options [SYSTEM, DIRS]. I have to extract out the STATS variable of SYSTEM and write the information in a text file based on the parameters stored in variable (i.e memory, cpu and processes etc.).</p>
+<p>In another text file store the disk information of all the directories mention under the [DIRS] option.</p>
+<div class="section" id="id4">
+<h3>Code<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>The see code <a class="reference external" href="https://github.com/LinuxIoT/training/tree/DEV/Reading%20Conf%20Files%20%28TASK%20-%202%29">click here</a>.</p>
+</div>
+<div class="section" id="inheritance">
+<h3>INHERITANCE<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h3>
+<p>Children inherit some of their characteristics from their parents. Same concept is used in OOP, in order to avoid the re-creation of same piece of code in another class for writing more functional classes. The more functional class inherits the functionality of previously written class and can use it for some other software creation.</p>
+<div class="section" id="super-parent-class">
+<h4>Super / Parent Class<a class="headerlink" href="#super-parent-class" title="Permalink to this headline">¶</a></h4>
+<p>The class that provides its functionality to another class.</p>
+</div>
+<div class="section" id="sub-child-class">
+<h4>Sub / Child Class<a class="headerlink" href="#sub-child-class" title="Permalink to this headline">¶</a></h4>
+<p>The class that inherits the functionality parent.</p>
+<p>In Python, all classes are sub classes technically.</p>
+<p>– When we declare a class as class name_of_class : → class name_of_class ( object ).</p>
+<p>– Those class class do not inherited from some other class are inherited from special class “object”.</p>
+<p>Example::
+#!/usr/bin/python
+class contact:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">all_contacts</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+        <span class="n">contact</span><span class="o">.</span><span class="n">all_contacts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>class supplier(contact):</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="k">def</span> <span class="nf">order</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Hello I have shared the contacts of suppliers</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>if __name__ == &#8216;__main__&#8217;:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">s1</span> <span class="o">=</span> <span class="n">supplier</span><span class="p">(</span><span class="s2">&quot;Ahmer&quot;</span><span class="p">,</span><span class="s2">&quot;ahmer.malik@linuxiot.org&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="n">s1</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="n">s1</span><span class="o">.</span><span class="n">email</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">supplier</span><span class="p">(</span><span class="s2">&quot;Weqaar&quot;</span><span class="p">,</span><span class="s2">&quot;weqaar.janjua@linuxiot.org&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="n">s2</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="n">s2</span><span class="o">.</span><span class="n">email</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">s1</span><span class="o">.</span><span class="n">all_contacts</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="task-5-multi-processing">
+<h2>Task – 5: Multi-Processing<a class="headerlink" href="#task-5-multi-processing" title="Permalink to this headline">¶</a></h2>
+<p>What is multi-processing? What is the difference between a process and a thread? Learn the multiprocessing [Process] module in Python.</p>
+<p>Write a code that can familiarize you how to do multi-processing and differentiate between the results of multiple process program and sequential program as we do traditionally.</p>
+<p>CODE:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="k">import</span> <span class="n">Process</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+<p>def f1():</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="nb">print</span><span class="s1">&#39; P-1 Started&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10000</span><span class="p">):</span>
+<span class="nb">print</span> <span class="s1">&#39;NUM = </span><span class="si">%d</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span>
+<span class="nb">print</span>  <span class="s1">&#39; P-1 ENDED&#39;</span>
+</pre></div>
+</div>
+<p>def f2():</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="nb">print</span> <span class="s1">&#39;P2 - Started&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span> <span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="mi">20000</span><span class="p">):</span>
+<span class="nb">print</span> <span class="s1">&#39;NUM = </span><span class="si">%d</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span>
+<span class="nb">print</span> <span class="s1">&#39;P2 - ENDED&#39;</span>
+</pre></div>
+</div>
+<p>def without_multi_process():</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">f1</span><span class="p">()</span>
+<span class="n">f2</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>def multi_process():</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">p1</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span><span class="s1">&#39;Function - 1&#39;</span> <span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">f1</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span><span class="s1">&#39;Function - 2&#39;</span> <span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">f2</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>if __name__ == &#8216;__main__&#8217;:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">multi_process</span><span class="p">()</span>
+<span class="n">_finish</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">_finish</span> <span class="o">-</span> <span class="n">_start</span>
+<span class="n">_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">without_multi_process</span><span class="p">()</span>
+<span class="n">_finish</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">_finish</span> <span class="o">-</span> <span class="n">_start</span>
+<span class="nb">print</span> <span class="s1">&#39;Time with multi_processes = </span><span class="si">%.8f</span><span class="s1"> seconds</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">t1</span>
+<span class="nb">print</span> <span class="s1">&#39;Time without multi_processes = </span><span class="si">%.8f</span><span class="s1"> seconds</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">t2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="task-6-queues">
+<h2>Task - 6: Queues<a class="headerlink" href="#task-6-queues" title="Permalink to this headline">¶</a></h2>
+<p>What are queues and how to make a queue in python. Learn how to use [ Queue class of multiprocessing ].</p>
+<p>Write a code that make a server.py that makes a queue of some friends. A client name “writer.py” can write on that queue and another client “reader.py” can read that queue.</p>
+<div class="section" id="id6">
+<h3>Code<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>The see code <a class="reference external" href="https://github.com/LinuxIoT/training/tree/DEV/Reading%20Conf%20Files%20%28TASK%20-%202%29">click here</a>.</p>
+<p><strong>Learn about some other modules in Python.</strong></p>
+<ol class="arabic simple">
+<li>Sockets</li>
+<li>Serial - - sudo setserial -g /dev/ttyS[0123]</li>
+<li>Daemon</li>
+</ol>
+</div>
+</div>
+<div class="section" id="task-7-setup-qemu-for-arm-cortex-m4-32bit-cpu">
+<h2>Task - 7: Setup QEMU for ARM Cortex M4 32bit CPU<a class="headerlink" href="#task-7-setup-qemu-for-arm-cortex-m4-32bit-cpu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-qemu">
+<h3>What is QEMU?<a class="headerlink" href="#what-is-qemu" title="Permalink to this headline">¶</a></h3>
+<p>It is used for emulation or virtualization. Emulation means we can write c codes for some other processor family. Instead of purchasing that processor to check, we can simply check our code performance and debugging using emulator. We can say that it virtualize a board.</p>
+<p>Link: <a class="reference external" href="http://gnuarmeclipse.github">http://gnuarmeclipse.github</a>.</p>
+<p><strong>What is mBedOS?</strong></p>
+<p>MbedOS is online IDE that can compile (cross-compilation) codes for different development boards using its C++ API.
+Compile a binary using their online IDE, for the board/chip supported by Qemu and run on it to verify.</p>
+<p><a href="#id8"><span class="problematic" id="id9">**</span></a>* Link - Learn mBed</p>
+<p><a class="reference external" href="https://drive.google.com/folderview">https://drive.google.com/folderview</a> id=0B9Whv5cCE_iEfldHdkp0RWtJbVhYeUFxWFcxNVQxaEpkeVZudS1YTUJtOGFOZVUzdlRhTHM&amp;usp=drive_web</p>
+<p>I compile a binary for NUCLEO_F411RE board and run using QEMU as follows.</p>
+<div class="figure align-center" id="id10">
+<span id="qemu-mbed"></span><img alt="_images/mbed_Qemu_08.png" src="_images/mbed_Qemu_08.png" />
+<p class="caption"><span class="caption-text">Output of File Compile by mbed on Qemu</span></p>
+</div>
+<p><strong>What is the meaning of __main__ in Python?</strong></p>
+<div class="figure align-center" id="id11">
+<span id="py-main"></span><img alt="_images/py__main__.png" src="_images/py__main__.png" />
+<p class="caption"><span class="caption-text">Proof that getting rich is mostly luck.</span></p>
+</div>
+</div>
+</div>
+<div class="section" id="useful-information">
+<h2>Useful Information<a class="headerlink" href="#useful-information" title="Permalink to this headline">¶</a></h2>
+<p>Differentiate between Mutable and Immutable Data types?</p>
+<p><a class="reference external" href="https://lukewickstead.wordpress.com/2015/06/12/mutable-vs-immutable/">https://lukewickstead.wordpress.com/2015/06/12/mutable-vs-immutable/</a></p>
+<p>Install psutil module: <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">psutil</span></code></p>
+<p><strong>Error:</strong></p>
+<p>compilation terminated.</p>
+<p>error: command &#8216;x86_64-linux-gnu-gcc&#8217; failed with exit status 1</p>
+<p><strong>Solution:</strong></p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python-dev</span></code></p>
+<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">psutil</span></code></p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">psutil</span><span class="o">.</span><span class="n">phymem_usage</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">usage</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">4153868288</span><span class="p">,</span> <span class="n">used</span><span class="o">=</span><span class="mi">2854199296</span><span class="p">,</span> <span class="n">free</span><span class="o">=</span><span class="mi">1299668992</span><span class="p">,</span> <span class="n">percent</span><span class="o">=</span><span class="mf">34.6</span><span class="p">)</span>
+<span class="go">``cat meminfo | grep &quot;MemTotal:&quot; | cut -d&#39; &#39; -f9``</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week-09.html" class="btn btn-neutral float-right" title="Week - 9 Linux IoT Project" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="week-07.html" class="btn btn-neutral" title="Week - 7 Linux IoT Training" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

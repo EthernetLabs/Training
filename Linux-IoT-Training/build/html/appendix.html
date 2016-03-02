@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Settings GNU-Plot &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="prev" title="Linux IoT" href="week-12.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Linux IoT</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Settings GNU-Plot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#customization">Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-plot">MULTI-PLOT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-data">Plotting Data</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Settings GNU-Plot</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/appendix.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="settings-gnu-plot">
+<span id="gnu-plot"></span><span id="appendix"></span><h1>Settings GNU-Plot<a class="headerlink" href="#settings-gnu-plot" title="Permalink to this headline">¶</a></h1>
+<p>#</p>
+<p># Plot trigonometric functions with Gnuplot.</p>
+<p>#</p>
+<p># AUTHOR: Hagen Wierstorf</p>
+<p>reset</p>
+<p># wxt</p>
+<p>set terminal wxt size 350,262 enhanced font &#8216;Verdana,10&#8217; persist</p>
+<p># png</p>
+<p>#set terminal pngcairo size 350,262 enhanced font &#8216;Verdana,10&#8217;</p>
+<p>#set output &#8216;plotting_functions.png&#8217;</p>
+<p># svg</p>
+<p>#set terminal svg size 350,262 fname &#8216;Verdana, Helvetica, Arial, sans-serif&#8217; </p>
+<p>#fsize &#8216;10&#8217;</p>
+<p>#set output &#8216;plotting_functions.svg&#8217;</p>
+<p># Line styles</p>
+<p>set border linewidth 1.5</p>
+<p>set style line 1 linecolor rgb &#8216;#0060ad&#8217; linetype 1 linewidth 2  # blue</p>
+<p>set style line 2 linecolor rgb &#8216;#dd181f&#8217; linetype 1 linewidth 2  # red</p>
+<p># Legend</p>
+<p>set key at 6.1,1.3</p>
+<p># Axes label</p>
+<p>set xlabel &#8216;x&#8217;</p>
+<p>set ylabel &#8216;y&#8217;</p>
+<p># Axis ranges</p>
+<p>set xrange[-2*pi:2*pi]</p>
+<p>set yrange[-1.5:1.5]</p>
+<p># Axis labels</p>
+<p>set xtics (&#8220;-2Ï€&#8221; -2*pi, &#8220;-Ï€&#8221; -pi, 0, &#8220;Ï€&#8221; pi, &#8220;2Ï€&#8221; 2*pi)</p>
+<p>set ytics 1</p>
+<p>set tics scale 0.75</p>
+<p># Functions to plot</p>
+<p>a = 0.9</p>
+<p>f(x) = a * sin(x)</p>
+<p>g(x) = a * cos(x)</p>
+<p># Plot</p>
+<p>plot f(x) title &#8216;sin(x)&#8217; with lines ls 1, </p>
+<blockquote>
+<div>g(x) notitle with lines ls 2</div></blockquote>
+<hr class="docutils" />
+<p>Now we save our file as introduction.gnu and execute it by running the following command in BASH under Linux.</p>
+<p>$ gnuplot introduction.gnu</p>
+<dl class="docutils">
+<dt><strong>Syntax:</strong></dt>
+<dd><p class="first">plot {[ranges]}</p>
+<blockquote class="last">
+<div><p>{[function] | {&#8220;[datafile]&#8221; {datafile-modifiers}}}</p>
+<p>{axes [axes] } { [title-spec] } {with [style] }</p>
+<p>{, {definitions,} [function] ...}</p>
+</div></blockquote>
+</dd>
+</dl>
+<p>where either a [function] or the name of a data file enclosed in quotes is supplied. For more complete descriptions, type: help plot help plot with help plot using or help plot smooth .</p>
+<div class="section" id="customization">
+<h2>Customization<a class="headerlink" href="#customization" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Create a title:                  &gt; set title &#8220;Force-Deflection Data&#8221;</p>
+<p>Put a label on the x-axis:       &gt; set xlabel &#8220;Deflection (meters)&#8221;</p>
+<p>Put a label on the y-axis:       &gt; set ylabel &#8220;Force (kN)&#8221;</p>
+<p>Change the x-axis range:         &gt; set xrange [0.001:0.005]</p>
+<p>Change the y-axis range:         &gt; set yrange [20:500]</p>
+<p>Have Gnuplot determine ranges:   &gt; set autoscale</p>
+<p>Move the key:                    &gt; set key 0.01,100</p>
+<p>Delete the key:                  &gt; unset key</p>
+<p>Put a label on the plot:         &gt; set label &#8220;yield point&#8221; at 0.003, 260</p>
+<p>Remove all labels:               &gt; unset label</p>
+<p>Plot using log-axes:             &gt; set logscale</p>
+<p>Plot using log-axes on y-axis:   &gt; unset logscale; set logscale y</p>
+<p>Change the tic-marks:            &gt; set xtics (0.002,0.004,0.006,0.008)</p>
+<p>Return to the default tics:      &gt; unset xtics; set xtics auto</p>
+</div></blockquote>
+</div>
+<div class="section" id="multi-plot">
+<h2>MULTI-PLOT<a class="headerlink" href="#multi-plot" title="Permalink to this headline">¶</a></h2>
+<p>Gnuplot can plot more than one figure in a frame ( like subplot in matlab ) i.e., try:</p>
+<blockquote>
+<div><p>set multiplot;                  # get into multiplot mode</p>
+<p>set size 1,0.5;</p>
+<p>set origin 0.0,0.5;   plot sin(x);</p>
+<p>set origin 0.0,0.0;   plot cos(x)</p>
+<p>unset multiplot                         # exit multiplot mode</p>
+</div></blockquote>
+<p>In gnuplot, exponentiation uses <code class="docutils literal"><span class="pre">**,</span> <span class="pre">not</span> <span class="pre">^.</span> <span class="pre">x^2</span> <span class="pre">=</span> <span class="pre">x**2.</span></code></p>
+<p>Variable define : plot [t=-4:4] exp(-t**2 / 2), t**2 / 16</p>
+</div>
+<div class="section" id="plotting-data">
+<h2>Plotting Data<a class="headerlink" href="#plotting-data" title="Permalink to this headline">¶</a></h2>
+<p>Discrete data contained in a file can be displayed by specifying the name of the data file (enclosed in quotes) on the plot or splot command line. Data files should have the data arranged in columns of numbers. Columns should be separated by white space (tabs or spaces) only, (no commas). Lines beginning with a # character are treated as comments and are ignored by Gnuplot. A blank line in the data file results in a break in the line connecting data points.</p>
+<p>For example your data file, force.dat , might look like:</p>
+<blockquote>
+<div><p># This file is called   force.dat</p>
+<p># Force-Deflection data for a beam and a bar</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="30%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Deflection</th>
+<th class="head">Col-Force</th>
+<th class="head">Beam-Force</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0.000</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>0.001</td>
+<td>104</td>
+<td>51</td>
+</tr>
+<tr class="row-even"><td>0.002</td>
+<td>202</td>
+<td>101</td>
+</tr>
+<tr class="row-odd"><td>0.003</td>
+<td>298</td>
+<td>148</td>
+</tr>
+<tr class="row-even"><td>0.0031</td>
+<td>290</td>
+<td>149</td>
+</tr>
+<tr class="row-odd"><td>0.004</td>
+<td>289</td>
+<td>201</td>
+</tr>
+<tr class="row-even"><td>0.0041</td>
+<td>291</td>
+<td>209</td>
+</tr>
+<tr class="row-odd"><td>0.005</td>
+<td>310</td>
+<td>250</td>
+</tr>
+<tr class="row-even"><td>0.010</td>
+<td>311</td>
+<td>260</td>
+</tr>
+<tr class="row-odd"><td>0.020</td>
+<td>280</td>
+<td>240</td>
+</tr>
+</tbody>
+</table>
+<p>You can display your data by typing:</p>
+<blockquote>
+<div><p>gnuplot&gt;  plot  &#8220;force.dat&#8221; using 1:2 title &#8216;Column&#8217;, </p>
+<blockquote>
+<div>&#8220;force.dat&#8221; using 1:3 title &#8216;Beam&#8217;</div></blockquote>
+</div></blockquote>
+<p>Do not type blank space after the line continuation character, &#8220;&#8221; .</p>
+<p>Your data may be in multiple data files. In this case you may make your plot by using a command like:</p>
+<blockquote>
+<div><p>gnuplot&gt;  plot  &#8220;fileA.dat&#8221; using 1:2 title &#8216;data A&#8217;, </p>
+<blockquote>
+<div>&#8220;fileB.dat&#8221; using 1:3 title &#8216;data B&#8217;</div></blockquote>
+</div></blockquote>
+<p>For information on plotting 3-D data, type:</p>
+<blockquote>
+<div>gnuplot&gt;  help splot datafile</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="week-12.html" class="btn btn-neutral" title="Linux IoT" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

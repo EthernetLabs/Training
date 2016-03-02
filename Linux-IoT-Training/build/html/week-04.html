@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week - 4 Linux IoT Training &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Week - 5 Linux-IoT Training" href="week-05.html"/>
+        <link rel="prev" title="Week - 3 Linux IoT Training" href="week-03.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week - 4 Linux IoT Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-1-sdn-scripting">Task - 1: SDN - Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-2-figure-out-the-problem">Task - 2: Figure Out the Problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-3-fix-it-now">Task - 3: Fix It Now</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-4-inter-subnet-communication">Task - 4: Inter-subnet communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-5-different-possibilities-for-communication-in-sub-netted-network">Task - 5: Different possibilities for communication in sub-netted network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#case-i-intra-subnet">Case - I: Intra-Subnet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case-ii-inter-subnet-but-different-switches">Case - II: Inter-Subnet But Different Switches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case-iii-inter-subnet-but-single-switch">Case - III: Inter-Subnet But Single switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#case-iv-inter-subnet-but-single-switch-possible-by-hacker">Case - IV: Inter-Subnet But Single switch (possible by hacker)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task-6-inter-router-communication">Task - 6: Inter-Router Communication</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Linux IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week - 4 Linux IoT Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-04.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-4-linux-iot-training">
+<span id="week-04"></span><h1>Week - 4 Linux IoT Training<a class="headerlink" href="#week-4-linux-iot-training" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="task-1-sdn-scripting">
+<h2>Task - 1: SDN - Scripting<a class="headerlink" href="#task-1-sdn-scripting" title="Permalink to this headline">¶</a></h2>
+<p>As we have concluded our week-3 by establishing the IoT Systems Networks through commands and have to think how we can implement it using bash scripts. Why Bash Scripts?</p>
+<p>Now, we have got that how the things are working, but did not done in professional way. Secondly, if we have to work on some different machine, having the VMS, then we have to perform all this procedure again. It sounds not good.</p>
+<p>We have performed a task 1 time, then why we do the same again and waste time. Lets do it in professional way.</p>
+<ol class="arabic simple">
+<li>Create a .conf file that contains the names of domains (VM machines). Because every user or client doesn&#8217;t have the same name as we used. The .conf should look like this</li>
+</ol>
+<p><strong>#VM-Domains.conf</strong></p>
+<p><code class="docutils literal"><span class="pre">HOSTS</span> <span class="pre">=</span> <span class="pre">Router_name,H1,H2,</span> <span class="pre">H3,H4,.</span> <span class="pre">.</span> <span class="pre">.</span></code></p>
+<p>What is the benefit of using Router name at 1st position, we will discussed it later.</p>
+<ol class="arabic simple">
+<li>Read the all domain names and check its status whether it is ON or OFF? You can use (Hint: man virsh dominfo). Based on the state, you should take step to ON it.</li>
+</ol>
+<p><strong>#Boot.sh</strong></p>
+<ul class="simple">
+<li>Start all VMS by reading names from .conf.</li>
+<li>Add the hosts and ports of router to corresponding switch/bridge.</li>
+</ul>
+<p>For scripting you should have solid grip on the <strong>“Regular Expressions”</strong>. Because you have to extract out useful information from files, have to edit it and have to perform different functions.</p>
+<p><strong>Hint-1:</strong> have excessive use of “grep”, “cut”, “sed” commands. Do read them in detail.</p>
+<p><strong>Hint-2:</strong> /etc/network/ . . . This directory will be used many times.</p>
+<ol class="arabic simple">
+<li>Instead of giving full path to .xml files, use dumpxml (read it carefully, what it do) . Because, in different computer the path to .xml files might be different. And your script will not work properly.</li>
+</ol>
+<p>You should write such script that can run on any machine. Not just on your own local.</p>
+<ol class="arabic simple">
+<li>Create the required switches and add corresponding VMS or host to it. For Example:</li>
+</ol>
+<p><code class="docutils literal"><span class="pre">SW-1</span>&nbsp; <span class="pre">=</span> <span class="pre">[H1,H2</span> <span class="pre">and</span> <span class="pre">eth0</span> <span class="pre">of</span> <span class="pre">router]</span></code></p>
+<p><strong>Hint:</strong> Read man <cite>brctl</cite> because you have create/delete bridges, add/delete interfaces.</p>
+<ol class="arabic simple">
+<li>Write shutoff.sh to off all the domains when need. Otherwise you will have to shutdown 20 VMS manually. (Its the power of scripting).</li>
+<li>Now we have to test whether domains under same switch can communicate or not.</li>
+</ol>
+<p><strong>Hint:</strong>  Ping command will help you a lot. Read it.</p>
+<ol class="arabic simple">
+<li>Using ping, the message received properly to the destination or not. It should work fine.</li>
+</ol>
+<p><strong>Debugging challenge:</strong> Now the Challenge begins, they are not communicating within the same bridge. Why? As everything is just looking fine from frontal view</p>
+</div>
+<div class="section" id="task-2-figure-out-the-problem">
+<h2>Task - 2: Figure Out the Problem<a class="headerlink" href="#task-2-figure-out-the-problem" title="Permalink to this headline">¶</a></h2>
+<p>Figure out, what is going wrong and where? Look into each KVM, their Macs, IP&#8217;s (broadcast, net masks etc), vnets. Use ifconfig, read xml&#8217;s. . . Its too irritating but we have to do it.</p>
+<p>What was the problem –-&gt; After 1 day of debugging, we have found that when a VM starts it goes into default virbr0. We know it from the first very first day. But, we were doing was that we deleted it from virbr0 and add it in SW-1 / SW-2 etc, their macs somehow changes. And the change was very minor, only  1st octet, whose consequence was that, machine pings to some unknown mac address. Hence, host became unreachable.</p>
+</div>
+<div class="section" id="task-3-fix-it-now">
+<h2>Task - 3: Fix It Now<a class="headerlink" href="#task-3-fix-it-now" title="Permalink to this headline">¶</a></h2>
+<p>I think its obvious now, what will be the next task. “How to Fix it”.
+The solution might be that somehow we edit the .XMLs of VMS in a way that our domain automatically added to bridges (SW-1, 2 ) etc. despite of adding to virbr0.</p>
+<p>We edit the XMLs in following fashion:</p>
+<dl class="docutils">
+<dt>&lt;/controller&gt;</dt>
+<dd><dl class="first last docutils">
+<dt>&lt;interface type=&#8217;network&#8217;&gt;</dt>
+<dd>&lt;mac address=&#8216;52:54:00:0c:cf:7c&#8217;/&gt;
+&lt;source network=&#8217;default&#8217;/&gt;</dd>
+</dl>
+</dd>
+</dl>
+<dl class="docutils">
+<dt>&lt;/controller&gt;</dt>
+<dd><dl class="first last docutils">
+<dt>&lt;interface type=&#8217;bridge&#8217;&gt;</dt>
+<dd>&lt;mac address=&#8216;52:54:00:0c:cf:7c&#8217;/&gt;
+&lt;source bridge=&#8217;SW-1&#8217;/&gt;</dd>
+</dl>
+</dd>
+</dl>
+<hr class="docutils" />
+<p>It works fine, now each domain/NIC automatically added to its corresponding switch/bridge.
+We also configure the IP&#8217;s and net masks of switches to an un-useable IP addresses in order to ssh from host working machine (Ubuntu 14.04.3).
+Yes, all the things were working properly.</p>
+</div>
+<div class="section" id="task-4-inter-subnet-communication">
+<h2>Task - 4: Inter-subnet communication<a class="headerlink" href="#task-4-inter-subnet-communication" title="Permalink to this headline">¶</a></h2>
+<p>Uptil now, we have checked the the intra-subnet communication. Now check, is our script is working fine for inter-subnet communication.</p>
+<p>Things to learn here:
+- ARP cache                     <a class="reference external" href="http://www.thegeekstuff.com/2012/01/arp-cache-poisoning/">http://www.thegeekstuff.com/2012/01/arp-cache-poisoning/</a></p>
+<ul class="simple">
+<li>What is function of router     <a class="reference external" href="http://www.thegeekstuff.com/2012/04/route-examples/">http://www.thegeekstuff.com/2012/04/route-examples/</a></li>
+<li>What is routing table.</li>
+<li>What steps are involved for inter-subnet communication</li>
+<li>What are the chances of hacking</li>
+</ul>
+<p><strong>Hint:</strong> Before moving onward just ON the ip-forwarding on router VM.</p>
+<p><code class="docutils literal"><span class="pre">Echo</span> <span class="pre">1</span> <span class="pre">&gt;</span>&nbsp; <span class="pre">/proc/sys/net/ipv4/ip-forwarding</span></code></p>
+<p>Check, now all subnets can communicate with each other subnet.</p>
+</div>
+<div class="section" id="task-5-different-possibilities-for-communication-in-sub-netted-network">
+<h2>Task - 5: Different possibilities for communication in sub-netted network<a class="headerlink" href="#task-5-different-possibilities-for-communication-in-sub-netted-network" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="case-i-intra-subnet">
+<h3>Case - I: Intra-Subnet<a class="headerlink" href="#case-i-intra-subnet" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>H1 (subnet-1) &#8212;&gt; H2 (subnet-1)      Communication through bridge</li>
+<li>Broadcast ARP request</li>
+<li>ARP reply by the required IP host H2 having its MAC address.</li>
+</ul>
+</div>
+<div class="section" id="case-ii-inter-subnet-but-different-switches">
+<h3>Case - II: Inter-Subnet But Different Switches<a class="headerlink" href="#case-ii-inter-subnet-but-different-switches" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>H1 (subnet-1) SW-1 &#8212;&gt; H2 (subnet-2) SW-2    Communication through Router</li>
+<li>Broadcast ARP request</li>
+<li>No reply</li>
+</ul>
+<p>Handed Over to router (Gateway) –&#8212;-&gt; subnet mask &amp; IP (See Routing Table) –&#8211;&gt; Get network interface (eth-1) –&#8211;&gt; SW2 (Broadcast and get reply)</p>
+</div>
+<div class="section" id="case-iii-inter-subnet-but-single-switch">
+<h3>Case - III: Inter-Subnet But Single switch<a class="headerlink" href="#case-iii-inter-subnet-but-single-switch" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>H1 (subnet-1) SW-1 &#8212;&gt; H2 (subnet-2) SW-1    Communication not possible</li>
+<li>Broadcast ARP request (127) but didn&#8217;t reach t0 H2 (130)</li>
+<li>No reply</li>
+</ul>
+</div>
+<div class="section" id="case-iv-inter-subnet-but-single-switch-possible-by-hacker">
+<h3>Case - IV: Inter-Subnet But Single switch (possible by hacker)<a class="headerlink" href="#case-iv-inter-subnet-but-single-switch-possible-by-hacker" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>H1 (subnet-1) SW-1 &#8212;&gt; H2 (subnet-2) SW-1    Communication  possible</li>
+<li>Hacker change the IP and net mask as that of subnet-1 (say 124 – free host IP)</li>
+<li>Broadcast ARP request (127) but  reach to H2 (124)</li>
+<li>Reply</li>
+</ul>
+</div>
+</div>
+<div class="section" id="task-6-inter-router-communication">
+<h2>Task - 6: Inter-Router Communication<a class="headerlink" href="#task-6-inter-router-communication" title="Permalink to this headline">¶</a></h2>
+<p>Uptil now, we have only 1 router with 12 interfaces, means 10 departments or 20 hosts are handled by only one router.</p>
+<p>Now in order to learn the inter-router communication, split the network into 2 parts.</p>
+<div class="figure align-center" id="id1">
+<span id="inter-router-comm"></span><img alt="_images/INTER_ROUTER_COMM_04.png" src="_images/INTER_ROUTER_COMM_04.png" />
+<p class="caption"><span class="caption-text"><strong>Inter-Router Communication Architecture</strong></span></p>
+</div>
+<ol class="arabic">
+<li><p class="first">5 switches should be handled by Router-1 on first PC. 5 switches should be handled by Router-2 on 2nd PC.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Both the PC&#8217;s are interconnected using LAN cable.</dt>
+<dd><dl class="first last docutils">
+<dt>The hierarchy will be like:</dt>
+<dd><p class="first last">Router-1 &#8212;-&gt; EDGE_SWITCH_1 &#8212;-&gt; eth0 &#8212;-&gt; eth0&#8212;-&gt; EDGE_SWITCH_2 &#8212;-&gt; Router- 2
+(192.168.7.1)   (192.168.7.2)                                   (192.168.7.3)           (192.168.7.4)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><p class="first">Now copy the desired KVM&#8217;s .xml&#8217;s and .img&#8217;s from PC-1 to PC-2 using SCP command.</p>
+<blockquote>
+<div><p>SCP -C __________________________________ (because -c will increase the speed up to a reasonable extent).</p>
+</div></blockquote>
+</li>
+<li><p class="first">Now, we have to work carefully. Because, the enviroment in the .xlm&#8217;s was according to the PC-1. Now, we have to edit its path of .img (where domain.img is copied).</p>
+</li>
+</ol>
+<p><strong>Steps to run a KVM that was running in 1 PC to run it on another PC:</strong></p>
+<dl class="docutils">
+<dt><strong>- virsh define domain.xml</strong></dt>
+<dd><p class="first">The line that can cause error are most likely to be following in .xml file. Do concentrate on it.</p>
+<blockquote class="last">
+<div><code class="docutils literal"><span class="pre">&lt;type</span> <span class="pre">arch='x86_64'</span> <span class="pre">machine='pc-i440fx-trusty'&gt;hvm&lt;/type&gt;</span></code></div></blockquote>
+</dd>
+</dl>
+<p>Just check that PC-2 should have same architecture. Machine variable should be supported otherwise replaced by a supported one. In my case supported machine was not present in PC-2.</p>
+<p><strong>I got this error:</strong></p>
+<blockquote>
+<div><p>error: internal error: process exited while connecting to monitor: qemu-system-x86_64: -machine pc-i440fx-trusty,accel=kvm,</p>
+<p>Use -machine help to list supported machines!</p>
+<dl class="docutils">
+<dt>Therefore, I replaced the variable with</dt>
+<dd><code class="docutils literal"><span class="pre">machine='pc-i440fx-2.0'</span> <span class="pre">&lt;emulator&gt;/usr/bin/kvm-spice&lt;/emulator&gt;</span></code></dd>
+</dl>
+</div></blockquote>
+<p>Must check the kvm-spice binary should installed on PC-2. Otherwise install it or replace it with installed one.</p>
+<dl class="docutils">
+<dt>I have replaced the binary</dt>
+<dd><blockquote class="first">
+<div><code class="docutils literal"><span class="pre">&lt;emulator&gt;/usr/bin/kvm&lt;/emulator&gt;</span></code></div></blockquote>
+<p class="last"><code class="docutils literal"><span class="pre">&lt;source</span> <span class="pre">file='/home/ahmer/VMS/web-server/ubuntu-kvm/tmpgStITZ.qcow2'/&gt;</span></code></p>
+</dd>
+</dl>
+<p>Must check your path for the desired .qcow2 or .img</p>
+<p><strong>- Virsh create domain.img</strong></p>
+<p>Now, you are able to use your KVM.</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Now, SW-1 &#8212;&#8212;&#8211; SW-5 are handled by Router-1 and SW-6 &#8212;&#8212;- SW10 are handled by Router-2.</dt>
+<dd><p class="first last">You can easily ping between the hosts of same router and but not to the host of other router.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>How we can make this communication possible?</dt>
+<dd><p class="first"><strong>Hint:</strong> Learn routing tables and route -n</p>
+<p class="last">As communication between subnets are done based on the routing table. If you check the routing table in either machine, you will not find the IP addresses of the other router subnets of course. You have to add them manually.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>Let&#8217;s move step by step.</p>
+<ul class="simple">
+<li>Check that can you ping 192.168.7.1, 2, 3, 4 from either side? If yes then nice, because you have a successful connection between both the PC&#8217;s. If not, then problem is that your Ethernet ports are interconnected, hence, no path to access the hosts of other router.</li>
+<li>Now, learn this concept that in order to access PC-2 from PC-1 your gateway is 192.168.7.4, and 192.168.7.1 vice versa.</li>
+</ul>
+<ol class="arabic simple">
+<li>Add 5 routes of Router -2 on Router-1 as follows:</li>
+</ol>
+<hr class="docutils" />
+<blockquote>
+<div><p>route add -net 192.168.5.236 netmask 255.255.255.240 gw 192.168.7.4</p>
+<p>route add -net 192.168.6.0 netmask 255.255.255.128 gw 192.168.7.4</p>
+<p>route add -net 192.168.6.32 netmask 255.255.255.128 gw 192.168.7.4</p>
+<p>route add -net 192.168.6.64 netmask 255.255.255.128 gw 192.168.7.4</p>
+<p>route add -net 192.168.5.72 netmask 255.255.255.128 gw 192.168.7.4</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>Have you checked that all have same gateway. Because, gateway address must present in the broadcast of router-1</p>
+<ol class="arabic simple" start="2">
+<li>Similarly, add the routes on the Router-2, all have the gw=192.168.7.1</li>
+</ol>
+<p>Now, check that we should be able to communicate over the LAN. I have first time, because after copying the router KVM, I have note change the MACs of the NIC&#8217;s of router-2. Hence both of the routers were working with same MACs that results in no communication. One more thing, we should kept in mind, IP forwarding variable should be 1, because it can change, when you reboot the Router.</p>
+<p>The solution was that change the MACs of Router 2 and must be unique. Check IP forwarding and setting it permanently 1 even after rebooting the KVM.</p>
+<p><code class="docutils literal"><span class="pre">Sysctl</span> <span class="pre">-a</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">forward</span></code></p>
+<p><code class="docutils literal"><span class="pre">vim</span> <span class="pre">/etc/sysctl.conf</span> <span class="pre">&amp;</span> <span class="pre">set</span> <span class="pre">IP-forward</span> <span class="pre">=1</span></code></p>
+<p>Now, you are able to communicate.</p>
+<p><strong>Practice:</strong> Figure out all the variables that are changed automatically when you reboot the system. Add them to rc_local or some other script that runs automatically when a system is booted.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week-05.html" class="btn btn-neutral float-right" title="Week - 5 Linux-IoT Training" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="week-03.html" class="btn btn-neutral" title="Week - 3 Linux IoT Training" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

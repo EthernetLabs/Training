@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week - 10 IoT Protocols: RESTful APIs and COAP &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Linux IoT" href="week-12.html"/>
+        <link rel="prev" title="Week - 9 Linux IoT Project" href="week-09.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week - 10 IoT Protocols: RESTful APIs and COAP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rest-representational-state-transfer">REST: Representational State Transfer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rest-as-light-weight-web-service">REST as Light Weight Web-Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#web-service">Web-Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hypertext-transfer-protocol-http">Hypertext Transfer Protocol (HTTP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#request-message">Request Message</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-post-method">The POST method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-url-method">The URL method</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#response-message">Response Message</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#proxy-server">Proxy Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#web-proxies">Web Proxies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#coap-constrained-application-protocol">COAP – Constrained Application Protocol</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#coap-header-format">COAP Header Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging-in-python">Logging in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coap-implementation-in-python-aiocoap">Coap Implementation in Python – aiocoap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coap-communication-in-c">COAP Communication in C</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Linux IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week - 10 IoT Protocols: RESTful APIs and COAP</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-10.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-10-iot-protocols-restful-apis-and-coap">
+<span id="week-10"></span><h1>Week - 10 IoT Protocols: RESTful APIs and COAP<a class="headerlink" href="#week-10-iot-protocols-restful-apis-and-coap" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rest-representational-state-transfer">
+<h2>REST: Representational State Transfer<a class="headerlink" href="#rest-representational-state-transfer" title="Permalink to this headline">¶</a></h2>
+<p>To see REST in detail follow the <a class="reference external" href="http://rest.elkstein.org/">link</a></p>
+<p>It is stateless, client server, cacheable communnication protocol. e.g HTTP</p>
+<p>RESTful applications use HTTP requests to post data (create and/or update), read data (e.g., make queries), and delete data. Thus, REST uses HTTP for all four CRUD (Create/Read/Update/Delete) operations.</p>
+<div class="section" id="rest-as-light-weight-web-service">
+<h3>REST as Light Weight Web-Service<a class="headerlink" href="#rest-as-light-weight-web-service" title="Permalink to this headline">¶</a></h3>
+<p>As a programming approach, REST is a lightweight alternative to Web Services and RPC.</p>
+<p>Much like Web Services, a REST service is:</p>
+<ul class="simple">
+<li>Platform-independent (you don&#8217;t care if the server is Unix, the client is a Mac, or anything else).</li>
+<li>Language-independent (C# can talk to Java, etc.),</li>
+<li>Standards-based (runs on top of HTTP)</li>
+<li>Can easily be used in the presence of firewalls.</li>
+</ul>
+<p>Like Web Services, REST offers no built-in security features, encryption, session management, QoS guarantees, etc. But also as with Web Services, these can be added by building on top of HTTP:</p>
+<p>For security, username/password tokens are often used.</p>
+<p>For encryption, REST can be used on top of HTTPS (secure sockets).
+... etc.</p>
+</div>
+</div>
+<div class="section" id="web-service">
+<h2>Web-Service<a class="headerlink" href="#web-service" title="Permalink to this headline">¶</a></h2>
+<p>A web service is any piece of software that makes itself available over the internet and uses a standardized XML messaging system. XML is used to encode all communications to a web service. For example, a client invokes a web service by sending an XML message, then waits for a corresponding XML response.</p>
+</div>
+<div class="section" id="hypertext-transfer-protocol-http">
+<h2>Hypertext Transfer Protocol (HTTP)<a class="headerlink" href="#hypertext-transfer-protocol-http" title="Permalink to this headline">¶</a></h2>
+<p>HTTP is a method for encoding and transporting information between a client (such as a web browser) and a web server. HTTP is the primary protocol for transmission of information across the Internet.</p>
+<p>Follow the <a class="reference external" href="https://www.nginx.com/resources/glossary/http/">link for better understanding</a></p>
+<p>HTTP follows a request-response paradigm in which the client makes a request and the server issues a response that includes not only the requested content, but also relevant status information about the request.</p>
+<p>HTTP is an application layer protocol and relies on an underlying network-level protocol such as Transmission Control Protocol (TCP) to function.</p>
+<p>HTTP resources such as web servers are identified across the Internet using unique identifiers known as Uniform Resource Locaters (URLs).</p>
+<div class="figure align-center" id="web-name">
+<img alt="_images/WEB_NAME_10.jpg" src="_images/WEB_NAME_10.jpg" />
+</div>
+<div class="figure align-center" id="url-res">
+<img alt="_images/URL_RESO_10.jpg" src="_images/URL_RESO_10.jpg" />
+</div>
+<p>Follow the link for more understanding: <a class="reference external" href="https://en.wikibooks.org/wiki/Communication_Networks/HTTP_Protocol">https://en.wikibooks.org/wiki/Communication_Networks/HTTP_Protocol</a></p>
+<div class="figure align-center" id="http-1">
+<img alt="_images/HTTP_1_10.jpeg" src="_images/HTTP_1_10.jpeg" />
+</div>
+<div class="figure align-center" id="http-2">
+<img alt="_images/HTTP_2_10.jpeg" src="_images/HTTP_2_10.jpeg" />
+</div>
+<p>There are two types of messages that HTTP uses</p>
+<ol class="arabic simple">
+<li>Request message</li>
+<li>Response message</li>
+</ol>
+<div class="section" id="request-message">
+<h3>Request Message<a class="headerlink" href="#request-message" title="Permalink to this headline">¶</a></h3>
+<p>The request line has three parts, separated by spaces: a method name, the local path of the requested resource and version of HTTP being used. The message format is in ASCII so that it can be read by the humans.
+For e.g.:</p>
+<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">/path/to/the/file.html</span> <span class="pre">HTTP/1.0</span></code></p>
+<p>The GET method is the most commonly used. It states that “give me this resource”. The part of the URL is also called as Request URL. The HTTP is to be in uppercase and the next part denotes the version of HTTP.
+HTTP Request Message: General Format</p>
+<p>The HTTP Request message format is shown below:</p>
+<div class="figure align-center" id="http-req-frame">
+<img alt="_images/HTTP_REQ_10.png" src="_images/HTTP_REQ_10.png" />
+</div>
+<p>The method is the type of method used to request the URL. Like GET, POST or HEAD. The URL block contains the requested URL. Version denotes the HTTP version. Either HTTP/1.0 or HTTP/1.1. The header lines include the browser type, host , number of objects and file name and the type of language in the requested page. For e.g.:</p>
+<div class="figure align-center" id="http-req-lines">
+<img alt="_images/HTTP_REQ_LINES_10.png" src="_images/HTTP_REQ_LINES_10.png" />
+</div>
+<p>The entity body is used by the POST method. When user enters information on to the page, the entity body contains that information.</p>
+<p>The HTTP 1.0 has GET, POST and HEAD methods. While the HTTP 1.1 has along with GET, POST and HEAD, PUT and DELETE.</p>
+<p>Uploading the information in Web pages</p>
+<div class="section" id="the-post-method">
+<h4>The POST method<a class="headerlink" href="#the-post-method" title="Permalink to this headline">¶</a></h4>
+<p>The Web pages which ask for input from user uses the POST method. The information filled by the web user is uploaded in server’s entity body.
+The typical form submission in POST method. The content type is usually the application/x-www-form-urlencoded and the content-type is the length of the URL encoded form data.</p>
+</div>
+<div class="section" id="the-url-method">
+<h4>The URL method<a class="headerlink" href="#the-url-method" title="Permalink to this headline">¶</a></h4>
+<p>The URL method uses the GET method to get user input from the user. It appends the user information to be uploaded to server to the URL field.</p>
+</div>
+</div>
+<div class="section" id="response-message">
+<h3>Response Message<a class="headerlink" href="#response-message" title="Permalink to this headline">¶</a></h3>
+<p>The HTTP message response line also has three parts separated by spaces: the HTTP version, a response status code giving result of the request and English phrase of the status code. This first line is also called as Status line.
+The HTTP Response message format is shown below:</p>
+<div class="figure align-center" id="http-res">
+<img alt="_images/HTTP_RES_10.png" src="_images/HTTP_RES_10.png" />
+</div>
+<div class="figure align-center" id="http-res-lines">
+<img alt="_images/HTTP_RES_LINES_10.png" src="_images/HTTP_RES_LINES_10.png" />
+</div>
+<p>Below are the some HTTP response status codes:
+- 200 OK The request succeeded, and the resulting resource (e.g. file or script output) is returned in the message body.
+- 404 Not Found The requested resource doesn&#8217;t exist.
+- 301 Moved Permanently
+- 302 Moved Temporarily
+- 303 See Other (HTTP 1.1 only)</p>
+<p>The resource has moved to another URL (given by the Location: response header), and should be automatically retrieved by the client. This is often used by a CGI script to redirect the browser to an existing file.</p>
+<ul class="simple">
+<li>500 Server Error</li>
+</ul>
+<p>An unexpected server error. The most common cause is a server-side script that has bad syntax, fails, or otherwise can&#8217;t run correctly.</p>
+</div>
+</div>
+<div class="section" id="proxy-server">
+<h2>Proxy Server<a class="headerlink" href="#proxy-server" title="Permalink to this headline">¶</a></h2>
+<p>A proxy server is a computer that offers a computer network service to allow clients to make indirect network connections to other network services. A client connects to the proxy server, then requests a connection, file, or other resource available on a different server. The proxy provides the resource either by connecting to the specified server or by serving it from a cache. In some cases, the proxy may alter the client&#8217;s request or the server&#8217;s response for various purposes.</p>
+<p>Useful Link: <a class="reference external" href="http://whatismyipaddress.com/proxy-server">http://whatismyipaddress.com/proxy-server</a></p>
+<div class="section" id="web-proxies">
+<h3>Web Proxies<a class="headerlink" href="#web-proxies" title="Permalink to this headline">¶</a></h3>
+<p>A common proxy application is a caching Web proxy. This provides a nearby cache of Web pages and files available on remote Web servers, allowing local network clients to access them more quickly or reliably.</p>
+<p>When it receives a request for a Web resource (specified by a URL), a caching proxy looks for the resulting URL in its local cache. If found, it returns the document immediately. Otherwise it fetches it from the remote server, returns it to the requester and saves a copy in the cache. The cache usually uses an expiry algorithm to remove documents from the cache, according to their age, size, and access history. Two simple cache algorithms are Least Recently Used (LRU) and Least Frequently Used (LFU). LRU removes the least-recently used documents, and LFU removes the least-frequently used documents.</p>
+</div>
+</div>
+<div class="section" id="coap-constrained-application-protocol">
+<h2>COAP – Constrained Application Protocol<a class="headerlink" href="#coap-constrained-application-protocol" title="Permalink to this headline">¶</a></h2>
+<p>To learn COAP basic <a class="reference external" href="http://www.coapsharp.com/basics-of-coap/">follow</a></p>
+<p>In the PC world, the message exchange is over TCP and application protocol is HTTP. However, for small devices, implementing the TCP stack and then HTTP protocol is really too much to ask for. That is where CoAP was devised. It’s a tiny protocol at the application layer (an alternative to HTTP) that is envisaged to fit in tiny form factors. It runs on UDP and not on HTTP. The smallest message size that CoAP mandates is 4-bytes!</p>
+<p><strong>SO IS COAP A REPLACEMENT FOR HTTP</strong></p>
+<p>CoAP is not a replacement for HTTP. It’s an alternative suggestion for tiny devices that have severe resource constraints (e.g. 256 KB memory, 32 KB RAM, 20 MHz speed).</p>
+<p><strong>WHAT ARE THE DIFFERENT TYPES OF COAP MESSAGE</strong></p>
+<p>CoAP messages follow the same request/response paradigm (largely) that is prevelant in HTTP world. There are 4 types of CoAP messages</p>
+<ol class="arabic simple">
+<li>CON – This is called “Confirmable” request. When a CON request is sent, the recipient must respond.</li>
+<li>NON – This is called “Non-Confirmable” request. When a NON request is sent, the recipient is not required to respond back.</li>
+<li>ACK – This is called “Acknowledgement”. This is a response to a CON message. When processing succeeds, the recipient of a CON message should respond back with an ACK. The ACK message can also contain result of the processing alongwith.</li>
+<li>RST – This is called “Reset” message. When the recipient of a message encounters an error, does not understand the message or is no longer interested in the message sender, this response is sent bac</li>
+</ol>
+<p>For detailed understanding <a class="reference external" href="http://www.slideshare.net/zdshelby/coap-tutorial">follow</a></p>
+<div class="section" id="coap-header-format">
+<h3>COAP Header Format<a class="headerlink" href="#coap-header-format" title="Permalink to this headline">¶</a></h3>
+<p>WHAT ARE THE DIFFERENT PARTS OF A COAP MESSAGE</p>
+<p>A CoAP message, at minimum, must be 4 bytes long. The different parts, that can make up a CoAP message are:
+- Version – What is the CoAP version that this message follows (as of now its V 1)
+- The message type (CON, NON, ACK, RST)
+- The message code (Like PUT, GET, UNAUTHORIZED)
+- The message id. Each CoAP message has an ID associated with it. The ID is generally unique for a conversation for some period of time, after which, it can be recycled.
+- The token. A token is another value that may be attached to the message for matching. Messages can be sent out of order and at that time, token becomes important.
+- A set of options. Options in CoAP are like HTTP request headers. They contain metadata about the CoAP message itself (e.g. the CoAP port, the CoAP host, the CoAP querystring)
+- The payload. This is the actual message that is being exchanged.</p>
+<div class="figure align-center" id="coap-hdr-1">
+<img alt="_images/COAP_HEADER_1_10.jpg" src="_images/COAP_HEADER_1_10.jpg" />
+</div>
+<div class="figure align-center" id="coap-hdr-2">
+<img alt="_images/COAP_HEADER_2_10.jpg" src="_images/COAP_HEADER_2_10.jpg" />
+</div>
+<div class="figure align-center" id="coap-hdr-3">
+<img alt="_images/COAP_HEADER_3_10.jpg" src="_images/COAP_HEADER_3_10.jpg" />
+</div>
+<p><strong>WHAT IS OBSERVE IN COAP</strong></p>
+<p>Sometimes, you want to monitor a value, let’s say, temperature. In that case, the client does not need to continuously poll the server. The client can send one “Observable” request to the server. From that point onwards, the server will remember the client connection details, and on every change in temperature, will send the new value to the client.If client no longer wishes to receive the temperature values, it can respond back with an RST message and server will clear it’s memory. More on this in examples.</p>
+<div class="figure align-center" id="coap-obs">
+<img alt="_images/COAP_OBS_10.jpg" src="_images/COAP_OBS_10.jpg" />
+</div>
+<p><strong>WHAT IS BLOCK TRANSFER IN COAP</strong></p>
+<p>Given that CoAP messages should be key very small in size, there will be cases when you need to exchange large data streams, either from client to server (like a PUT) or from server to client (like a GET). In that case, the CoAP message can contain options associated with block transfer and then the client and server can exchange multiple messages with blocks of data in each. More on this later on, in tutorials.</p>
+<div class="figure align-center" id="id2">
+<img alt="_images/COAP_BLOCK_10.jpg" src="_images/COAP_BLOCK_10.jpg" />
+</div>
+</div>
+<div class="section" id="logging-in-python">
+<h3>Logging in Python<a class="headerlink" href="#logging-in-python" title="Permalink to this headline">¶</a></h3>
+<p>Logging is way of printing information while running a module. It is just like “printf” but have many advantages over it. import logging</p>
+<p>Another useful feature of the logging API is the ability to produce different messages at different log levels. Let&#8217;s suppose, I configure the level INFO, then all the log levels above it will be get printed    [20 - 50], while lower will not be printed [0 – 10].</p>
+<p>Level           Value</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="57%" />
+<col width="43%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>CRITICAL</td>
+<td>50</td>
+</tr>
+<tr class="row-even"><td>ERROR</td>
+<td>40</td>
+</tr>
+<tr class="row-odd"><td>WARNING</td>
+<td>30</td>
+</tr>
+<tr class="row-even"><td>INFO</td>
+<td>20</td>
+</tr>
+<tr class="row-odd"><td>DEBUG</td>
+<td>10</td>
+</tr>
+<tr class="row-even"><td>UNSET</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Follow the links for better understanding the logging.</p>
+<p><a class="reference external" href="http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python">http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python</a></p>
+<p><a class="reference external" href="https://pymotw.com/2/logging/">https://pymotw.com/2/logging/</a></p>
+<p><strong>What is the difference between functions, sub-routines and co-routines?</strong></p>
+<p><strong>Function</strong></p>
+<p>A function is basically same just like as it is we use in maths.</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">F(X)</span> <span class="pre">=</span> <span class="pre">2X</span> <span class="pre">+</span> <span class="pre">1</span></code></div></blockquote>
+<p>It has some input and based on the expression, it has specific output. Similarly, used in C/C++</p>
+<p>int  F (int X):</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="p">{</span>       <span class="k">return</span>  <span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">X</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Sub-Routine</strong></p>
+<p>A sub-routine and a function is very much similar except one difference that is, sub-routines does not return anything. It is simply a set of instructions in order to perform a certain task.
+We can say that, a void  function is a sub-routine.</p>
+<p>Both functions and sub-routines have single entry and ending point, and executed completely.</p>
+<p><strong>Co-Routine</strong></p>
+<p>A co-routine is different from a sub-routine in a way that it has single entry point, multiple ending and re-entry points. That&#8217;s why we use “resume” co-routine instead of “call” a subroutine.</p>
+<p>Co-routine:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">coroutine</span> <span class="n">foo</span> <span class="p">{</span>
+ <span class="k">yield</span> <span class="mi">1</span><span class="p">;</span>
+ <span class="k">yield</span> <span class="mi">2</span><span class="p">;</span>
+ <span class="k">yield</span> <span class="mi">3</span><span class="p">;</span> <span class="p">}</span>
+ <span class="nb">print</span> <span class="n">foo</span><span class="p">();</span>
+ <span class="nb">print</span> <span class="n">foo</span><span class="p">();</span>
+ <span class="nb">print</span> <span class="n">foo</span><span class="p">();</span>
+ <span class="n">Prints</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Sub-routine:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span class="n">coroutine</span> <span class="n">foo</span> <span class="p">{</span>
+<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">return</span> <span class="mi">2</span><span class="p">;</span> <span class="o">//</span><span class="n">Dead</span> <span class="n">code</span>
+<span class="k">return</span> <span class="mi">3</span><span class="p">;}</span>
+<span class="nb">print</span> <span class="n">foo</span><span class="p">();</span>
+<span class="nb">print</span> <span class="n">foo</span><span class="p">();</span>
+<span class="nb">print</span> <span class="n">foo</span><span class="p">();</span>
+<span class="n">Prints</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> Coroutines may use a return, and behave just like a subroutine</p>
+<p>For co-routines in Python (generators, yield) follow the link: import asyncio (python library)
+<a class="reference external" href="http://wla.berkeley.edu/~cs61a/fa11/lectures/streams.html#coroutines">http://wla.berkeley.edu/~cs61a/fa11/lectures/streams.html#coroutines</a>
+<a class="reference external" href="https://www.jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/">https://www.jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/</a></p>
+</div>
+<div class="section" id="coap-implementation-in-python-aiocoap">
+<h3>Coap Implementation in Python – aiocoap<a class="headerlink" href="#coap-implementation-in-python-aiocoap" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://aiocoap.readthedocs.org/en/latest/examples.html">https://aiocoap.readthedocs.org/en/latest/examples.html</a></p>
+<p>you will want to create a single Context instance that binds to the network.  The Context.create_client_context() and Context.create_server_context() coroutines give you a readily connected context.</p>
+<p>On the client side, you can request resources by assembling a Message.</p>
+<p><a class="reference external" href="https://aiocoap.readthedocs.org/en/latest/aiocoap.message.html#aiocoap.message.Message">https://aiocoap.readthedocs.org/en/latest/aiocoap.message.html#aiocoap.message.Message</a></p>
+<p>For COAP communication, we will use aiocoap module in Python 3.0+. aicoap module is not yet supported for Python 2.7. Let&#8217;s install Python 3.0+.</p>
+<p>Check the using version of Python.</p>
+<p><code class="docutils literal"><span class="pre">python</span> <span class="pre">-V</span></code></p>
+<p>To change Python2.7 → Python3.0+</p>
+<p><code class="docutils literal"><span class="pre">alias</span> <span class="pre">python=python3</span></code></p>
+<p><a class="reference external" href="https://aiocoap.readthedocs.org/en/latest/examples.html">https://aiocoap.readthedocs.org/en/latest/examples.html</a></p>
+</div>
+<div class="section" id="coap-communication-in-c">
+<h3>COAP Communication in C<a class="headerlink" href="#coap-communication-in-c" title="Permalink to this headline">¶</a></h3>
+<p>libcoap is the COAP communication library for C.
+Download libcoap: <a class="reference external" href="https://libcoap.net/">https://libcoap.net/</a>
+How to use: <a class="reference external" href="https://gitlab.informatik.uni-bremen.de/bergmann/libcoap/tree/3e9afb146043a94da25e0e8fc4bc6c03ebc7a2f1/examples">https://gitlab.informatik.uni-bremen.de/bergmann/libcoap/tree/3e9afb146043a94da25e0e8fc4bc6c03ebc7a2f1/examples</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week-12.html" class="btn btn-neutral float-right" title="Linux IoT" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="week-09.html" class="btn btn-neutral" title="Week - 9 Linux IoT Project" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

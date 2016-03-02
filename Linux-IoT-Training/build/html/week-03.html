@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week - 3 Linux IoT Training &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Week - 4 Linux IoT Training" href="week-04.html"/>
+        <link rel="prev" title="Week - 2 Linux IoT Training" href="week-02.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week - 3 Linux IoT Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-1-ssh-and-sftp">Task - 1: SSH and SFTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-2-kernel-virtual-machines-kvm-s">Task - 2: Kernel Virtual Machines (KVM&#8217;s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-3-ip-addresses-and-subnets">Task - 3: IP Addresses and Subnets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-4-ip-addressing-case">Task - 4: IP Addressing Case</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-5-software-defined-network-sdn">Task - 5: Software Defined Network (SDN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-6-bash-scripting-of-sdn-lab">Task - 6: Bash Scripting of SDN Lab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Linux IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week - 3 Linux IoT Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-03.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-3-linux-iot-training">
+<span id="week-03"></span><h1>Week - 3 Linux IoT Training<a class="headerlink" href="#week-3-linux-iot-training" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="task-1-ssh-and-sftp">
+<h2>Task - 1: SSH and SFTP<a class="headerlink" href="#task-1-ssh-and-sftp" title="Permalink to this headline">¶</a></h2>
+<p>Learn why and how to use ssh and sftp in Linux. What is the difference between ssh and sftp. How to manipulate data between host and client. After remotely login into the server, how we can do download data from there using get command.</p>
+</div>
+<div class="section" id="task-2-kernel-virtual-machines-kvm-s">
+<h2>Task - 2: Kernel Virtual Machines (KVM&#8217;s)<a class="headerlink" href="#task-2-kernel-virtual-machines-kvm-s" title="Permalink to this headline">¶</a></h2>
+<p>What is a KVM and how virtual machines are beneficial. Build a KVM using Python VM builder and Virt-Mnager. The guest should be on the same OS as host is (in my case Ubuntu 14.04.3) .</p>
+<p>How to make virtual machines <a class="reference external" href="https://www.howtoforge.com/creating-virtual-machines-for-xen-kvm-vmware-workstation-6-vmware-server-with-vmbuilder-on-ubuntu-8.10-p2">follow this</a></p>
+</div>
+<div class="section" id="task-3-ip-addresses-and-subnets">
+<h2>Task - 3: IP Addresses and Subnets<a class="headerlink" href="#task-3-ip-addresses-and-subnets" title="Permalink to this headline">¶</a></h2>
+<p>What is an IP address. What is difference between IPV4 and IPV6. Why IPV6 was necessary to introduced. What each octet represents in an IP address. What are subnets and learn about the VLSM and CIDR and present back to the instructor.</p>
+</div>
+<div class="section" id="task-4-ip-addressing-case">
+<h2>Task - 4: IP Addressing Case<a class="headerlink" href="#task-4-ip-addressing-case" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s assume that IoT Systems has 10 departments. The list of departments are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">DEPARTMENTS</th>
+<th class="head">NO. OF EMPLOYEES</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Software</td>
+<td>112</td>
+</tr>
+<tr class="row-odd"><td>Hardware</td>
+<td>60</td>
+</tr>
+<tr class="row-even"><td>IT</td>
+<td>40</td>
+</tr>
+<tr class="row-odd"><td>Finance</td>
+<td>06</td>
+</tr>
+<tr class="row-even"><td>Public Relations</td>
+<td>02</td>
+</tr>
+<tr class="row-odd"><td>Marketing</td>
+<td>12</td>
+</tr>
+<tr class="row-even"><td>Business development</td>
+<td>25</td>
+</tr>
+<tr class="row-odd"><td>Quality Insurance</td>
+<td>20</td>
+</tr>
+<tr class="row-even"><td>House Keeping</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Admin</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Each department should have its own subnet. The design of sub-netting should be wise, as the company is well developed and there will be chances to extend it up to little extent only (in term of employees).</p>
+<div class="figure align-center" id="id1">
+<span id="ip-addr-tech"></span><img alt="_images/IP_Addressing_Techknox.png" src="_images/IP_Addressing_Techknox.png" />
+<p class="caption"><span class="caption-text">IP Addressing for IoT Systems.</span></p>
+</div>
+</div>
+<div class="section" id="task-5-software-defined-network-sdn">
+<h2>Task - 5: Software Defined Network (SDN)<a class="headerlink" href="#task-5-software-defined-network-sdn" title="Permalink to this headline">¶</a></h2>
+<p>Now, we have a proper design of subnets for a company. Now, its time to simulate it on our PC. This task is divided into different subtasks:</p>
+<ol class="arabic">
+<li><p class="first">Install 20 KVM&#8217;s on your host (2 KVM&#8217;s/Department). I have used different embedded .iso&#8217;s (tiny core linux, snappy etc), but snappy suits best. Build 20 KVM having 128M RAM, 3.5 G Disk, 1 CPU.</p>
+</li>
+<li><p class="first">Change their IP&#8217;s according to sub-netting exercise that we have done in previous task. This directory (/etc/network/interfaces.d/eth0) is important for changing IP&#8217;s.</p>
+</li>
+<li><p class="first">Reboot all KVM&#8217;s and check using ifconfig that all the desired changes have been saved or not. If not then might be some issue.</p>
+</li>
+<li><p class="first">Now, install 21st  KVM that will be act as Router. It should be running Ubuntu 14.04.3. Its RAM should be around 1-2 GB.</p>
+</li>
+<li><p class="first">The router should have 10 ports for the communication through a switch to the 10 departments of company. Hence, here is the need to add 10 network interfaces in the Router VM that should be act as 10 ports of the router.</p>
+<blockquote>
+<div><p>Shutdown the router VM &#8212;&gt; virsh edit router &#8212;&gt; add 10 network interfaces here (.xml file)
+change:  mac = 0x_____ , slot: each should have different slot.</p>
+</div></blockquote>
+</li>
+<li><p class="first">After adding 10 NIC&#8217;s, start the router domain. Check in host machine using ifconfig  whether 10 macs are added or not.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Now, its time to connect each router port to its corresponding subnet through a switch.</dt>
+<dd><p class="first last">Learn brctl using man page.
+P1 (router) connects to N1 (Software  –&gt;  Employ 1 (KVM-1) Employ 2 (KVM -2) )</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Learn the ping command. And check whether each guest of a Network can communicate to or listen to its corresponding Port on router.</p>
+</li>
+</ol>
+<p>In router: ping _IP (N1: E1)____</p>
+</div>
+<div class="section" id="task-6-bash-scripting-of-sdn-lab">
+<h2>Task - 6: Bash Scripting of SDN Lab<a class="headerlink" href="#task-6-bash-scripting-of-sdn-lab" title="Permalink to this headline">¶</a></h2>
+<p>All that has been done above should be scripted now. Think how we can efficiently start all the KVM&#8217;s, check each KVM status. After successful booting of all VM&#8217;s add the router ports and corresponding network VMS to same switch (bridge).</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week-04.html" class="btn btn-neutral float-right" title="Week - 4 Linux IoT Training" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="week-02.html" class="btn btn-neutral" title="Week - 2 Linux IoT Training" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

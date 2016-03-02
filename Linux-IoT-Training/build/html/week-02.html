@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week - 2 Linux IoT Training &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Week - 3 Linux IoT Training" href="week-03.html"/>
+        <link rel="prev" title="Week-1 Linux IoT Training" href="week-01.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="week-01.html">Week-1 Linux IoT Training</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week - 2 Linux IoT Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-1-signals-and-traps">Task - 1: Signals and Traps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-2-process-scheduling">Task - 2: Process Scheduling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-3-ipc-pipes-and-fifo-s">Task - 3: IPC (Pipes and FIFO&#8217;s)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-4-job-control-commands">Task - 4: Job Control Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-5-message-queues">Task - 5: Message Queues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-6-shared-memories">Task - 6: Shared Memories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-7-process-process-management">Task - 7: Process &amp; Process Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-8-fork-and-exec">Task - 8: Fork and Exec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-9-semaphores">Task - 9: Semaphores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-10-case-study-mars-rover">Task - 10: Case Study (Mars Rover )</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-11-virtual-memory-management">Task - 11: Virtual Memory Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-resources">Useful Resources:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Linux IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week - 2 Linux IoT Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-02.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-2-linux-iot-training">
+<span id="week-02"></span><h1>Week - 2 Linux IoT Training<a class="headerlink" href="#week-2-linux-iot-training" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="task-1-signals-and-traps">
+<h2>Task - 1: Signals and Traps<a class="headerlink" href="#task-1-signals-and-traps" title="Permalink to this headline">¶</a></h2>
+<p>Learn different types of signals in Linux. Figure out which signals cannot be trapped. The trap-able signals were caught and performed a certain action on trapping.</p>
+<p><strong>Code:</strong> Write a shell script that can continuously printing a “Hello-World” while it has not been caught or trapped by any or the terminate signal.</p>
+<p>check shell script <a class="reference external" href="https://github.com/Ahmer-444/personal-repo/blob/master/signal-trap.sh">click here</a></p>
+</div>
+<div class="section" id="task-2-process-scheduling">
+<h2>Task - 2: Process Scheduling<a class="headerlink" href="#task-2-process-scheduling" title="Permalink to this headline">¶</a></h2>
+<p>How to schedule a process that it can run on specific times and days. Learn the man page of Crontab command in Linux.</p>
+<p><strong>Code:</strong> Write a shell script that prints your name 100 times in .txt file specifically on every Friday. The process should execute in background.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Read about special character &#8220;&amp;&#8221; in bash</p>
+</div>
+</div>
+<div class="section" id="task-3-ipc-pipes-and-fifo-s">
+<h2>Task - 3: IPC (Pipes and FIFO&#8217;s)<a class="headerlink" href="#task-3-ipc-pipes-and-fifo-s" title="Permalink to this headline">¶</a></h2>
+<p>Read about Pipes and FIFO, how they work in IPC&#8217;s. The basic commands in bash for using them.</p>
+<p><strong>Code:</strong> Write a shell script to make your own output file descriptor with fd=3. It is used when 1 process writes to a pipe and another process reads to it later on.
+Check shell script <a class="reference external" href="https://github.com/Ahmer-444/personal-repo/blob/master/own_output_fd.sh">click here</a></p>
+</div>
+<div class="section" id="task-4-job-control-commands">
+<h2>Task - 4: Job Control Commands<a class="headerlink" href="#task-4-job-control-commands" title="Permalink to this headline">¶</a></h2>
+<p>What is job. What is the difference between job and process. Learn the basic commands in bash that are used for job control.</p>
+<p>Practice these commands in various scenarios.</p>
+</div>
+<div class="section" id="task-5-message-queues">
+<h2>Task - 5: Message Queues<a class="headerlink" href="#task-5-message-queues" title="Permalink to this headline">¶</a></h2>
+<p>Read about the message queues that for what purpose they are use. Read the man pages for the different commands that are used for handling messages like mq_send, mq_receive.</p>
+</div>
+<div class="section" id="task-6-shared-memories">
+<h2>Task - 6: Shared Memories<a class="headerlink" href="#task-6-shared-memories" title="Permalink to this headline">¶</a></h2>
+<p>Learn about the benefits of shared memory and the what logical errors and flaws might cause when different processes are using same shared memory simultaneously. What techniques are used to avoid the these errors.</p>
+<p><strong>Code:</strong> Write a code to create a shared memory. A process should write a complete alphabets from A – Z on this shared memory and waits for the other process to write &#8216;*&#8217; on its 1st entry to complete its execution. Like a server is waiting for a message from client to perform a certain task.</p>
+<p>Check shell script <a class="reference external" href="https://github.com/Ahmer-444/personal-repo/tree/master/Shared_Memory_Client_Server">click here</a></p>
+</div>
+<div class="section" id="task-7-process-process-management">
+<h2>Task - 7: Process &amp; Process Management<a class="headerlink" href="#task-7-process-process-management" title="Permalink to this headline">¶</a></h2>
+<p>Learn about the process what it is? How an OS identify a process. How different processes are handled by OS ? What is priority of a process? How CPU deals with the process based on their priorities. Learn all the concepts related to process in OS. (Recommended books by instructor).</p>
+<p><strong>Practice:</strong> All the commands related to process and priorities under different scenarios.</p>
+</div>
+<div class="section" id="task-8-fork-and-exec">
+<h2>Task - 8: Fork and Exec<a class="headerlink" href="#task-8-fork-and-exec" title="Permalink to this headline">¶</a></h2>
+<p>How a process can start a new process. This new process is called the child process. What is the difference between exec and fork command.</p>
+<p><strong>Code:</strong> Write a code that uses fork and exec commands. It clears the main difference between both. Sketch down the situations  which exec command is useful and where fork is better to use.</p>
+</div>
+<div class="section" id="task-9-semaphores">
+<h2>Task - 9: Semaphores<a class="headerlink" href="#task-9-semaphores" title="Permalink to this headline">¶</a></h2>
+<p>What are semaphores. What is their advantage and why they are used for process handling in the scenarios where different process has access to the shared resources.</p>
+<p><strong>Code:</strong> Write a code that if a  process P1 is using the shared resource, no other process or P2 could not use that resource until P1 has not allowed.</p>
+</div>
+<div class="section" id="task-10-case-study-mars-rover">
+<h2>Task - 10: Case Study (Mars Rover )<a class="headerlink" href="#task-10-case-study-mars-rover" title="Permalink to this headline">¶</a></h2>
+<p>What happened to the MARS ROVER on the mars in its early stages. What was the fault occurred that forces engineers to rethink. State that fault. How they have fixed it out?</p>
+<p><strong>Code:</strong></p>
+<p><strong>Part - 1:</strong> (Priority Inversion): Mimic the same situation myself that how I can code that faulty program to see, can it really malfunctioned a system and force it to restart. How that unexpected restart would have lost a lot of useful data or information.</p>
+<p><strong>Part - 2:</strong> (Priority Inheritance): Now solve the problem as it was solved for Mars Rover.</p>
+<p>To check c codes for Semaphores, Priority settings, Priority Inversion, Priority Inheritance  <a class="reference external" href="https://github.com/Ahmer-444/personal-repo/tree/master/Priority_Inversion">click here</a></p>
+</div>
+<div class="section" id="task-11-virtual-memory-management">
+<h2>Task - 11: Virtual Memory Management<a class="headerlink" href="#task-11-virtual-memory-management" title="Permalink to this headline">¶</a></h2>
+<p>Learn what is the benefit of virtual memory. Why the OS&#8217;s use virtual memory. What is Paging? How virtual address is mapped into physical address. Learn about the page fault, page tables. What is the disadvantage of long page tables. How this issue can be resolved up to reasonable extent.</p>
+</div>
+<div class="section" id="useful-resources">
+<h2>Useful Resources:<a class="headerlink" href="#useful-resources" title="Permalink to this headline">¶</a></h2>
+<p><strong>Message-Queues</strong></p>
+<p><a class="reference external" href="http://menehune.opt.wfu.edu/">http://menehune.opt.wfu.edu/</a></p>
+<p><a class="reference external" href="http://linux.die.net/man/7/mq">http://linux.die.net/man/7/mq</a></p>
+<p><a class="reference external" href="https://www.cs.cf.ac.uk/Dave/">https://www.cs.cf.ac.uk/Dave/</a></p>
+<p><strong>FIFO/Pipes</strong></p>
+<p><a class="reference external" href="https://linuxprograms">https://linuxprograms</a>.</p>
+<p><strong>Process Scheduling (Crontab)</strong></p>
+<p><a class="reference external" href="http://www.cyberciti.biz/faq/">http://www.cyberciti.biz/faq/</a></p>
+<p><strong>Process and Process Management</strong></p>
+<p>Read chapter 1.1 of&nbsp;Linux Performance and Tuning Guidelines</p>
+<p>Chapter 5 - Process Management of Book:&nbsp;linux-system-</p>
+<p>/proc (Virtual file system):</p>
+<p><a class="reference external" href="http://www.tldp.org/LDP/Linux">http://www.tldp.org/LDP/Linux</a>-</p>
+<p><strong>Difference between bin and sbin</strong></p>
+<p><a class="reference external" href="http://blog.taylormcgann.com/">http://blog.taylormcgann.com/</a></p>
+<p><strong>MARS PathFinder</strong></p>
+<p><a class="reference external" href="http://research.microsoft.com/">http://research.microsoft.com/</a></p>
+<p><a class="reference external" href="http://research.microsoft.com/">http://research.microsoft.com/</a></p>
+<p><strong>Shared Memory</strong></p>
+<p><a class="reference external" href="https://www.cs.cf.ac.uk/Dave/">https://www.cs.cf.ac.uk/Dave/</a></p>
+<p><strong>Fork()</strong></p>
+<p><a class="reference external" href="http://www.csl.mtu.edu/cs4411">http://www.csl.mtu.edu/cs4411</a>.</p>
+<p>Dont use printf for fork(). use write instead.</p>
+<p><strong>SSH</strong></p>
+<p><a class="reference external" href="http://www.linuxhowtos.org/">http://www.linuxhowtos.org/</a></p>
+<p><a class="reference external" href="http://www.slashroot.in/">http://www.slashroot.in/</a></p>
+<p><strong>Virtual Address to Physical Address</strong></p>
+<p><a class="reference external" href="http://www.cs.umd.edu/class/">http://www.cs.umd.edu/class/</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week-03.html" class="btn btn-neutral float-right" title="Week - 3 Linux IoT Training" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="week-01.html" class="btn btn-neutral" title="Week-1 Linux IoT Training" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

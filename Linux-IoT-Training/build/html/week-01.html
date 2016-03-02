@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Week-1 Linux IoT Training &mdash; LIT 1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="LIT 1.1 documentation" href="index.html"/>
+        <link rel="next" title="Week - 2 Linux IoT Training" href="week-02.html"/>
+        <link rel="prev" title="USER GUIDE: LinuxIoT TRAINING" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LIT
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Week-1 Linux IoT Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#task-1-battery-calculation">Task - 1: Battery Calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-2-ieee-754-floating-point-standard-refer-number-systems-exercise-pdf-question-4">Task - 2: IEEE-754  Floating Point Standard (Refer: Number_Systems_Exercise.pdf -Question 4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-3-crc-checksum">Task - 3: CRC &amp; Checksum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-4-vim-editor">Task - 4: Vim Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-5-signal-generator-oscilloscope">Task - 5: Signal Generator &amp; Oscilloscope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-6-special-characters">Task - 6: Special Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-7-bash-how-to">Task - 7: BASH HOW TO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week-02.html">Week - 2 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-03.html">Week - 3 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-04.html">Week - 4 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-05.html">Week - 5 Linux-IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-06.html">Week - 6 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-07.html">Week - 7 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-08.html">Week - 8 Linux IoT Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-09.html">Week - 9 Linux IoT Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-10.html">Week - 10 IoT Protocols: RESTful APIs and COAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week-12.html">Linux IoT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">Settings GNU-Plot</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">LIT</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Week-1 Linux IoT Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/week-01.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="week-1-linux-iot-training">
+<span id="week-01"></span><h1>Week-1 Linux IoT Training<a class="headerlink" href="#week-1-linux-iot-training" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="task-1-battery-calculation">
+<h2>Task - 1: Battery Calculation<a class="headerlink" href="#task-1-battery-calculation" title="Permalink to this headline">¶</a></h2>
+<p>Minimum components required to run a MCU board like Raspberry Pi.</p>
+<p>Power consumption for of each component in full working mode.</p>
+<p>We have 2500 mAh battery. How many days/hours the battery will take to discharge in full working mode of board.</p>
+<p>How to optimize the battery.</p>
+<p>How we can convert the 5V into 3.3V. Name that component or IC.</p>
+<p>Name a communication device that can be used on the design board.</p>
+</div>
+<div class="section" id="task-2-ieee-754-floating-point-standard-refer-number-systems-exercise-pdf-question-4">
+<h2>Task - 2: IEEE-754  Floating Point Standard (Refer: Number_Systems_Exercise.pdf -Question 4)<a class="headerlink" href="#task-2-ieee-754-floating-point-standard-refer-number-systems-exercise-pdf-question-4" title="Permalink to this headline">¶</a></h2>
+<p>Learn the algorithm that how a floating point is saved.</p>
+<p>Code: write a C/C++ code that can present the whole algorithm of IEEE-754.</p>
+<p><a class="reference external" href="https://github.com/Ahmer-444/personal-repo/blob/master/IEEE-754.c">Code for IEEE-754 can be seen or downloaded from github</a></p>
+</div>
+<div class="section" id="task-3-crc-checksum">
+<h2>Task - 3: CRC &amp; Checksum<a class="headerlink" href="#task-3-crc-checksum" title="Permalink to this headline">¶</a></h2>
+<p>Read and Implement CRC and checksums. Why they are used.</p>
+</div>
+<div class="section" id="task-4-vim-editor">
+<h2>Task - 4: Vim Editor<a class="headerlink" href="#task-4-vim-editor" title="Permalink to this headline">¶</a></h2>
+<p>Full command on the Vim Editor. Be full aware of all the utilities that we usually use in MS Word in order to manipulate data in a MS file (i.e copy, cut, paste, select, find etc )</p>
+</div>
+<div class="section" id="task-5-signal-generator-oscilloscope">
+<h2>Task - 5: Signal Generator &amp; Oscilloscope<a class="headerlink" href="#task-5-signal-generator-oscilloscope" title="Permalink to this headline">¶</a></h2>
+<p>Use siggen and xoscope for waveform generation using the sound cards and display it on the screen in bash.</p>
+</div>
+<div class="section" id="task-6-special-characters">
+<h2>Task - 6: Special Characters<a class="headerlink" href="#task-6-special-characters" title="Permalink to this headline">¶</a></h2>
+<p>We should be well aware of meanings of special characters in bash/Linux in order of scripting.</p>
+</div>
+<div class="section" id="task-7-bash-how-to">
+<h2>Task - 7: BASH HOW TO<a class="headerlink" href="#task-7-bash-how-to" title="Permalink to this headline">¶</a></h2>
+<p>How to use bash. Bash full command is necessary to move forward in embedded systems.</p>
+<p>You can follow Bash How to recent pdf.</p>
+<ol class="arabic simple">
+<li>Redirection (STDIN, STDOUT, STDERR) [0 1 2]</li>
+<li>Make your own output file descriptor with fd=3. It is used when 1 process writes to a pipe and another process reads to it later on.</li>
+<li>Pipes are important.</li>
+<li>Conditional Theory</li>
+<li>Loops</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="week-02.html" class="btn btn-neutral float-right" title="Week - 2 Linux IoT Training" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="USER GUIDE: LinuxIoT TRAINING" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Linux IoT.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
