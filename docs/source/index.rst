@@ -16,4 +16,7 @@ USER GUIDE: LinuxIoT TRAINING
    week-08
    week-09
    week-10
+   week-11-12
+   week-13
+   week-14
    appendix

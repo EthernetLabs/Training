@@ -111,7 +111,34 @@
 \BOOKMARK [2][-]{subsection.10.5.2}{Logging in Python}{section.10.5}% 111
 \BOOKMARK [2][-]{subsection.10.5.3}{Coap Implementation in Python \205 aiocoap}{section.10.5}% 112
 \BOOKMARK [2][-]{subsection.10.5.4}{COAP Communication in C}{section.10.5}% 113
-\BOOKMARK [0][-]{chapter.11}{Settings GNU-Plot}{}% 114
-\BOOKMARK [1][-]{section.11.1}{Customization}{chapter.11}% 115
-\BOOKMARK [1][-]{section.11.2}{MULTI-PLOT}{chapter.11}% 116
-\BOOKMARK [1][-]{section.11.3}{Plotting Data}{chapter.11}% 117
+\BOOKMARK [0][-]{chapter.11}{Week 11-12 Linux IoT Training}{}% 114
+\BOOKMARK [1][-]{section.11.1}{Frame Definition}{chapter.11}% 115
+\BOOKMARK [1][-]{section.11.2}{Valid PHY-TYPE Values}{chapter.11}% 116
+\BOOKMARK [1][-]{section.11.3}{Valid DEV-TYPE Values}{chapter.11}% 117
+\BOOKMARK [1][-]{section.11.4}{Valid TOM Values}{chapter.11}% 118
+\BOOKMARK [1][-]{section.11.5}{Valid SEQNUM Values}{chapter.11}% 119
+\BOOKMARK [0][-]{chapter.12}{Week-13 LINUX IoT Training}{}% 120
+\BOOKMARK [1][-]{section.12.1}{DATABASE CREATION , MANAGEMENT AND BACKUPS}{chapter.12}% 121
+\BOOKMARK [2][-]{subsection.12.1.1}{Database Configuration}{section.12.1}% 122
+\BOOKMARK [3][-]{subsubsection*.11}{VM \205 1 \(IP:192.168.122.13\)}{subsection.12.1.1}% 123
+\BOOKMARK [3][-]{subsubsection*.12}{VM \205 2 \(IP: 192.168.122.10\)}{subsection.12.1.1}% 124
+\BOOKMARK [1][-]{section.12.2}{Configuring, Attacking and Securing VRRP on Linux}{chapter.12}% 125
+\BOOKMARK [1][-]{section.12.3}{What is Keepalived}{chapter.12}% 126
+\BOOKMARK [1][-]{section.12.4}{VM \205 3 \(IP: 192.168.122.11\)}{chapter.12}% 127
+\BOOKMARK [1][-]{section.12.5}{VM \205 4 \(IP: 192.168.122.9\)}{chapter.12}% 128
+\BOOKMARK [1][-]{section.12.6}{Network Filesystem - NFS}{chapter.12}% 129
+\BOOKMARK [0][-]{chapter.13}{Week-14 Linux IoT Training}{}% 130
+\BOOKMARK [1][-]{section.13.1}{System Network Management Protocol - SNMP}{chapter.13}% 131
+\BOOKMARK [1][-]{section.13.2}{Basic Understanding and Configuration of Ansible Tool in Linux}{chapter.13}% 132
+\BOOKMARK [1][-]{section.13.3}{What is Linux HA}{chapter.13}% 133
+\BOOKMARK [1][-]{section.13.4}{Amazon Web Service \(AWS\)}{chapter.13}% 134
+\BOOKMARK [1][-]{section.13.5}{Learn in Detail about Apache}{chapter.13}% 135
+\BOOKMARK [2][-]{subsection.13.5.1}{Web-Proxy \(Forward \046 Reverse\)}{section.13.5}% 136
+\BOOKMARK [1][-]{section.13.6}{NGINX}{chapter.13}% 137
+\BOOKMARK [1][-]{section.13.7}{SQUID - A Proxy Server}{chapter.13}% 138
+\BOOKMARK [1][-]{section.13.8}{Icinga - 2}{chapter.13}% 139
+\BOOKMARK [1][-]{section.13.9}{Jenkins}{chapter.13}% 140
+\BOOKMARK [0][-]{chapter.14}{Settings GNU-Plot}{}% 141
+\BOOKMARK [1][-]{section.14.1}{Customization}{chapter.14}% 142
+\BOOKMARK [1][-]{section.14.2}{MULTI-PLOT}{chapter.14}% 143
+\BOOKMARK [1][-]{section.14.3}{Plotting Data}{chapter.14}% 144
