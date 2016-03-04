@@ -5,13 +5,15 @@
 \DeclareUnicodeCharacter{00A0}{\nobreakspace}
 \usepackage{cmap}
 \usepackage[T1]{fontenc}
+\usepackage{amsfonts}
 \usepackage{babel}
 \usepackage{times}
 \usepackage[Bjarne]{fncychap}
 \usepackage{longtable}
 \usepackage{sphinx}
 \usepackage{multirow}
-\usepackage{amsfonts}
+\usepackage{eqparbox}
+
 
 \addto\captionsenglish{\renewcommand{\figurename}{Fig. }}
 \addto\captionsenglish{\renewcommand{\tablename}{Table }}
@@ -20,7 +22,7 @@
 
 
 \title{LIT Documentation}
-\date{February 05, 2016}
+\date{March 03, 2016}
 \release{1.1}
 \author{Weqaar Janjua, Ahmer Malik}
 \newcommand{\sphinxlogo}{}
@@ -1725,7 +1727,7 @@ Sudo apt-get install gnuplot-qt rlwrap
 
 \subsection{Settings}
 \label{week-07:settings}
-For doing diffrent settings for gnu-plot and help {\hyperref[appendix:gnu-plot]{\emph{Settings GNU-Plot}}}
+For doing diffrent settings for gnu-plot and help {\hyperref[appendix:gnu\string-plot]{\emph{Settings GNU-Plot}}}
 
 
 \section{Task - 6: Git-Hub}
@@ -2631,6 +2633,641 @@ To change Python2.7 \(\rightarrow\) Python3.0+
 libcoap is the COAP communication library for C.
 Download libcoap: \href{https://libcoap.net/}{https://libcoap.net/}
 How to use: \href{https://gitlab.informatik.uni-bremen.de/bergmann/libcoap/tree/3e9afb146043a94da25e0e8fc4bc6c03ebc7a2f1/examples}{https://gitlab.informatik.uni-bremen.de/bergmann/libcoap/tree/3e9afb146043a94da25e0e8fc4bc6c03ebc7a2f1/examples}
+
+
+\chapter{Week 11-12 Linux IoT Training}
+\label{week-11-12:week-11-12}\label{week-11-12::doc}\label{week-11-12:week-11-12-linux-iot-training}\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{{GW_FRAME_LIT}.png}
+\caption{\textbf{Frame Structure for WSN Gateway Firmware}}\label{week-11-12:gw-frame}\end{figure}
+
+
+\section{Frame Definition}
+\label{week-11-12:frame-definition}
+\begin{tabulary}{\linewidth}{|L|L|L|L|L|L|L|L|L|L|L|L|L|}
+\hline
+
+Description
+ & 
+Network-ID
+ & 
+Source-ID
+ & 
+Destination-ID
+ & 
+Physical-Type
+ & 
+Device-Type
+ & 
+Type-Of-Message
+ & 
+Priority
+ & 
+Sequence-Number
+ & 
+PDU-Length
+ & 
+PDU-Type
+ & 
+PDU
+ & 
+Encrytion
+\\
+\hline
+Field
+ & 
+NET-ID
+ & 
+SRC-ID
+ & 
+DEST-ID
+ & 
+PHY-TYPE
+ & 
+DEV-TYPE
+ & 
+TOM
+ & 
+PRIO
+ & 
+SEQNUM
+ & 
+PDU-L
+ & 
+PDU-T
+ & 
+PDU
+ & 
+ECC
+\\
+\hline
+Variable (V) / Fixed Length
+ & 
+F
+ & 
+F
+ & 
+F
+ & 
+F
+ & 
+F
+ & 
+F
+ & 
+F
+ & 
+F
+ & 
+F
+ & 
+F
+ & 
+V
+ & 
+V
+\\
+\hline
+Byte Length
+ & 
+2
+ & 
+2
+ & 
+2
+ & 
+1
+ & 
+1
+ & 
+1
+ & 
+1
+ & 
+2
+ & 
+1
+ & 
+1
+ & 
+80
+ & 
+2
+\\
+\hline\end{tabulary}
+
+
+Total Length: 16 - 96 Bytes
+
+
+\section{Valid PHY-TYPE Values}
+\label{week-11-12:valid-phy-type-values}
+\begin{tabular}{|p{0.317\linewidth}|p{0.317\linewidth}|p{0.317\linewidth}|}
+\hline
+\textsf{\relax 
+PHY-TYPE
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+PDU
+}\\
+\hline
+Z
+ & 
+ZigBee: 802.15.4
+ & \\
+\hline
+W
+ & 
+Wireless: 802.11
+ & \\
+\hline
+E
+ & 
+Ethernet: 802.3
+ & \begin{itemize}
+\item {} 
+P : PIR
+
+\item {} 
+A : Acoustic
+
+\item {} 
+S : Siesmic
+
+\item {} 
+V=Video
+
+\end{itemize}
+\\
+\hline\end{tabular}
+
+
+
+\section{Valid DEV-TYPE Values}
+\label{week-11-12:valid-dev-type-values}
+
+\section{Valid TOM Values}
+\label{week-11-12:valid-tom-values}
+\begin{tabular}{|p{0.317\linewidth}|p{0.317\linewidth}|p{0.317\linewidth}|}
+\hline
+\textsf{\relax 
+TOM
+} & \textsf{\relax 
+Description
+} & \textsf{\relax 
+PDU
+}\\
+\hline
+T
+ & 
+Time Synchronization
+ & \\
+\hline
+I
+ & 
+Sequence Number \& Increment Synchronization
+ & \\
+\hline
+P
+ & 
+Type Of Power Source
+ & \begin{itemize}
+\item {} 
+B : Battery
+
+\item {} 
+M : Main
+
+\end{itemize}
+\\
+\hline
+B
+ & 
+Battery Information (\%)
+ & \\
+\hline
+H
+ & 
+Heart-Beat
+ & \\
+\hline
+S
+ & 
+State Of Device
+ & \begin{itemize}
+\item {} 
+O : OFF
+
+\item {} 
+N : ON
+
+\item {} 
+D : DEBUG
+
+\item {} 
+L : GPS Locking
+
+\item {} 
+F : GPS Lock Fail
+
+\item {} 
+S : SLEEP
+
+\item {} 
+W : WAKEUP
+
+\end{itemize}
+\\
+\hline
+R
+ & 
+Registration / Authentication
+ & \\
+\hline
+W
+ & 
+Wireless
+ & \begin{itemize}
+\item {} 
+S : Strength
+
+\item {} 
+I : Internal Antenna
+
+\item {} 
+E : Externel Antenna
+
+\item {} 
+T : Transciever Power
+
+\end{itemize}
+\\
+\hline\end{tabular}
+
+
+
+\section{Valid SEQNUM Values}
+\label{week-11-12:valid-seqnum-values}
+\begin{tabulary}{\linewidth}{|L|L|}
+\hline
+\textsf{\relax 
+SEQNUM
+} & \textsf{\relax 
+Description
+}\\
+\hline
+S
+ & 
+Start Sequence Number (randomly generated) 0-255
+\\
+\hline
+I
+ & 
+Increment in Sequence Number (random) 0-25
+\\
+\hline\end{tabulary}
+
+
+
+\chapter{Week-13 LINUX IoT Training}
+\label{week-13:week-13-linux-iot-training}\label{week-13:week-13}\label{week-13::doc}
+
+\section{DATABASE CREATION , MANAGEMENT AND BACKUPS}
+\label{week-13:database-creation-management-and-backups}
+On ZMQ client on one of the virtual machines VM-1 that stores the IoT Gateway Messages in a queue. Create a mysql database named “LITdb” in another VM-2 (IP = 192.168.122.10). Write a code in python in VM-1 that can connect to remote database at VM-2 and can create a table “LITFRAME” so that remote database can be updated according to the IoT Gateway Messages. We need one more VM named as VM-3 that will work as BACKUP DATABASE. Hence, it is necessary that VM-3 should sync its database with VM-2 database. If somehow, VM-2 shuts off, VM-3 will receive data and update its database, so that whenever, VM-2 wakes-up it should recover all the important messages that it have misses during the die-off period.
+\begin{figure}[htbp]
+\centering
+
+\includegraphics{{DATABASE_MANAGEMENT_TOPPLOGY}.png}
+\label{week-13:is-sweaty}\end{figure}
+
+
+\subsection{Database Configuration}
+\label{week-13:database-configuration}
+
+\subsubsection{VM – 1 (IP:192.168.122.13)}
+\label{week-13:vm-1-ip-192-168-122-13}\begin{enumerate}
+\item {} 
+Install MySQL.
+
+\item {} 
+Write a python code named ZMQ\_Client that receives messages from IoT Gateway. Store it in a  queue. Then, update the local database based on that queue.
+
+\item {} 
+Code is provided on github. \href{https://github.com/LinuxIoT/python-dev}{https://github.com/LinuxIoT/python-dev}
+
+\end{enumerate}
+
+
+\subsubsection{VM – 2 (IP: 192.168.122.10)}
+\label{week-13:vm-2-ip-192-168-122-10}
+\#.Install MySQL
+\begin{enumerate}
+\item {} \begin{description}
+\item[{Start with editing mysql config file.}] \leavevmode
+\emph{vim /etc/mysql/my.cnf}
+\emph{bind-address           = 0.0.0.0}
+
+\end{description}
+
+\item {} \begin{description}
+\item[{Restart mysql server.}] \leavevmode
+\emph{service mysql restart}
+
+\end{description}
+
+\item {} \begin{description}
+\item[{Create a database named as “ LITdb”.}] \leavevmode\begin{itemize}
+\item {} 
+mysql -u root -p
+
+\item {} 
+CREATE DATABASE LITdb;
+
+\item {} 
+USE LITdb;
+
+\item {} \begin{description}
+\item[{Change Privileges or give privileges to remote user.}] \leavevmode
+\href{https://easyengine.io/tutorials/mysql/remote-access/}{https://easyengine.io/tutorials/mysql/remote-access/}
+
+\end{description}
+
+\end{itemize}
+
+\end{description}
+
+\item {} \begin{description}
+\item[{Test at remote station (VM-1) by executing following command that it can access the database         or not.}] \leavevmode
+\emph{mysql -h HOST -u USERNAME -pPASSWORD}
+
+\end{description}
+
+\end{enumerate}
+
+
+\section{Configuring, Attacking and Securing VRRP on Linux}
+\label{week-13:configuring-attacking-and-securing-vrrp-on-linux}
+We will configure VIRTUAL - IP = 192.168.122.12
+\href{http://louwrentius.com/configuring-attacking-and-securing-vrrp-on-linux.html}{http://louwrentius.com/configuring-attacking-and-securing-vrrp-on-linux.html}
+
+
+\section{What is Keepalived}
+\label{week-13:what-is-keepalived}
+Keepalived is a routing software written in C. The main goal of this project is to provide simple and robust facilities for load-balancing and high-availability to Linux system and Linux based infrastructures.
+\href{http://keepalived.org/}{http://keepalived.org/}
+\begin{description}
+\item[{\textbf{What is the requirement for installing or running Load-Balancer like keepalived or Linux-HA?}}] \leavevmode
+Load balancing in HAProxy and Keepalived at the same time also requires the ability to bind to an IP address that are nonlocal, meaning that it is not assigned to a device on the local system. This allows a running load balancer instance to bind to a an IP that is not local for failover.
+
+\end{description}
+
+To enable, edit the line in /etc/sysctl.conf that reads net.ipv4.ip\_nonlocal\_bind to the following:
+net.ipv4.ip\_nonlocal\_bind = 1
+sysctl -p
+\href{https://access.redhat.com/documentation/en-US/Red\_Hat\_Enterprise\_Linux/7/html/Load\_Balancer\_Administration/s1-initial-setup-forwarding-VSA.html}{https://access.redhat.com/documentation/en-US/Red\_Hat\_Enterprise\_Linux/7/html/Load\_Balancer\_Administration/s1-initial-setup-forwarding-VSA.html}
+
+\textbf{ISCSI Initiator settings:}
+\href{https://help.ubuntu.com/lts/serverguide/iscsi-initiator.html}{https://help.ubuntu.com/lts/serverguide/iscsi-initiator.html}
+\href{https://www.howtoforge.com/using-iscsi-on-ubuntu-10.04-initiator-and-target}{https://www.howtoforge.com/using-iscsi-on-ubuntu-10.04-initiator-and-target}
+
+
+\section{VM – 3 (IP: 192.168.122.11)}
+\label{week-13:vm-3-ip-192-168-122-11}
+Same Procedure with VM-3 as we done for VM-2.
+
+
+\section{VM – 4 (IP: 192.168.122.9)}
+\label{week-13:vm-4-ip-192-168-122-9}\begin{itemize}
+\item {} \begin{description}
+\item[{The two dominant IP storage protocols used in virtualization}] \leavevmode
+\(\rightarrow\) NFS
+\(\rightarrow\) ISCSI
+
+\end{description}
+
+\end{itemize}
+
+\textbf{What is iSCSI?}
+
+It is a network storage protocol above TCP/IP. This protocol encapsulates SCSI data into TCP packets.
+\href{https://www.howtoforge.com/iscsi\_on\_linux}{https://www.howtoforge.com/iscsi\_on\_linux}
+
+\textbf{ISCSI – Target Installation – SERVER:}
+
+Follow this link for server installation:
+\href{https://www.howtoforge.com/using-iscsi-on-ubuntu-10.04-initiator-and-target}{https://www.howtoforge.com/using-iscsi-on-ubuntu-10.04-initiator-and-target}
+
+sudo apt-get update
+sudo apt-get install iscsitarget iscsitarget-source iscsitarget-dkms
+
+\textbf{\(\rightarrow\) iscsitaget-source failed -  FiX}
+
+\href{http://installion.co.uk/ubuntu/precise/universe/i/iscsitarget-source/install/index.html}{http://installion.co.uk/ubuntu/precise/universe/i/iscsitarget-source/install/index.html}
+
+First, check that the universe repository is enabled by inspecting `/etc/apt/sources.list' with your favourite editor.
+You will need to use sudo to ensure that you have permissions to edit the file.
+sudo gedit /etc/apt/sources.list
+If universe is not included then modify the file so that it does.
+deb \href{http://us.archive.ubuntu.com/ubuntu}{http://us.archive.ubuntu.com/ubuntu} precise main universe
+After any changes you should run this command to update your system.
+\emph{sudo apt-get update}
+\emph{You can now install the package like this.}
+\emph{sudo apt-get install iscsitarget-source}
+
+\textbf{Again ERROR:}
+\begin{description}
+\item[{\href{mailto:user@ubuntu}{user@ubuntu}:\textasciitilde{}\$ sudo service iscsitarget restart}] \leavevmode\begin{itemize}
+\item {} 
+Removing iSCSI enterprise target devices:           {[} OK {]}
+
+\item {} 
+Starting iSCSI enterprise target service            FATAL: Module iscsi\_trgt not found.
+
+\end{itemize}
+
+\end{description}
+
+\textbf{HOW TO FIX:}
+
+\href{http://sysadmin.wikia.com/wiki/Server\_side\_iscsi\_linux}{http://sysadmin.wikia.com/wiki/Server\_side\_iscsi\_linux}
+
+The error is normal, because we still didn't build the module to use for iSCSI. So, let's do it. To install this new kernel module, you will need to install two packages :
+\# apt-get install module-assistant debhelper
+And now, you are able to build the new kernel module to enable iSCSI target. Let's build the kernel module with this command :
+\# m-a a-i iscsitarget
+If all goes properly, we, now, have to load this new kernel module. Let's do it with this command :
+\# modprobe iscsi\_trgt
+You can known configure your iSCSI target on Debian here.
+
+\textbf{Differences Between NFS and iSCSI}
+
+\href{https://www.usenix.org/legacy/events/fast04/tech/full\_papers/radkov/radkov\_html/node5.html}{https://www.usenix.org/legacy/events/fast04/tech/full\_papers/radkov/radkov\_html/node5.html}
+\href{http://www.infoworld.com/article/2616802/infrastructure-storage/your-fateful-decision--nfs-or-iscsi-.html}{http://www.infoworld.com/article/2616802/infrastructure-storage/your-fateful-decision--nfs-or-iscsi-.html}
+
+NFS and iSCSI provide fundamentally different data sharing semantics. NFS is inherently suitable for data sharing, since it enable files to be shared among multiple client machines. In contrast, a block protocol such as iSCSI supports a single client for each volume on the block server. Consequently, iSCSI permits applications running on a single client machine to share remote data, but it is not directly suitable for sharing data across machines. It is possible, however, to employ iSCSI in shared multi-client environments by designing an appropriate distributed file system that runs on multiple clients and accesses data from block server.
+The implications of caching are also different in the two scenarios. In NFS, the file system is located at the server and so is the file system cache (hits in this cache incur a network hop). NFS clients also employ a cache that can hold both data and meta-data. To ensure consistency across clients, NFS v2 and v3 require that client perform consistency checks with the server on cached data and meta-data. The validity of cached data at the client is implementation-dependent--in Linux, cached meta-data is treated as potentially stale after 3 seconds and cached data after 30 seconds. Thus, meta-data and data reads may trigger a message exchange (i.e., a consistency check) with the server even in the event of a cache hit. NFS v4 can avoid this message exchange for data reads if the server supports file delegation. From the perspective of writes, both data and meta-data writes in NFS v2 are synchronous. NFS v3 and v4 supports asynchronous data writes, but meta-data updates continue to be synchronous. Thus, depending on the version, NFS has different degrees of write-through caching.
+In iSCSI, the caching policy is governed by the file system. Since the file system cache is located at the client, both data and meta-data reads benefit from any cached content. Data updates are asynchronous in most file systems. In modern file systems, meta-data updates are also asynchronous, since such systems use log-based journaling for faster recovery. In the ext3 file system, for instance, meta-data is written asynchronously at commit points. The asynchrony and frequency of these commit points is a trade-off between recovery and performance (ext3 uses a commit interval of 5 seconds). Thus, when used in conjunction with ext3, iSCSI supports a fully write-back cache for data and meta-data updates.
+Observe that the benefits of asynchronous meta-data update in iSCSI come at the cost of lower reliability of data and meta-data persistence than in NFS. Due to synchronous meta-data updates in NFS, both data and meta-data updates persist across client failure. However, in iSCSI, meta-data updates as well as related data may be lost in case client fails prior to flushing the journal and data blocks to the iSCSI server.
+
+
+\section{Network Filesystem - NFS}
+\label{week-13:network-filesystem-nfs}
+\href{https://linuxconfig.org/how-to-configure-nfs-on-linux}{https://linuxconfig.org/how-to-configure-nfs-on-linux}
+- \emph{apt-get install nfs-common (Both Server and Client)}
+
+\textbf{Server}
+- \emph{apt-get install nfs-kernel-server (Server)}
+- \emph{echo `/home/nfs/ *(ro,sync)' \textgreater{} /etc/exports}
+- \emph{vim /home/nfs/nfs-test-files}
+- \emph{sudo service  nfs-kernel-server restart}
+
+\textbf{Client}
+\begin{itemize}
+\item {} 
+\emph{mkdir /home/nfs\_local}
+
+\item {} 
+\emph{mount IP-Address:/home/nfs /home/nfs\_local}
+
+\end{itemize}
+
+
+\chapter{Week-14 Linux IoT Training}
+\label{week-14::doc}\label{week-14:week-14}\label{week-14:week-14-linux-iot-training}
+
+\section{System Network Management Protocol - SNMP}
+\label{week-14:system-network-management-protocol-snmp}\begin{enumerate}
+\item {} 
+\textbf{What is SNMP? Basic understanding of SNMP.}
+
+\end{enumerate}
+
+\href{http://www.thegeekstuff.com/2012/09/snmp-introduction/}{http://www.thegeekstuff.com/2012/09/snmp-introduction/}
+\href{https://www.digitalocean.com/community/tutorials/an-introduction-to-snmp-simple-network-management-protocol}{https://www.digitalocean.com/community/tutorials/an-introduction-to-snmp-simple-network-management-protocol}
+\begin{enumerate}
+\item {} 
+\textbf{How to Configure SNMP Manager and SNMP Agent in Linux?}
+
+\end{enumerate}
+
+\href{https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-an-snmp-daemon-and-client-on-ubuntu-14-04}{https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-an-snmp-daemon-and-client-on-ubuntu-14-04}
+
+
+\section{Basic Understanding and Configuration of Ansible Tool in Linux}
+\label{week-14:basic-understanding-and-configuration-of-ansible-tool-in-linux}
+\href{http://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/}{http://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/}
+\href{http://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/2/}{http://www.tecmint.com/install-and-configure-ansible-automation-tool-in-linux/2/}
+\begin{enumerate}
+\item {} 
+\textbf{How to Use Ansible Playbooks to Automate Complex Tasks on Multiple Remote Servers}
+
+\end{enumerate}
+
+\href{http://www.tecmint.com/use-ansible-playbooks-to-automate-complex-tasks-on-multiple-linux-servers/}{http://www.tecmint.com/use-ansible-playbooks-to-automate-complex-tasks-on-multiple-linux-servers/}
+\begin{enumerate}
+\item {} 
+\textbf{How to change directory for ansible hosts and playbooks.}
+
+\end{enumerate}
+
+\emph{ansible-playbook -vvv -i \textasciitilde{}/Ahmer/Techknox/ansible/hosts \textasciitilde{}/Ahmer/Techknox/ansible/playbooks/apache.yml}
+
+
+\section{What is Linux HA}
+\label{week-14:what-is-linux-ha}
+A way for the cluster to communicate about its state and configuration, this is called a cluster messaging layer.
+A way to automatically manage the resources of the cluster, the cluster resource manager (CRM).
+Some kind of middle ware between the resource manager and the actual resources, sometimes called resource agents.
+
+\href{http://frankgroeneveld.nl/2014/03/23/basic-concepts-of-high-availability-linux/}{http://frankgroeneveld.nl/2014/03/23/basic-concepts-of-high-availability-linux/}
+\href{https://www.howtoforge.com/high\_availability\_heartbeat\_centos}{https://www.howtoforge.com/high\_availability\_heartbeat\_centos}
+
+
+\section{Amazon Web Service (AWS)}
+\label{week-14:amazon-web-service-aws}
+Learn AWS in detail as well its cli tool to manage the AWS utilities from command line.
+How to manage its EBS, VM instances, Queues etc.
+
+
+\section{Learn in Detail about Apache}
+\label{week-14:learn-in-detail-about-apache}
+
+\subsection{Web-Proxy (Forward \& Reverse)}
+\label{week-14:web-proxy-forward-reverse}
+\href{http://linuxpoison.blogspot.com/2010/01/configuring-apache-as-forward-reverse.html}{http://linuxpoison.blogspot.com/2010/01/configuring-apache-as-forward-reverse.html}
+\href{https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod\_proxy-extension}{https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod\_proxy-extension}
+
+
+\section{NGINX}
+\label{week-14:nginx}\begin{enumerate}
+\item {} 
+\textbf{Look into NGINX}
+
+\end{enumerate}
+
+
+\section{SQUID - A Proxy Server}
+\label{week-14:squid-a-proxy-server}\begin{enumerate}
+\item {} 
+\textbf{Basic Understanding of Proxy Web-Server}
+
+\end{enumerate}
+
+\href{http://www.brennan.id.au/11-Squid\_Web\_Proxy.html}{http://www.brennan.id.au/11-Squid\_Web\_Proxy.html}
+\begin{enumerate}
+\item {} 
+\textbf{whatis.techtarget.com/definition/Squid-proxy-server}
+
+\item {} 
+\textbf{How to use and configure Squid Proxy Server?}
+
+\end{enumerate}
+
+\href{https://help.ubuntu.com/lts/serverguide/squid.html}{https://help.ubuntu.com/lts/serverguide/squid.html}
+\href{http://www.computersecuritystudent.com/UNIX/UBUNTU/1204/lesson12/}{http://www.computersecuritystudent.com/UNIX/UBUNTU/1204/lesson12/}
+\href{https://www.linode.com/docs/networking/squid/squid-http-proxy-ubuntu-12-04}{https://www.linode.com/docs/networking/squid/squid-http-proxy-ubuntu-12-04}
+\href{http://www.cyberciti.biz/faq/linux-unix-clearing-squid-proxy-cache-and-recreate-dirs/}{http://www.cyberciti.biz/faq/linux-unix-clearing-squid-proxy-cache-and-recreate-dirs/}
+\href{http://www.tecmint.com/configure-squid-server-in-linux/}{http://www.tecmint.com/configure-squid-server-in-linux/}
+\begin{enumerate}
+\item {} 
+\textbf{How to ban Particular Websites?}
+
+\end{enumerate}
+
+Vim /etc/squid3/squid.conf
+
+\href{http://www.thegeekstuff.com/2010/09/squid-control-internet-access/}{http://www.thegeekstuff.com/2010/09/squid-control-internet-access/}
+
+http\_port 8020
+
+visible\_hostname LITproxy
+
+acl client src 192.168.10.19
+
+acl ban\_domains dstdomain ``/etc/squid3/ban\_domains''
+
+http\_access deny ban\_domains client
+
+http\_access allow client
+
+
+\section{Icinga - 2}
+\label{week-14:icinga-2}
+Basic Hands on Experience on Icinga - 2
+
+
+\section{Jenkins}
+\label{week-14:jenkins}
+Basic learning of Jenkins tool for automatic build and deployemnet in a huge network.
+\begin{itemize}
+\item {} 
+Write a jenkins job for automatic build of our Linux IoT Gateway firmware.
+
+\end{itemize}
 \phantomsection\label{appendix:appendix}
 
 \chapter{Settings GNU-Plot}
