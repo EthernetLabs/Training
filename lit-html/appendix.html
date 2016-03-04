@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>APPENDIX &mdash; LIT_Project 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="LIT_Project 0.0.1 documentation" href="index.html" />
+    <link rel="prev" title="WIRELESS SENSOR NETWORK" href="chapter-2.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="chapter-2.html" title="WIRELESS SENSOR NETWORK"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIT_Project 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="appendix">
+<span id="id1"></span><h1>APPENDIX<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="create-development-kvm-s">
+<h2>Create Development KVM&#8217;s<a class="headerlink" href="#create-development-kvm-s" title="Permalink to this headline">¶</a></h2>
+<p>Write a bash script that can create a KVM with a particular name, size and location using VM-Builder.</p>
+<p>We have to create 3 KVM&#8217;s for our development in IoT.</p>
+<p><strong>→ PYTHON-DEV</strong>                Python Development
+<strong>→ C-DEV</strong>                     C Development
+<strong>→ RIOTOS-DEV</strong>                RIOT OS Development</p>
+<p>Also make three repositories with the same name as kvm&#8217;s have, on git-hub.</p>
+<div class="section" id="vm-script">
+<h3>VM-Script<a class="headerlink" href="#vm-script" title="Permalink to this headline">¶</a></h3>
+<p># Author: Ahmer Malik</p>
+<p># Company: Techknox System</p>
+<p># Version: 0.1</p>
+<p># Description:This script is used create a kvm using VM-builder. Follow the link for understanding : https://www.howtoforge.com/creating-virtual-machines-for-xen-kvm-vmware-workstation-6-vmware-server-with-vmbuilder-on-ubuntu-8.10-p2</p>
+<p>#!/bin/bash</p>
+<p># Name of KVM you want to build</p>
+<p>VM_NAME=c-dev</p>
+<p># Path of KVM, where to build</p>
+<p>_PATH=scripted_kvms/$VM_NAME</p>
+<p>mkdir -p $_PATH/mytemplates/libvirt/</p>
+<p>cp /etc/vmbuilder/libvirt/* $_PATH/mytemplates/libvirt/</p>
+<p>echo root 1000 &gt; $_PATH/vmbuilder.partition</p>
+<p>echo swap 500 &gt;&gt; $_PATH/vmbuilder.partition</p>
+<p>echo /var 5000 &gt;&gt; $_PATH/vmbuilder.partition</p>
+<p>echo passwd -e ahmer &gt; $_PATH/boot.sh</p>
+<p>echo apt-get update &#8211;apt-get install -qqy &#8211;force-yes openssh-server &gt;&gt; $_PATH/boot.sh</p>
+<p>sudo chmod +x $_PATH/boot.sh</p>
+<p>cd $_PATH</p>
+<p># Commands used to create the Ubuntu:Trusty KVM
+vmbuilder kvm ubuntu &#8211;suite=trusty &#8211;flavour=virtual &#8211;arch=amd64 &#8211;mirror=http://de.archive.ubuntu.com/ubuntu -o &#8211;tmpfs=- &#8211;libvirt=qemu:///system &#8211;ip=192.168.7.2  &#8211;part=vmbuilder.partition &#8211;templates=mytemplates &#8211;user=ahmer &#8211;name=ahmer &#8211;pass=ahmer &#8211;addpkg=vim-nox &#8211;addpkg=unattended-upgrades &#8211;addpkg=acpid &#8211;addpkg=linux-image-generic &#8211;firstboot=/home/ahmer/Techknox/Make_Your_KVM_script/$_PATH/boot.sh &#8211;mem=512 &#8211;cpus=1 &#8211;hostname=$VM_NAME</p>
+</div>
+</div>
+<div class="section" id="snapshots">
+<h2>Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">¶</a></h2>
+<p>Schedule a process that runs daily at specific time and take the snapshots of all of your working KVM&#8217;s. We will use <strong>crontab</strong> for scheduling purposes as we have done it our earlier labs.</p>
+<p><strong>What is a snapshot?</strong></p>
+<p>Keeping the backup of anything, is called snapshot.</p>
+<p><strong>What are different types of snapshots for qcow2 images?</strong></p>
+<p><strong>→ VM State Snapshot</strong></p>
+<blockquote>
+<div><p>This will save the guest/domain state to a file. So, if you take a snapshot including VM state, we      can then shut off that guest and use the freed up memory for other purposes on the host or for  other guests. Internally this calls qemu monitor’s ‘savevm’ command. Note that this only takes  care of VM state(and not disk snapshot).</p>
+<p><cite>virsh list (shows the list off all running guests)</cite></p>
+<p><strong>To save the state</strong></p>
+<p><cite>virsh save VM_NAME BACKUP_VM_NAME</cite></p>
+<p><strong>To restore the state</strong></p>
+<p><cite>virsh restore BACKUP_VM_NAME</cite></p>
+</div></blockquote>
+<p><strong>→ Internal snapshot</strong></p>
+<blockquote>
+<div><p>A type of snapshot, where a single QCOW2 file will hold both the <strong>saved state</strong> and the <strong>delta</strong> since that saved point. <strong>Internal snapshots</strong> are very handy because it’s only a single file where  all the snapshot info. is captured, and easy to copy/move around the machines.</p>
+<p><strong>Create Snapshot</strong></p>
+<p><cite>virsh snapshot-create-as VM_NAME VM_NAME-DEV</cite></p>
+<p><strong>Internal Snapshot Details</strong></p>
+<p><cite>virsh snapshot-list VM_NMAE</cite></p>
+<p><cite>qemu-img info ~/Techknox/Make_Your_KVM_script/scripted_kvms/python-dev/ubuntu- kvm/tmpq0JMWS.qcow2</cite></p>
+<p><strong>Delete Snapshot</strong></p>
+<p><cite>virsh snapshot-delete VM_NAME VM_NAME-DEV</cite></p>
+<p><strong>Revert Snapshot</strong> - To Start Guest From the Saved State.</p>
+<p><cite>virsh snapshot-revert python-dev snap-python-dev</cite></p>
+</div></blockquote>
+<p>For better understanding follow the following link:</p>
+<p><a class="reference external" href="http://kashyapc.com/2011/10/04/snapshotting-with-libvirt-for-qcow2-images/">http://kashyapc.com/2011/10/04/snapshotting-with-libvirt-for-qcow2-images/</a></p>
+<p><a class="reference external" href="https://kashyapc.fedorapeople.org/virt/lc-2012/snapshots-handout.html">https://kashyapc.fedorapeople.org/virt/lc-2012/snapshots-handout.html</a></p>
+<blockquote>
+<div>IPV6:</div></blockquote>
+<p><a class="reference external" href="http://www.tutorialspoint.com/ipv6/ipv6_address_types.htm">http://www.tutorialspoint.com/ipv6/ipv6_address_types.htm</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">APPENDIX</a><ul>
+<li><a class="reference internal" href="#create-development-kvm-s">Create Development KVM&#8217;s</a><ul>
+<li><a class="reference internal" href="#vm-script">VM-Script</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#snapshots">Snapshots</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="chapter-2.html"
+                        title="previous chapter">WIRELESS SENSOR NETWORK</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/appendix.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="chapter-2.html" title="WIRELESS SENSOR NETWORK"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">LIT_Project 0.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Weqaar Janjua, Ahmer Malik.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.4.
+    </div>
+  </body>
+</html>
