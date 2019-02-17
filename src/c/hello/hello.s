@@ -1,4 +1,5 @@
 	.file	"hello.c"
+	.intel_syntax noprefix
 	.globl	string
 	.section	.rodata
 .LC0:
@@ -18,17 +19,17 @@ string:
 main:
 .LFB0:
 	.cfi_startproc
-	pushq	%rbp
+	push	rbp
 	.cfi_def_cfa_offset 16
 	.cfi_offset 6, -16
-	movq	%rsp, %rbp
+	mov	rbp, rsp
 	.cfi_def_cfa_register 6
-	movq	string(%rip), %rax
-	movq	%rax, %rsi
-	movl	$.LC1, %edi
-	movl	$0, %eax
+	mov	rax, QWORD PTR string[rip]
+	mov	rsi, rax
+	mov	edi, OFFSET FLAT:.LC1
+	mov	eax, 0
 	call	printf
-	popq	%rbp
+	pop	rbp
 	.cfi_def_cfa 7, 8
 	ret
 	.cfi_endproc

@@ -1,3 +1,3 @@
 #include <stdio.h>
 
-char *string = "hello sabir";
+char *string = "Hello Linux!";
