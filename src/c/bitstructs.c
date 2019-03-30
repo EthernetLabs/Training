@@ -29,6 +29,8 @@ void sighandler(int signum)
 }
 
 int main(void) {
+    int x = 0b0011;
+    int y = 0b0101;
     printf ("\xD\xA");
     printf ("WORDSIZE is: %d\n", __WORDSIZE);
     printf ("sizeof struct is: %lu\n", sizeof(object));
@@ -37,8 +39,9 @@ int main(void) {
     printf ("struct3.state2 is: %c\n", object.state2);
     printf ("get_states() is: %d\n", get_states().state1);
     printf ("sizeof int: %lu, char: %lu, double: %lu, float: %lu\n", sizeof(int), sizeof(char), sizeof(double), sizeof(float));
-    signal(SIGSEGV, sighandler);
-    signal(SIGINT, sighandler);
+    //signal(SIGSEGV, sighandler);
+    //signal(SIGINT, sighandler);
+    printf("binary z = %d\n", x&y);
     printf("Process %d waits for someone to send it SIGSEGV\n", getpid());
     //while (1) {
     //};

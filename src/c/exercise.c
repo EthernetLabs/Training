@@ -47,9 +47,12 @@ void sighandler(int signum)
 
 //int main(int cliargsnum, char *cliargs[]) {
 int main(int argc, char *argv[]) {
+    struct3 _str;
     printf ("\xD\xA");
     printf ("cli args num: %d \n", argc);
     assert ((argc >= 2) && (argc <=4));
+    _str = get_states();
+    printf ("%d", _str.state4);
 
 }
 

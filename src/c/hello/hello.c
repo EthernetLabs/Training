@@ -1,6 +1,9 @@
 #include "hello.h"
 
 void main(void) {
-    printf ("%s\xD\xA", string);
+    unsigned char temperature;
+    temperature = 200;
+    printf ("%d\xD\xA", temperature);
+    
 }
 

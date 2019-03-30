@@ -5,7 +5,7 @@ union STATES {
     char state2; 
     float state3; 
     int state4; 
-    double state5; 
+    long double state5; 
     int state6;
 } union1, union2;
 
@@ -17,8 +17,8 @@ int get_states()
 
 int set_states()
 {
-    union2.state4 = 709;
-    return union2.state4;
+    union1.state4 = 709;
+    return union1.state4;
 };
 
 int main(void) {
@@ -26,8 +26,9 @@ int main(void) {
     printf ("sizeof union is: %lu\n", sizeof(union1));
     printf ("sizeof char is: %lu\n", sizeof(int));
     printf ("union1.state1 is: %d\n", union1.state1);
+    printf ("union1.state4 is: %d\n", set_states());
     printf ("current state is: %d\n", get_states());
-    printf ("union2.state4 is: %d\n", set_states());
+    printf ("union1.state6 is: %d\n", union1.state6);
     printf ("union1.statey is: %d\n", union1.statey);
     return 0;
 }
