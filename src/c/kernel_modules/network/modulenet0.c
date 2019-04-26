@@ -3,7 +3,8 @@
 #include <linux/kernel.h>
 #include <linux/workqueue.h>
 #include <linux/sched.h>
-//#include <linux/interrupt.h>
+#include <linux/interrupt.h>
+//Special files
 #include <linux/netdevice.h>   /* struct device, and other headers */
 #include <linux/etherdevice.h> /* eth_type_trans */
 #include <linux/ethtool.h>

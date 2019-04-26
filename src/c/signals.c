@@ -30,7 +30,7 @@ void sighandler(int signum)
 }
 
 
-int main(void) {
+void main(void) {
     printf ("\xD\xA");
     printf ("sizeof struct is: %lu\n", sizeof(struct3));
     printf ("struct1.state1 is: %d\n", struct3.state1);
@@ -40,6 +40,5 @@ int main(void) {
     printf("Process %d waits for someone to send it SIGSEGV\n", getpid());
     while (1) {
     };
-    return 0;
 }
 
