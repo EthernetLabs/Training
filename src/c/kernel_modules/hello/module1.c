@@ -42,10 +42,6 @@ static void _call_printk(struct work_struct *work)
 
 static int _init_module(void)
 {
-    //__fptr __fptr_ptr;
-    //__fptr_ptr.callfunc = printk;
-	//__fptr_ptr.callfunc(KERN_ALERT "Hi Weqaar\n");
-	//_call_printk("Hi Weqaar\n");
 	__queue = create_workqueue(_QUEUE_NAME);
 	queue_delayed_work(__queue, &Task, 100);
     return 0;

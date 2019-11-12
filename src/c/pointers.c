@@ -58,6 +58,7 @@ int main(void) {
     PointerTarget(&x, 22);
     printf("X = %d\n", x);
     printf("pi = %p\n", (void *)pi);
+    printf ("sizeof char ptr is %d\n", sizeof(struct3.ptr));
     goto labelx;
     printf("_array[3] = %d\n", 7[_array]);
     return 0;

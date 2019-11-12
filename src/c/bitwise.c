@@ -6,22 +6,14 @@
 //Macros
 #define BITS_PER_BYTE (8)
 
-/* extract the n-th bit of x */
-#define GET_BIT(x, n) ((((x)[(n) / BITS_PER_BYTE]) & (0x1 << ((n) % BITS_PER_BYTE))) != 0)
-
-/* set the n-th bit of x to 1 */
-#define SET_BIT(x, n) ((x)[(n) / BITS_PER_BYTE]) |= (0x1 << ((n) % BITS_PER_BYTE))
-
-/* set the n-th bit of x to 0 */
-#define RESET_BIT(x, n) ((x)[(n) / BITS_PER_BYTE]) &= ~(0x1 << ((n) % BITS_PER_BYTE))
-
 unsigned char x = 0xFF;
 unsigned char y = 0x00;
-//int y = 1;
+size_t a = 0, b = 0;
+unsigned char halfmask = 0x0F;
 
 //divide
 int shift_right(void) {
-    return x >> y;
+    return x >> 2;
 }
 
 //mul
@@ -49,20 +41,25 @@ int test_zero(void) {
     }
 }
 
-int test_var(void) {
-    if (y) {
+int test_both_zero(void) {
+    if ((a|b)==0) {
         printf ("True\n");
+    }
+    else {
+        printf ("False\n");
     }
 }
 
 int main(void) {
+    int y = 0;
+    char z = 0x0f;
     printf ("\xD\xA");
     printf ("WORDSIZE is: %d\n", __WORDSIZE);
     printf("shift right = %d\n", shift_right());
     printf("shift left = %d\n", shift_left());
     //printf("GET BIT 0 = %d\n", GET_BIT(x, 0));
     test_zero();
-    test_var();
+    test_both_zero();
     return 0;
 }
 

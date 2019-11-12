@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 enum STATES {
     state1 = 200, 
@@ -9,18 +10,20 @@ enum STATES {
     state6
 };
 
-enum STATES _ENUM_TYPE;
+//enum STATES _ENUM_TYPE;
 
 enum STATES get_states()
 {
-      return state2;
+      return state1;
 };
 
 int main(void) {
     printf ("\xD\xA");
-    printf ("size of enum: %d \xD\xA", sizeof(_ENUM_TYPE)); 
+    size_t _x = 3500;
+    //printf ("size of enum: %d \xD\xA", sizeof(_ENUM_TYPE)); 
     printf ("current state is: %d\n", get_states()); 
     printf ("enum is: %d\n", state5); 
+    printf ("sizeof _x is: %d\n", sizeof(_x)); 
     return 0;
 }
 

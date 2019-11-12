@@ -1,0 +1,1 @@
+cmd_/opt/repo/Training/src/c/kernel_modules/hello/module0.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /opt/repo/Training/src/c/kernel_modules/hello/module0.ko /opt/repo/Training/src/c/kernel_modules/hello/module0.o /opt/repo/Training/src/c/kernel_modules/hello/module0.mod.o ;  true
