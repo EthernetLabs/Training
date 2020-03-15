@@ -12,9 +12,9 @@ enum STATES {
 
 //enum STATES _ENUM_TYPE;
 
-enum STATES get_states()
+int get_states()
 {
-      return state1;
+      return state3;
 };
 
 int main(void) {
