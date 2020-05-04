@@ -1,8 +1,8 @@
-cmd_/home/weqaar/c/kernel_modules/hello/module1.o := gcc -Wp,-MD,/home/weqaar/c/kernel_modules/hello/.module1.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/6/include -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -include ./include/linux/compiler_types.h -D__KERNEL__ -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -std=gnu89 -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_AVX512=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -fno-jump-tables -fno-delete-null-pointer-checks -Wno-frame-address -O2 --param=allow-store-data-races=0 -Wframe-larger-than=2048 -fstack-protector-strong -Wno-unused-but-set-variable -Wno-unused-const-variable -fomit-frame-pointer -fno-var-tracking-assignments -Wdeclaration-after-statement -Wvla -Wno-pointer-sign -fno-strict-overflow -fno-merge-all-constants -fmerge-constants -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init  -DMODULE  -DKBUILD_BASENAME='"module1"' -DKBUILD_MODNAME='"module1"' -c -o /home/weqaar/c/kernel_modules/hello/module1.o /home/weqaar/c/kernel_modules/hello/module1.c
+cmd_/opt/repo/Training/src/c/kernel_modules/pci/pciModule.o := gcc -Wp,-MD,/opt/repo/Training/src/c/kernel_modules/pci/.pciModule.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/6/include -I./arch/x86/include -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./arch/x86/include/generated/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -include ./include/linux/compiler_types.h -D__KERNEL__ -Wall -Wundef -Werror=strict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -fshort-wchar -fno-PIE -Werror=implicit-function-declaration -Werror=implicit-int -Wno-format-security -std=gnu89 -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_AVX512=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -fno-jump-tables -fno-delete-null-pointer-checks -Wno-frame-address -O2 --param=allow-store-data-races=0 -Wframe-larger-than=2048 -fstack-protector-strong -Wno-unused-but-set-variable -Wno-unused-const-variable -fomit-frame-pointer -fno-var-tracking-assignments -Wdeclaration-after-statement -Wvla -Wno-pointer-sign -fno-strict-overflow -fno-merge-all-constants -fmerge-constants -fno-stack-check -fconserve-stack -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init  -DMODULE  -DKBUILD_BASENAME='"pciModule"' -DKBUILD_MODNAME='"pciModule"' -c -o /opt/repo/Training/src/c/kernel_modules/pci/pciModule.o /opt/repo/Training/src/c/kernel_modules/pci/pciModule.c
 
-source_/home/weqaar/c/kernel_modules/hello/module1.o := /home/weqaar/c/kernel_modules/hello/module1.c
+source_/opt/repo/Training/src/c/kernel_modules/pci/pciModule.o := /opt/repo/Training/src/c/kernel_modules/pci/pciModule.c
 
-deps_/home/weqaar/c/kernel_modules/hello/module1.o := \
+deps_/opt/repo/Training/src/c/kernel_modules/pci/pciModule.o := \
   include/linux/kconfig.h \
     $(wildcard include/config/cpu/big/endian.h) \
     $(wildcard include/config/booger.h) \
@@ -664,6 +664,7 @@ deps_/home/weqaar/c/kernel_modules/hello/module1.o := \
     $(wildcard include/config/modules/use/elf/rel.h) \
     $(wildcard include/config/modules/use/elf/rela.h) \
   arch/x86/include/asm/orc_types.h \
+  include/linux/uaccess.h \
   include/linux/sched.h \
     $(wildcard include/config/virt/cpu/accounting/native.h) \
     $(wildcard include/config/sched/info.h) \
@@ -763,6 +764,133 @@ deps_/home/weqaar/c/kernel_modules/hello/module1.o := \
   include/linux/task_io_accounting.h \
     $(wildcard include/config/task/io/accounting.h) \
   include/uapi/linux/rseq.h \
+  arch/x86/include/asm/uaccess.h \
+    $(wildcard include/config/x86/intel/usercopy.h) \
+  arch/x86/include/asm/smap.h \
+  arch/x86/include/asm/extable.h \
+  arch/x86/include/asm/uaccess_64.h \
+  include/linux/cred.h \
+    $(wildcard include/config/debug/credentials.h) \
+    $(wildcard include/config/keys.h) \
+  include/linux/capability.h \
+  include/uapi/linux/capability.h \
+  include/linux/key.h \
+  include/linux/assoc_array.h \
+    $(wildcard include/config/associative/array.h) \
+  include/linux/sched/user.h \
+    $(wildcard include/config/fanotify.h) \
+    $(wildcard include/config/epoll.h) \
+    $(wildcard include/config/posix/mqueue.h) \
+    $(wildcard include/config/bpf/syscall.h) \
+    $(wildcard include/config/net.h) \
+    $(wildcard include/config/io/uring.h) \
+  include/linux/ratelimit.h \
+  include/linux/proc_fs.h \
+  include/linux/fs.h \
+    $(wildcard include/config/fs/posix/acl.h) \
+    $(wildcard include/config/cgroup/writeback.h) \
+    $(wildcard include/config/ima.h) \
+    $(wildcard include/config/fsnotify.h) \
+    $(wildcard include/config/fs/encryption.h) \
+    $(wildcard include/config/file/locking.h) \
+    $(wildcard include/config/quota.h) \
+    $(wildcard include/config/fs/dax.h) \
+    $(wildcard include/config/mandatory/file/locking.h) \
+    $(wildcard include/config/migration.h) \
+  include/linux/wait_bit.h \
+  include/linux/kdev_t.h \
+  include/uapi/linux/kdev_t.h \
+  include/linux/dcache.h \
+  include/linux/rculist_bl.h \
+  include/linux/list_bl.h \
+  include/linux/bit_spinlock.h \
+  include/linux/lockref.h \
+    $(wildcard include/config/arch/use/cmpxchg/lockref.h) \
+  include/linux/stringhash.h \
+    $(wildcard include/config/dcache/word/access.h) \
+  include/linux/hash.h \
+    $(wildcard include/config/have/arch/hash.h) \
+  include/linux/path.h \
+  include/linux/list_lru.h \
+    $(wildcard include/config/memcg/kmem.h) \
+  include/linux/shrinker.h \
+  include/linux/semaphore.h \
+  include/linux/fcntl.h \
+    $(wildcard include/config/arch/32bit/off/t.h) \
+  include/uapi/linux/fcntl.h \
+  arch/x86/include/uapi/asm/fcntl.h \
+  include/uapi/asm-generic/fcntl.h \
+  include/uapi/linux/fiemap.h \
+  include/linux/migrate_mode.h \
+  include/linux/percpu-rwsem.h \
+  include/linux/rcuwait.h \
+  include/linux/rcu_sync.h \
+  include/linux/delayed_call.h \
+  include/linux/uuid.h \
+  include/uapi/linux/uuid.h \
+  include/linux/errseq.h \
+  include/linux/ioprio.h \
+  include/linux/sched/rt.h \
+  include/linux/iocontext.h \
+  include/linux/fs_types.h \
+  include/uapi/linux/fs.h \
+  include/linux/quota.h \
+    $(wildcard include/config/quota/netlink/interface.h) \
+  include/linux/percpu_counter.h \
+  include/uapi/linux/dqblk_xfs.h \
+  include/linux/dqblk_v1.h \
+  include/linux/dqblk_v2.h \
+  include/linux/dqblk_qtree.h \
+  include/linux/projid.h \
+  include/uapi/linux/quota.h \
+  include/linux/nfs_fs_i.h \
+  /opt/repo/Training/src/c/kernel_modules/pci/pciModule.h \
+  include/linux/pci.h \
+    $(wildcard include/config/pci/iov.h) \
+    $(wildcard include/config/pcieaer.h) \
+    $(wildcard include/config/pcieaspm.h) \
+    $(wildcard include/config/hotplug/pci/pcie.h) \
+    $(wildcard include/config/pcie/ptm.h) \
+    $(wildcard include/config/pci/ats.h) \
+    $(wildcard include/config/pci/pri.h) \
+    $(wildcard include/config/pci/pasid.h) \
+    $(wildcard include/config/pci/p2pdma.h) \
+    $(wildcard include/config/pci/domains/generic.h) \
+    $(wildcard include/config/pcieportbus.h) \
+    $(wildcard include/config/pcie/ecrc.h) \
+    $(wildcard include/config/pci/domains.h) \
+    $(wildcard include/config/pci/quirks.h) \
+    $(wildcard include/config/hibernate/callbacks.h) \
+    $(wildcard include/config/acpi/mcfg.h) \
+    $(wildcard include/config/hotplug/pci.h) \
+    $(wildcard include/config/of.h) \
+    $(wildcard include/config/eeh.h) \
+  include/linux/mod_devicetable.h \
+  include/linux/ioport.h \
+  include/linux/device.h \
+    $(wildcard include/config/debug/devres.h) \
+    $(wildcard include/config/generic/msi/irq/domain.h) \
+    $(wildcard include/config/pinctrl.h) \
+    $(wildcard include/config/generic/msi/irq.h) \
+    $(wildcard include/config/dma/declare/coherent.h) \
+    $(wildcard include/config/dma/cma.h) \
+    $(wildcard include/config/arch/has/sync/dma/for/device.h) \
+    $(wildcard include/config/arch/has/sync/dma/for/cpu.h) \
+    $(wildcard include/config/arch/has/sync/dma/for/cpu/all.h) \
+    $(wildcard include/config/devtmpfs.h) \
+    $(wildcard include/config/sysfs/deprecated.h) \
+  include/linux/klist.h \
+  include/linux/pm.h \
+    $(wildcard include/config/vt/console/sleep.h) \
+    $(wildcard include/config/pm.h) \
+    $(wildcard include/config/pm/clk.h) \
+    $(wildcard include/config/pm/generic/domains.h) \
+  arch/x86/include/asm/device.h \
+    $(wildcard include/config/intel/iommu.h) \
+    $(wildcard include/config/amd/iommu.h) \
+    $(wildcard include/config/sta2x11.h) \
+    $(wildcard include/config/x86/dev/dma/ops.h) \
+  include/linux/pm_wakeup.h \
   include/linux/interrupt.h \
     $(wildcard include/config/irq/forced/threading.h) \
     $(wildcard include/config/generic/irq/probe.h) \
@@ -782,8 +910,105 @@ deps_/home/weqaar/c/kernel_modules/hello/module1.o := \
   arch/x86/include/asm/irq.h \
   arch/x86/include/asm/sections.h \
   include/asm-generic/sections.h \
-  arch/x86/include/asm/extable.h \
+  include/linux/io.h \
+    $(wildcard include/config/have/arch/huge/vmap.h) \
+  include/linux/resource_ext.h \
+  include/linux/slab.h \
+    $(wildcard include/config/debug/slab.h) \
+    $(wildcard include/config/failslab.h) \
+    $(wildcard include/config/have/hardened/usercopy/allocator.h) \
+    $(wildcard include/config/slab.h) \
+    $(wildcard include/config/slub.h) \
+    $(wildcard include/config/slob.h) \
+  include/linux/kasan.h \
+    $(wildcard include/config/kasan/generic.h) \
+  include/uapi/linux/pci.h \
+  include/uapi/linux/pci_regs.h \
+  include/linux/pci_ids.h \
+  include/linux/dmapool.h \
+    $(wildcard include/config/has/dma.h) \
+  include/linux/scatterlist.h \
+    $(wildcard include/config/need/sg/dma/length.h) \
+    $(wildcard include/config/debug/sg.h) \
+    $(wildcard include/config/sgl/alloc.h) \
+    $(wildcard include/config/arch/no/sg/chain.h) \
+    $(wildcard include/config/sg/pool.h) \
+  include/linux/mm.h \
+    $(wildcard include/config/have/arch/mmap/rnd/bits.h) \
+    $(wildcard include/config/have/arch/mmap/rnd/compat/bits.h) \
+    $(wildcard include/config/arch/uses/high/vma/flags.h) \
+    $(wildcard include/config/arch/has/pkeys.h) \
+    $(wildcard include/config/ppc.h) \
+    $(wildcard include/config/parisc.h) \
+    $(wildcard include/config/sparc64.h) \
+    $(wildcard include/config/stack/growsup.h) \
+    $(wildcard include/config/dev/pagemap/ops.h) \
+    $(wildcard include/config/shmem.h) \
+    $(wildcard include/config/debug/vm/rb.h) \
+    $(wildcard include/config/page/poisoning.h) \
+    $(wildcard include/config/debug/pagealloc.h) \
+    $(wildcard include/config/arch/has/set/direct/map.h) \
+    $(wildcard include/config/hibernation.h) \
+    $(wildcard include/config/hugetlbfs.h) \
+  include/linux/percpu-refcount.h \
+  include/linux/page_ext.h \
+    $(wildcard include/config/idle/page/tracking.h) \
+  include/linux/stacktrace.h \
+    $(wildcard include/config/stacktrace.h) \
+    $(wildcard include/config/arch/stackwalk.h) \
+    $(wildcard include/config/have/reliable/stacktrace.h) \
+  include/linux/stackdepot.h \
+  include/linux/page_ref.h \
+    $(wildcard include/config/debug/page/ref.h) \
+  include/linux/page-flags.h \
+    $(wildcard include/config/arch/uses/pg/uncached.h) \
+    $(wildcard include/config/memory/failure.h) \
+    $(wildcard include/config/swap.h) \
+    $(wildcard include/config/thp/swap.h) \
+    $(wildcard include/config/ksm.h) \
+  include/linux/memremap.h \
+  include/linux/sizes.h \
+  arch/x86/include/asm/pgtable.h \
+    $(wildcard include/config/debug/wx.h) \
+    $(wildcard include/config/have/arch/transparent/hugepage/pud.h) \
+    $(wildcard include/config/have/arch/soft/dirty.h) \
+    $(wildcard include/config/arch/enable/thp/migration.h) \
+  arch/x86/include/asm/pgtable_64.h \
+  arch/x86/include/asm/pgtable-invert.h \
+  include/asm-generic/pgtable.h \
+    $(wildcard include/config/x86/espfix64.h) \
+  include/linux/huge_mm.h \
+  include/linux/sched/coredump.h \
+    $(wildcard include/config/core/dump/default/elf/headers.h) \
+  include/linux/vmstat.h \
+    $(wildcard include/config/vm/event/counters.h) \
+    $(wildcard include/config/debug/tlbflush.h) \
+    $(wildcard include/config/debug/vm/vmacache.h) \
+  include/linux/vm_event_item.h \
+    $(wildcard include/config/memory/balloon.h) \
+    $(wildcard include/config/balloon/compaction.h) \
+  arch/x86/include/asm/pci.h \
+    $(wildcard include/config/pci/msi/irq/domain.h) \
+    $(wildcard include/config/vmd.h) \
+  arch/x86/include/asm/pat.h \
+  arch/x86/include/asm/pci_64.h \
+    $(wildcard include/config/calgary/iommu.h) \
+  include/asm-generic/pci.h \
+  include/linux/pci-dma-compat.h \
+  include/linux/dma-mapping.h \
+    $(wildcard include/config/swiotlb.h) \
+    $(wildcard include/config/arch/has/setup/dma/ops.h) \
+    $(wildcard include/config/arch/has/teardown/dma/ops.h) \
+    $(wildcard include/config/need/dma/map/state.h) \
+  include/linux/dma-debug.h \
+    $(wildcard include/config/dma/api/debug.h) \
+  include/linux/dma-direction.h \
+  arch/x86/include/asm/dma-mapping.h \
+    $(wildcard include/config/isa.h) \
+  arch/x86/include/asm/swiotlb.h \
+  include/linux/swiotlb.h \
+  include/linux/dma-contiguous.h \
 
-/home/weqaar/c/kernel_modules/hello/module1.o: $(deps_/home/weqaar/c/kernel_modules/hello/module1.o)
+/opt/repo/Training/src/c/kernel_modules/pci/pciModule.o: $(deps_/opt/repo/Training/src/c/kernel_modules/pci/pciModule.o)
 
-$(deps_/home/weqaar/c/kernel_modules/hello/module1.o):
+$(deps_/opt/repo/Training/src/c/kernel_modules/pci/pciModule.o):

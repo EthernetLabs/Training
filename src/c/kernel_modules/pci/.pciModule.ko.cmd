@@ -1,0 +1,1 @@
+cmd_/opt/repo/Training/src/c/kernel_modules/pci/pciModule.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /opt/repo/Training/src/c/kernel_modules/pci/pciModule.ko /opt/repo/Training/src/c/kernel_modules/pci/pciModule.o /opt/repo/Training/src/c/kernel_modules/pci/pciModule.mod.o ;  true

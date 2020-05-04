@@ -1,2 +1,2 @@
-kernel//opt/repo/Training/src/c/kernel_modules/hello/module0.ko
-kernel//opt/repo/Training/src/c/kernel_modules/hello/module1.ko
+kernel//home/weqaar/c/kernel_modules/hello/module0.ko
+kernel//home/weqaar/c/kernel_modules/hello/module1.ko

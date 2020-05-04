@@ -1,3 +1,3 @@
-/opt/repo/Training/src/c/kernel_modules/hello/module1.ko
-/opt/repo/Training/src/c/kernel_modules/hello/module1.o
+/home/weqaar/c/kernel_modules/hello/module1.ko
+/home/weqaar/c/kernel_modules/hello/module1.o
 

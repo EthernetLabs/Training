@@ -41,23 +41,23 @@ u_char getbyte(unsigned int hex) {
  * _bit:    no. of bit to set - 0-7
  * _byte:   ptr to _byte to be modified 
  */
-
-int set_bit(u_char _bit, u_char * _byte)
+typedef enum {OFF=0, ON=1} toggle;
+int set_bit(u_char _bit, u_char * _byte, toggle bitmode)
 {
-    printf("_bit to set is: %d\n", _bit);
+    printf("_bit to set is: %d\nbitmode is: %d\n", _bit, bitmode);
     *_byte |= 1u << _bit; //*_byte = *byte | 1 << _bit;
-
+    printf(" 1<< _bit: %d\n", 1 << _bit);
 };
 
 int main(void) {
     _BYTE_ byte;
-    byte.bit0 = 0b0;
+    byte.bit0 = 0b1;
     byte.bit1 = 0b0;
     byte.bit2 = 0b0;
     byte.bit3 = 0b0;
     byte.bit4 = 0b0;
     byte.bit5 = 0b0;
-    byte.bit6 = 0b0;
+    byte.bit6 = 0b1;
     byte.bit7 = 0b0;
 
     _BYTE_ * byte_ptr = &byte;
@@ -78,7 +78,7 @@ int main(void) {
 
     byte.bit0 = 0b0;
 
-    set_bit(3, (u_char *) byte_ptr);
+    set_bit(3, (u_char *) byte_ptr, OFF);
 
     printf("custom_byte bit0 = %d\n", byte.bit0);
     printf("custom_byte bit1 = %d\n", byte.bit1);
