@@ -162,10 +162,17 @@ static void _call_printk(struct work_struct *work)
 //PCI
 static int nic_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 {
+	int err;
 	struct net_device *netdev;
 	struct e1000_adapter *adapter = NULL;
 	struct e1000_hw *hw;
 	bool disable_dev = false;
+
+	pciDev = pdev;
+
+	err = pci_enable_device(pdev);
+	if (err)
+		return err;
 
 	if (!adapter || disable_dev)
 		pci_disable_device(pdev);
@@ -175,6 +182,7 @@ static int nic_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 static void nic_remove(struct pci_dev *pdev)
 {
 	pci_disable_device(pdev);
+    printk(KERN_INFO "DEBUG>> NIC removed\n");
 }
 
 static int nic_resume(struct pci_dev *pdev)
@@ -229,6 +237,11 @@ static int _init_module(void)
 	printk(KERN_INFO "/proc/%s created\n", ENTRY_NAME);
 
 	//pci
+	
+	if (pci_dev_present(intel_rtl_nics_table)) {
+        printk(KERN_INFO "Device present!\n");
+	}
+
 	//https://elixir.bootlin.com/linux/v5.1/source/include/linux/pci.h#L770
 	pciDriver.name = ENTRY_NAME;
 	pciDriver.id_table = intel_rtl_nics_table;
@@ -240,11 +253,9 @@ static int _init_module(void)
 
 	pci_register_driver(&pciDriver);
 
-	if (pci_dev_present(intel_rtl_nics_table)) {
-        printk(KERN_INFO "Device present!\n");
-	}
-
+	/*
     pciDev = pci_get_device(NIC_VENDOR_ID, NIC_DEVICE_ID, NULL);
+	*/
     if(!pciDev) {
         printk(KERN_INFO "Device not found\n");
 		return pciDev;
