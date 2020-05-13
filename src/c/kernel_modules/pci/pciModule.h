@@ -2,13 +2,6 @@
 #include <linux/workqueue.h>
 #include <linux/pci.h>
 
-/* PCI
-*  NIC: RTL8139
-*  
-*/
-#define NIC_VENDOR_ID   0x10EC
-#define NIC_DEVICE_ID   0x8139
-
 /* PROC
 */
 #define ENTRY_NAME          "pciModule"
@@ -33,7 +26,7 @@ static const struct pci_device_id intel_rtl_nics_table[] = {
     //INTEL_E1000_ETHERNET_DEVICE(0x100E),
     //RTL_8139_ETHERNET_DEVICE(0x8139),
     INTEL_E1000_ETHERNET_DEVICE,
-    RTL_8139_ETHERNET_DEVICE,
+    //RTL_8139_ETHERNET_DEVICE,
     { 0, },
 };
 

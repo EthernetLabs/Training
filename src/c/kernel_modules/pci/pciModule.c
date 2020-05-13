@@ -22,7 +22,6 @@ MODULE_AUTHOR("Weqaar Janjua");
 MODULE_DESCRIPTION("Weqaar's Linux PCI driver");
 MODULE_VERSION("0.0.1");
 
-extern int printk(const char *fmt, ...); //printk header: asmlinkage __visible int printk(const char *fmt, ...)
 typedef int (*_printk_ptr)(const char *fmt, ...); //define func pointer
 
 typedef struct _fps {
@@ -160,67 +159,54 @@ static void _call_printk(struct work_struct *work)
 }
 
 //PCI
+//enables PIC device
 static int nic_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 {
-	int err;
+	int ret;
 	struct net_device *netdev;
 	struct e1000_adapter *adapter = NULL;
 	struct e1000_hw *hw;
 	bool disable_dev = false;
 
-	pciDev = pdev;
+    printk(KERN_INFO "nic_probe: Device found [%x]:[%x]\n", pdev->vendor, pdev->device);
+    printk(KERN_INFO "nic_probe: Device IRQ: %d\n", pdev->irq);
+    
+	printk(KERN_INFO "Enabling Device: [%x]:[%x]\n", pdev->vendor, pdev->device);
+	ret = pci_enable_device(pdev);//dd book p.314
+	if (ret)
+    	printk(KERN_INFO "ret: %d\n", ret);
+		return ret;
 
-	err = pci_enable_device(pdev);
-	if (err)
-		return err;
-
-	if (!adapter || disable_dev)
+	if (!adapter || disable_dev) {
 		pci_disable_device(pdev);
+    	printk(KERN_INFO "Device disabled: [%x]:[%x]\n", pdev->vendor, pdev->device);
+	}
 	return 1;
 }
 
 static void nic_remove(struct pci_dev *pdev)
 {
+    printk(KERN_INFO "DEBUG>> nic_remove\n");
 	pci_disable_device(pdev);
     printk(KERN_INFO "DEBUG>> NIC removed\n");
 }
 
 static int nic_resume(struct pci_dev *pdev)
 {
+    printk(KERN_INFO "DEBUG>> nic_resume\n");
 	pci_disable_device(pdev);
 }
 
 static int nic_suspend(struct pci_dev *pdev, pm_message_t state)
 {
+    printk(KERN_INFO "DEBUG>> nic_suspend\n");
 	pci_disable_device(pdev);
 }
 
 static void nic_shutdown(struct pci_dev *pdev)
 {
+    printk(KERN_INFO "DEBUG>> nic_shutdown\n");
 	pci_disable_device(pdev);
-}
-
-static struct pci_dev* probe_pci_nic(void) 
-{
-        /* Ensure we are not working on a non-PCI system *
-        if(!pci_present( )) {
-               LOG_MSG("<1>pci not present\n");
-               return pdev;
-        }
-        /* Look for RealTek 8139 NIC */
-	
-	
-	pciDev = pci_get_device(NIC_VENDOR_ID, NIC_DEVICE_ID, NULL);
-	
-    if(!pciDev) {
-        printk(KERN_INFO "Device not found\n");
-		return pciDev;
-	}
-    else {
-        printk(KERN_INFO "Device found [%x]:[%x]\n", pciDev->vendor, pciDev->device);
-        printk(KERN_INFO "Device IRQ: %d\n", pciDev->irq);
-		return pciDev;
-	}
 }
 
 //Kernel module specific functions
@@ -232,7 +218,7 @@ static int _init_module(void)
 	//proc
 	pciModule_proc_entry = proc_create(ENTRY_NAME, S_IFREG | S_IRUGO| S_IWUSR, NULL, &procFileOps);
   	if (pciModule_proc_entry == NULL)
-    	return -ENOMEM;
+    	return ret;
 
 	printk(KERN_INFO "/proc/%s created\n", ENTRY_NAME);
 
@@ -240,6 +226,9 @@ static int _init_module(void)
 	
 	if (pci_dev_present(intel_rtl_nics_table)) {
         printk(KERN_INFO "Device present!\n");
+	} else {
+        printk(KERN_INFO "Error: device not present!\n");
+    	return ret;
 	}
 
 	//https://elixir.bootlin.com/linux/v5.1/source/include/linux/pci.h#L770
@@ -253,17 +242,9 @@ static int _init_module(void)
 
 	pci_register_driver(&pciDriver);
 
-	/*
-    pciDev = pci_get_device(NIC_VENDOR_ID, NIC_DEVICE_ID, NULL);
-	*/
-    if(!pciDev) {
-        printk(KERN_INFO "Device not found\n");
-		return pciDev;
-	}
-    else {
-        printk(KERN_INFO "Device found [%x]:[%x]\n", pciDev->vendor, pciDev->device);
-        printk(KERN_INFO "Device IRQ: %d\n", pciDev->irq);
-	}
+	//access config space
+
+
 	return 0;
 }
 
