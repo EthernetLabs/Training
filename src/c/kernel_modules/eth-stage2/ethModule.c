@@ -34,7 +34,7 @@ Features:
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Weqaar Janjua");
 MODULE_DESCRIPTION("Stage-2 Ethernet Linux PCI NIC driver");
-MODULE_VERSION("0.1.3");
+MODULE_VERSION("0.1.4");
 
 //ETH
 static const struct net_device_ops eth_netdev_ops = {
@@ -171,7 +171,7 @@ static void _call_printk(struct work_struct *work)
 static int nic_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 {
 	int ret;
-	struct net_device *netdev;
+	//struct net_device *netdev;
 
     printk(KERN_INFO "nic_probe: Device found [%x]:[%x]\n", pdev->vendor, pdev->device);
     printk(KERN_INFO "nic_probe: Device IRQ: %d\n", pdev->irq);
@@ -184,6 +184,7 @@ static int nic_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 	}
 
 	pciDev = pdev;
+	//memcpy(pciDev, pdev, sizeof(struct pci_dev));
 
 	return 1;
 }
@@ -217,7 +218,7 @@ void eth_init(struct net_device *eth_dev)
 {
 	ether_setup(eth_dev); /* assign some of the fields */
 	eth_dev->netdev_ops = &eth_netdev_ops;
-	eth_dev->flags     	|= IFF_NOARP;
+	eth_dev->flags     	|= IFF_BROADCAST;
 	eth_dev->features  	|= NETIF_F_HW_CSUM;
 
 	//This isn't necessary to register net_device
@@ -232,6 +233,8 @@ void eth_init(struct net_device *eth_dev)
 static int _init_module(void)
 {
 	int i, result, ret = -ENOMEM;
+	unsigned long mmio_start, mmio_end, mmio_len, mmio_flags;
+    void *ioaddr;
 
 	//proc
 	pciModule_proc_entry = proc_create(ENTRY_NAME, S_IFREG | S_IRUGO| S_IWUSR, NULL, &procFileOps);
@@ -268,6 +271,60 @@ static int _init_module(void)
 	
 	if (eth_net_device == NULL)
 		goto out;
+
+	priv->pciDev = pciDev;
+
+	//
+	 /* get PCI memory mapped I/O space base address from BAR1 */
+	/*
+	mmio_start = pci_resource_start(pciDev, 1);
+	mmio_end = pci_resource_end(pciDev, 1);
+	mmio_len = pci_resource_len(pciDev, 1);
+	mmio_flags = pci_resource_flags(pciDev, 1);
+	*/
+	mmio_start = pci_resource_start(priv->pciDev, 1);
+	mmio_end = pci_resource_end(priv->pciDev, 1);
+	mmio_len = pci_resource_len(priv->pciDev, 1);
+	mmio_flags = pci_resource_flags(priv->pciDev, 1);
+
+	/* make sure above region is MMI/O */
+	if(!(mmio_flags & IORESOURCE_MEM)) {
+			printk(KERN_INFO "region not MMI/O region\n");
+			goto out;
+	}
+	
+	/* get PCI memory space */
+	if(pci_request_regions(priv->pciDev, DRIVER_NAME)) {
+			printk(KERN_INFO "Could not get PCI region\n");
+			goto out;
+	}
+
+	pci_set_master(priv->pciDev);
+
+	/* ioremap MMI/O region */
+	ioaddr = ioremap(mmio_start, mmio_len);
+	if(!ioaddr) {
+			printk(KERN_INFO "Could not ioremap\n");
+			goto out;
+	}
+
+	eth_net_device->base_addr = (long)ioaddr;
+	priv->mmio_addr = ioaddr;
+	priv->regs_len = mmio_len;
+
+	for(i = 0; i < 6; i++) {  /* Hardware Address */
+		eth_net_device->dev_addr[i] = readb(eth_net_device->base_addr+i);
+		eth_net_device->broadcast[i] = 0xff;
+	}
+	eth_net_device->hard_header_len = 14;
+
+	memcpy(eth_net_device->name, DRIVER_NAME, sizeof(DRIVER_NAME));
+
+	eth_net_device->irq = (priv->pciDev)->irq;
+	//eth_net_device->open = eth_open;
+	//eth_net_device->stop = eth_stop;
+	//eth_net_device->hard_start_xmit = eth_start_xmit;
+	//eth_net_device->get_stats = eth_get_stats;
 
 	for (i = 0; i < 1;  i++)
 		if ((result = register_netdev(eth_net_device)))

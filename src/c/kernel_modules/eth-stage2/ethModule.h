@@ -5,6 +5,7 @@
 /* PROC
 */
 #define ENTRY_NAME          "ethModule-stage2"
+#define DRIVER_NAME         ENTRY_NAME
 #define PERMS               0644
 #define PARENT              NULL
 #define PROCFS_MAX_SIZE 	2048
@@ -27,8 +28,11 @@ static struct pci_driver pciDriver;
 static struct net_device *eth_net_device;
 
 static struct eth_priv {
+    struct pci_dev *pciDev;
 	struct net_device_stats stats;
 	int status;
+    void *mmio_addr; /* memory mapped I/O addr */
+    unsigned long regs_len; /* length of I/O or MMI/O region */
 };
 
 static struct eth_priv *priv;
