@@ -71,6 +71,7 @@ int eth_ioctl(struct net_device *, struct ifreq *, int);
 struct net_device_stats *eth_stats(struct net_device *);
 int	eth_set_mac_addr(struct net_device *, void *);
 bool eth_validate_header(const char *, unsigned int);
+int	eth_validate_addr(struct net_device *);
 int eth_create_header(struct sk_buff *, struct net_device *, unsigned short, const void *, const void *, unsigned);
 struct eth_packet *eth_get_tx_buffer(struct net_device *);
 void eth_release_buffer(struct eth_packet *);

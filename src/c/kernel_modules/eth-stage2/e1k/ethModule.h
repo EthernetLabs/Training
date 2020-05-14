@@ -38,6 +38,15 @@ static struct eth_priv {
 static struct eth_priv *priv;
 
 int eth_open(struct net_device *);
+int eth_release(struct net_device *);
+int eth_config(struct net_device *, struct ifmap *);
+static void eth_hw_tx(char *, int, struct net_device *);
+int eth_tx(struct sk_buff *, struct net_device *);
+static void eth_tx_timeout (struct net_device *);
+int eth_ioctl(struct net_device *, struct ifreq *, int);
+struct net_device_stats *eth_stats(struct net_device *);
+int	eth_set_mac_addr(struct net_device *, void *);
+int	eth_validate_addr(struct net_device *);
 
 //KERNEL
 typedef int (*_printk_ptr)(const char *fmt, ...);
@@ -50,7 +59,6 @@ typedef struct _fps {
 //https://elixir.bootlin.com/linux/latest/source/drivers/net/ethernet/intel/e1000/e1000_main.c
 static const struct pci_device_id intel_rtl_nics_table[] = {
     INTEL_E1000_ETHERNET_DEVICE,
-    //RTL_8139_ETHERNET_DEVICE,
     { 0, },
 };
 

@@ -39,11 +39,109 @@ MODULE_VERSION("0.1.4");
 //ETH
 static const struct net_device_ops eth_netdev_ops = {
 	.ndo_open            = eth_open,
+	.ndo_stop            = eth_release,
+	.ndo_start_xmit      = eth_tx,
+	.ndo_do_ioctl        = eth_ioctl,
+	.ndo_set_config      = eth_config,
+	.ndo_get_stats       = eth_stats,
+	.ndo_change_mtu      = eth_change_mtu,
+	.ndo_tx_timeout      = eth_tx_timeout,
+	.ndo_set_mac_address = eth_set_mac_addr,
+	.ndo_validate_addr	 = eth_validate_addr
+	//.ndo_bpf = modulenet_bpf, //https://elixir.bootlin.com/linux/latest/source/include/linux/netdevice.h#L1267
+	//.nod_xdp_xmit = modulenet_xdp_xmi
 };
 
 int eth_open(struct net_device *eth_dev)
 {
 	return 0;
+}
+
+int eth_release(struct net_device *eth_dev)
+{
+    /* release ports, irq and such -- like fops->close */
+
+	netif_stop_queue(eth_dev); /* can't transmit any more */
+	return 0;
+}
+
+/*
+ * Configuration changes (passed on by ifconfig)
+ */
+int eth_config(struct net_device *eth_dev, struct ifmap *map)
+{
+	if (eth_dev->flags & IFF_UP) /* can't act on a running interface */
+		return -EBUSY;
+
+	/* Don't allow changing the I/O address */
+	if (map->base_addr != eth_dev->base_addr) {
+		printk(KERN_WARNING "eth: Can't change I/O address\n");
+		return -EOPNOTSUPP;
+	}
+
+	/* Allow changing the IRQ */
+	if (map->irq != eth_dev->irq) {
+		eth_dev->irq = map->irq;
+        	/* request_irq() is delayed to open-time */
+	}
+
+	/* ignore other fields */
+	return 0;
+}
+
+/*
+ * Transmit a packet (low level interface)
+ */
+static void eth_hw_tx(char *buf, int len, struct net_device *eth_dev)
+{
+
+}
+
+/*
+ * Transmit a packet (called by the kernel)
+ */
+int eth_tx(struct sk_buff *skb, struct net_device *eth_dev)
+{
+	return 0; /* Our simple device can not fail */
+}
+
+/*
+ * Deal with a transmit timeout.
+ */
+void eth_tx_timeout (struct net_device *eth_dev)
+{
+	return;
+}
+
+/*
+ * Ioctl commands 
+ */
+int eth_ioctl(struct net_device *eth_dev, struct ifreq *rq, int cmd)
+{
+    printk(KERN_INFO "ioctl\n");
+	return 0;
+}
+
+/*
+ * Return statistics to the caller
+ */
+struct net_device_stats *eth_stats(struct net_device *eth_dev)
+{
+	struct eth_priv *priv = netdev_priv(eth_dev);
+	return &priv->stats;
+}
+
+bool eth_validate_header(const char *ll_header, unsigned int len)
+{
+	return 0;
+}
+
+int	eth_set_mac_addr(struct net_device *eth_dev, void *addr) {
+
+}
+
+int	eth_validate_addr(struct net_device *eth_dev) {
+
 }
 
 //PROC
@@ -186,7 +284,7 @@ static int nic_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 	pciDev = pdev;
 	//memcpy(pciDev, pdev, sizeof(struct pci_dev));
 
-	return 1;
+	return ret;
 }
 
 static void nic_remove(struct pci_dev *pdev)
@@ -221,6 +319,8 @@ void eth_init(struct net_device *eth_dev)
 	eth_dev->flags     	|= IFF_BROADCAST;
 	eth_dev->features  	|= NETIF_F_HW_CSUM;
 
+	printk(KERN_INFO "DEBUG>> eth_init\n");
+
 	//This isn't necessary to register net_device
 	priv = netdev_priv(eth_dev);
 	memset(priv, 0, sizeof(struct eth_priv));
@@ -237,12 +337,14 @@ static int _init_module(void)
     void *ioaddr;
 
 	//proc
+	/*
 	pciModule_proc_entry = proc_create(ENTRY_NAME, S_IFREG | S_IRUGO| S_IWUSR, NULL, &procFileOps);
   	if (pciModule_proc_entry == NULL)
     	return ret;
 
 	printk(KERN_INFO "/proc/%s created\n", ENTRY_NAME);
-
+	*/
+	printk(KERN_INFO "DEBUG>> init\n");
 	//pci
 	if (pci_dev_present(intel_rtl_nics_table)) {
         printk(KERN_INFO "Device present!\n");
@@ -269,24 +371,26 @@ static int _init_module(void)
 
 	ret = -ENODEV;
 	
-	if (eth_net_device == NULL)
+	if (eth_net_device == NULL) {
+		printk(KERN_INFO "DEBUG>> eth_net_device is NULL\n");
 		goto out;
+	}
 
 	priv->pciDev = pciDev;
 
 	//
 	 /* get PCI memory mapped I/O space base address from BAR1 */
-	/*
+	
 	mmio_start = pci_resource_start(pciDev, 1);
 	mmio_end = pci_resource_end(pciDev, 1);
 	mmio_len = pci_resource_len(pciDev, 1);
 	mmio_flags = pci_resource_flags(pciDev, 1);
-	*/
+	/*
 	mmio_start = pci_resource_start(priv->pciDev, 1);
 	mmio_end = pci_resource_end(priv->pciDev, 1);
 	mmio_len = pci_resource_len(priv->pciDev, 1);
 	mmio_flags = pci_resource_flags(priv->pciDev, 1);
-
+	*/
 	/* make sure above region is MMI/O */
 	if(!(mmio_flags & IORESOURCE_MEM)) {
 			printk(KERN_INFO "region not MMI/O region\n");
@@ -300,6 +404,7 @@ static int _init_module(void)
 	}
 
 	pci_set_master(priv->pciDev);
+	printk(KERN_INFO "DEBUG>> pci_set_master\n");
 
 	/* ioremap MMI/O region */
 	ioaddr = ioremap(mmio_start, mmio_len);
@@ -318,13 +423,15 @@ static int _init_module(void)
 	}
 	eth_net_device->hard_header_len = 14;
 
-	memcpy(eth_net_device->name, DRIVER_NAME, sizeof(DRIVER_NAME));
+	//memcpy(eth_net_device->name, DRIVER_NAME, sizeof(DRIVER_NAME));
 
-	eth_net_device->irq = (priv->pciDev)->irq;
-	//eth_net_device->open = eth_open;
-	//eth_net_device->stop = eth_stop;
-	//eth_net_device->hard_start_xmit = eth_start_xmit;
-	//eth_net_device->get_stats = eth_get_stats;
+	/*
+	eth_net_device->irq = pciDev->irq;
+	eth_net_device->open = eth_open;
+	eth_net_device->stop = eth_stop;
+	eth_net_device->hard_start_xmit = eth_start_xmit;
+	eth_net_device->get_stats = eth_get_stats;
+	*/
 
 	for (i = 0; i < 1;  i++)
 		if ((result = register_netdev(eth_net_device)))
