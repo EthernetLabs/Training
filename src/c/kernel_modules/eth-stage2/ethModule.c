@@ -1,6 +1,6 @@
 /*
 modulenet kernel driver - NIC
-Stage 1
+Stage 2
 Author: Weqaar Janjua
 
 Features:
@@ -17,14 +17,13 @@ Features:
 #include <linux/cred.h>
 #include <linux/proc_fs.h>
 
-//misc
+//
 #include <linux/sched.h>
 #include <linux/slab.h> /* kmalloc() */
 #include <linux/errno.h>  /* error codes */
 #include <linux/types.h>  /* size_t */
 #include <linux/interrupt.h> /* mark_bh */
 
-//net
 #include <linux/in.h>
 #include <linux/netdevice.h>   /* struct device, and other headers */
 #include <linux/etherdevice.h> /* eth_type_trans */
@@ -34,8 +33,8 @@ Features:
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Weqaar Janjua");
-MODULE_DESCRIPTION("Stage-1 Ethernet Linux PCI NIC driver");
-MODULE_VERSION("0.1.2");
+MODULE_DESCRIPTION("Stage-2 Ethernet Linux PCI NIC driver");
+MODULE_VERSION("0.1.3");
 
 //ETH
 static const struct net_device_ops eth_netdev_ops = {
@@ -54,7 +53,6 @@ int eth_open(struct net_device *eth_dev)
 static ssize_t procfs_read(struct file *filp, char *buffer,	size_t length, loff_t * offset)
 {
 	static int finished = 0;
-
 
 	if ( finished ) {
 		printk(KERN_INFO "procfs_read: END\n");
@@ -175,7 +173,6 @@ static int nic_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
 	int ret;
 	struct net_device *netdev;
 
-
     printk(KERN_INFO "nic_probe: Device found [%x]:[%x]\n", pdev->vendor, pdev->device);
     printk(KERN_INFO "nic_probe: Device IRQ: %d\n", pdev->irq);
     
@@ -234,7 +231,6 @@ void eth_init(struct net_device *eth_dev)
 //Kernel module specific functions
 static int _init_module(void)
 {
-
 	int i, result, ret = -ENOMEM;
 
 	//proc

@@ -1,5 +1,6 @@
 /*
 modulenet kernel driver - NIC
+Stage 1
 Author: Weqaar Janjua
 
 Features:
@@ -36,8 +37,8 @@ Features:
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Weqaar Janjua");
-MODULE_DESCRIPTION("Weqaar's Linux PCI driver");
-MODULE_VERSION("0.0.1");
+MODULE_DESCRIPTION("Stage-1 Ethernet Linux PCI NIC driver");
+MODULE_VERSION("0.1.1");
 
 //module parameters
 static int lockup = 0;
@@ -628,9 +629,12 @@ static int nic_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
     
 	printk(KERN_INFO "Enabling Device: [%x]:[%x]\n", pdev->vendor, pdev->device);
 	ret = pci_enable_device(pdev);//dd book p.314
-	if (ret)
+	if (ret) {
     	printk(KERN_INFO "ret: %d\n", ret);
 		return ret;
+	}
+
+	pciDev = pdev;
 
 	if (!adapter || disable_dev) {
 		pci_disable_device(pdev);
@@ -676,23 +680,11 @@ void eth_init(struct net_device *eth_dev)
 	eth_dev->watchdog_timeo = timeout;
 	eth_dev->netdev_ops = &eth_netdev_ops;
 	eth_dev->header_ops = &_eth_header_ops;
-	eth_dev->irq = DEV_IRQ;
+	//eth_dev->irq = DEV_IRQ;
 	/* keep the default flags, just add NOARP */
 	eth_dev->flags           |= IFF_NOARP;
 	eth_dev->features        |= NETIF_F_HW_CSUM;
 
-	/*
-	dev = alloc_etherdev(sizeof(struct rtl8139_private));
-	if(!dev) {
-			LOG_MSG("Could not allocate etherdev\n");
-			return -1;
-	}
-
-	tp = dev->priv;
-	tp->pci_dev = pdev;
-	*dev_out = dev;
-	*/
-	
 	priv = netdev_priv(eth_dev);
 	if (use_napi) {
 		netif_napi_add(eth_dev, &priv->napi, eth_poll, 2);
@@ -713,7 +705,6 @@ static int _init_module(void)
 	int i, result, ret = -ENOMEM;
 	unsigned long mmio_start, mmio_end, mmio_len, mmio_flags;
     void *ioaddr;
-    struct eth_priv *tp;
 
     eth_interrupt = use_napi ? eth_napi_interrupt : eth_regular_interrupt;
 
@@ -785,7 +776,10 @@ static void _cleanup_module(void)
 	__fptr_ptr.callfunc(KERN_ALERT "__JANJUA__ EXITING!\n");
 
 	//unregister proc
+	unregister_netdev(eth_net_device);
+	free_netdev(eth_net_device);
 	pci_unregister_driver(&pciDriver);
+	pci_disable_device(pciDev);
 	proc_remove(pciModule_proc_entry);
 	__fptr_ptr.callfunc(KERN_INFO "/proc/%s removed\n", ENTRY_NAME);
     

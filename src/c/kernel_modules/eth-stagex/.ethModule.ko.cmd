@@ -1,0 +1,1 @@
+cmd_/opt/repo/Training/src/c/kernel_modules/eth-stage1/ethModule.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /opt/repo/Training/src/c/kernel_modules/eth-stage1/ethModule.ko /opt/repo/Training/src/c/kernel_modules/eth-stage1/ethModule.o /opt/repo/Training/src/c/kernel_modules/eth-stage1/ethModule.mod.o ;  true
