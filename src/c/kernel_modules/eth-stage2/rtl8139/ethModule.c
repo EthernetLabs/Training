@@ -33,8 +33,8 @@ Features:
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Weqaar Janjua");
-MODULE_DESCRIPTION("Stage-2 Ethernet Linux PCI NIC driver");
-MODULE_VERSION("0.1.4");
+MODULE_DESCRIPTION("Stage-2 Ethernet Linux PCI NIC driver for rtl8139");
+MODULE_VERSION("0.1.5");
 
 //ETH
 static const struct net_device_ops eth_netdev_ops = {
@@ -337,13 +337,12 @@ static int _init_module(void)
     void *ioaddr;
 
 	//proc
-	/*
 	pciModule_proc_entry = proc_create(ENTRY_NAME, S_IFREG | S_IRUGO| S_IWUSR, NULL, &procFileOps);
   	if (pciModule_proc_entry == NULL)
     	return ret;
 
 	printk(KERN_INFO "/proc/%s created\n", ENTRY_NAME);
-	*/
+	
 	printk(KERN_INFO "DEBUG>> init\n");
 	//pci
 	if (pci_dev_present(intel_rtl_nics_table)) {
@@ -465,9 +464,12 @@ static void _cleanup_module(void)
 	printk(KERN_INFO "DEBUG>> device: %s unregistered\n", eth_net_device->name);
 	free_netdev(eth_net_device);
 	//unregister pci
+	iounmap(priv->mmio_addr);
+    pci_release_regions(priv->pciDev);
 	pci_unregister_driver(&pciDriver);
-	pci_disable_device(pciDev);
-	printk(KERN_INFO "DEBUG>> PCI Device: [%x]:[%x], unregistered and disabled\n", pciDev->vendor, pciDev->device);
+	pci_disable_device(priv->pciDev);
+	printk(KERN_INFO "DEBUG>> PCI Device: [%x]:[%x], unregistered and disabled\n", priv->pciDev->vendor, priv->pciDev->device);
+    //INTEL_E1000_ETHERNET_DEVICE,
     
 	return;
 }
