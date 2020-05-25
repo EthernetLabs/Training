@@ -17,7 +17,7 @@ int main(void) {
     printf ("addr of main is: %p\n", &main);
     printf ("addr of _array is: %p\n", &_array);
     unsigned int num = 0x00FFFFDD;
-    //int *pi;
+    int *pi;
     pi = &num;
     printf ("pi is: %p\n", pi);
     printf ("*pi is: %x\n", *pi);
