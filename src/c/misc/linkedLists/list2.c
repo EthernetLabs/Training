@@ -17,6 +17,7 @@ int main(void) {
     struct point pt3 = {5, -4, NULL};
     struct point pt4 = {9, -9, NULL};
     struct point pt5 = {29, -19, NULL};
+    struct point pt6 = {6, -6, NULL};
     struct point * head, * tail;
     
     head = &pt1;
@@ -25,6 +26,7 @@ int main(void) {
     
     appendNode(&pt3, &pt4);
     appendToList(head, &pt5);
+    appendNode(&pt4, &pt6);
 
     printPoints(head);
     
